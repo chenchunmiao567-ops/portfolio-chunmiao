@@ -811,49 +811,43 @@ body {
 
 .carousel-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 100%; /* 占满宽度 */
   margin: 0 auto;
   overflow: hidden;
-  padding: var(--spacing-md) 0;
+  padding: 0;
 }
 
-/* 左右渐隐效果（更柔和，只遮挡边缘） */
+/* 左右渐隐效果（完全隐藏边缘） */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 40px;
+  width: 60px;
   z-index: 5;
   pointer-events: none;
 }
 
 .carousel-container::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-white) 0%, rgba(255,255,255,0.3) 40%, transparent 100%);
+  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
 }
 
 .carousel-container::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-white) 0%, rgba(255,255,255,0.3) 40%, transparent 100%);
+  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s var(--ease-apple);
-  gap: var(--spacing-lg);
+  transition: transform 0.6s var(--ease-apple); /* 更缓慢 */
+  gap: var(--spacing-md);
 }
 
 .carousel-item {
-  flex: 0 0 calc(50% - var(--spacing-lg) * 0.5); /* 移动端 2 列 */
+  flex: 0 0 calc(100% - var(--spacing-md)); /* 单张展示，占满 */
   min-width: 0;
-}
-
-@media (min-width: 768px) {
-  .carousel-item {
-    flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.667); /* 平板/桌面 3 列 */
-  }
 }
 
 .carousel-image {
