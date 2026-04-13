@@ -846,7 +846,7 @@ body {
 }
 
 .carousel-item {
-  flex: 0 0 calc(100% - var(--spacing-md)); /* 单张展示，占满 */
+  flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.667); /* 同时展示 3 张 */
   min-width: 0;
 }
 
