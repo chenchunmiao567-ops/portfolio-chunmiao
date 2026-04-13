@@ -812,33 +812,99 @@
         // 响应式：计算每屏显示数量
         function updateItemsPerView() {
           if (window.innerWidth < 768) {
-            itemsPerView = 1; // 移动端 1 个
+            itemsPerView = 2; // 移动端 2 个
           } else {
-            itemsPerView = 2; // 平板/桌面 2 个
+            itemsPerView = 3; // 平板/桌面 3 个
           }
           updateCarousel();
         }
 
-        // 自动轮播
+        // 无缝循环轮播
         let autoPlayInterval = null;
+        let isTransitioning = false;
+
+        // 克隆第一组和最后一组实现无缝循环
+        function cloneCarouselItems() {
+          const items = document.querySelectorAll('.carousel-item');
+          // 克隆前 3 个放到末尾
+          for (let i = 0; i < itemsPerView; i++) {
+            const clone = items[i].cloneNode(true);
+            clone.classList.add('carousel-clone');
+            carouselTrack.appendChild(clone);
+          }
+          // 克隆后 3 个放到开头
+          for (let i = items.length - itemsPerView; i < items.length; i++) {
+            const clone = items[i].cloneNode(true);
+            clone.classList.add('carousel-clone');
+            carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+          }
+        }
 
         function startAutoPlay() {
-          stopAutoPlay(); // 清除旧的
+          stopAutoPlay();
           autoPlayInterval = setInterval(() => {
-            const maxIndex = Math.floor((itemCount - itemsPerView) / itemsPerView) * itemsPerView;
-            if (currentIndex >= maxIndex) {
-              currentIndex = 0; // 循环到开头
-            } else {
-              currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
-            }
-            updateCarousel();
-          }, 3000); // 3 秒切换一次
+            nextSlide();
+          }, 3000);
         }
 
         function stopAutoPlay() {
           if (autoPlayInterval) {
             clearInterval(autoPlayInterval);
             autoPlayInterval = null;
+          }
+        }
+
+        function nextSlide() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          
+          const totalItems = document.querySelectorAll('.carousel-item').length;
+          const originalItemCount = totalItems - (itemsPerView * 2); // 减去克隆的
+          const maxIndex = originalItemCount;
+          
+          currentIndex += itemsPerView;
+          
+          // 如果超过最后一张，无缝跳回开头（不显示动画）
+          if (currentIndex >= maxIndex) {
+            carouselTrack.style.transition = 'none';
+            currentIndex = itemsPerView; // 跳到第一个真实位置（克隆的后面）
+            updateCarousel();
+            // 强制重绘后恢复动画
+            setTimeout(() => {
+              carouselTrack.style.transition = 'transform 0.5s var(--ease-apple)';
+              isTransitioning = false;
+            }, 50);
+          } else {
+            updateCarousel();
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 500);
+          }
+        }
+
+        function prevSlide() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          
+          const totalItems = document.querySelectorAll('.carousel-item').length;
+          const originalItemCount = totalItems - (itemsPerView * 2);
+          
+          currentIndex -= itemsPerView;
+          
+          // 如果小于第一张，无缝跳到末尾
+          if (currentIndex < itemsPerView) {
+            carouselTrack.style.transition = 'none';
+            currentIndex = originalItemCount - itemsPerView;
+            updateCarousel();
+            setTimeout(() => {
+              carouselTrack.style.transition = 'transform 0.5s var(--ease-apple)';
+              isTransitioning = false;
+            }, 50);
+          } else {
+            updateCarousel();
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 500);
           }
         }
 
@@ -849,14 +915,17 @@
         // 创建指示点
         function createDots() {
           carouselDots.innerHTML = '';
-          const dotCount = Math.ceil(itemCount / itemsPerView);
+          const originalItemCount = itemCount; // 原始数量（不含克隆）
+          const dotCount = Math.ceil(originalItemCount / itemsPerView);
           for (let i = 0; i < dotCount; i++) {
             const dot = document.createElement('div');
             dot.classList.add('carousel-dot');
             if (i === 0) dot.classList.add('active');
             dot.addEventListener('click', () => {
-              currentIndex = i * itemsPerView;
+              stopAutoPlay();
+              currentIndex = (i * itemsPerView) + itemsPerView; // 加上克隆偏移
               updateCarousel();
+              startAutoPlay();
             });
             carouselDots.appendChild(dot);
           }
@@ -869,11 +938,12 @@
           const offset = currentIndex * (itemWidth + gap);
           carouselTrack.style.transform = `translateX(-${offset}px)`;
           
-          // 更新指示点
+          // 更新指示点（考虑克隆偏移）
           const dots = document.querySelectorAll('.carousel-dot');
+          const adjustedIndex = currentIndex - itemsPerView; // 减去克隆偏移
           dots.forEach((dot, index) => {
             const itemIndex = index * itemsPerView;
-            if (itemIndex === currentIndex || (currentIndex >= itemIndex && currentIndex < itemIndex + itemsPerView)) {
+            if (adjustedIndex >= itemIndex && adjustedIndex < itemIndex + itemsPerView) {
               dot.classList.add('active');
             } else {
               dot.classList.remove('active');
@@ -883,15 +953,16 @@
         
         // 上一页
         carouselPrev.addEventListener('click', () => {
-          currentIndex = Math.max(0, currentIndex - itemsPerView);
-          updateCarousel();
+          stopAutoPlay();
+          prevSlide();
+          startAutoPlay();
         });
         
         // 下一页
         carouselNext.addEventListener('click', () => {
-          const maxIndex = Math.floor((itemCount - itemsPerView) / itemsPerView) * itemsPerView;
-          currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
-          updateCarousel();
+          stopAutoPlay();
+          nextSlide();
+          startAutoPlay();
         });
         
         // 触摸滑动支持
@@ -923,14 +994,18 @@
         }
         
         // 初始化
+        cloneCarouselItems(); // 克隆实现无缝循环
         updateItemsPerView();
+        // 调整初始位置到第一个真实项目（跳过克隆的）
+        currentIndex = itemsPerView;
+        updateCarousel();
         createDots();
         window.addEventListener('resize', updateItemsPerView);
         
         // 启动自动轮播
         startAutoPlay();
         
-        console.log('✅ 轮播图初始化完成（含自动轮播）');
+        console.log('✅ 轮播图初始化完成（无缝循环 + 自动轮播）');
       }
 
       // 联系方式 Copy 功能
