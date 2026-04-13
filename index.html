@@ -1056,7 +1056,7 @@
         });
       });
       
-      // Apple 风格文字动画 - 简化保证触发
+      // Apple 风格文字动画 - 修复版（直接监听标题元素）
       (function() {
         console.log('🔍 文字动画初始化开始...');
         
@@ -1069,7 +1069,7 @@
           return;
         }
         
-        // 2. 添加 ready 类
+        // 2. 添加 ready 类（初始状态：隐藏 + 上浮）
         titles.forEach((title, i) => {
           title.classList.add('ready');
           console.log('  ✅ ready:', title.tagName, title.classList.contains('ready'));
@@ -1081,22 +1081,24 @@
           
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              console.log('  ✅ 元素可见:', entry.target.id || entry.target.tagName);
+              console.log('  ✅ 元素可见:', entry.target.classList.contains('section-subtitle') ? '副标题' : '主标题');
               
-              const section = entry.target;
-              const title = section.querySelector('.section-title');
-              const subtitle = section.querySelector('.section-subtitle');
+              // 直接给当前元素添加 visible 类
+              entry.target.classList.add('visible');
+              console.log('    📝 添加 visible 类');
               
-              if (title) {
-                console.log('    📝 主标题 → visible');
-                title.classList.add('visible');
-              }
-              
-              if (subtitle) {
-                console.log('    📝 副标题 → visible (100ms 延迟)');
-                setTimeout(() => {
-                  subtitle.classList.add('visible');
-                }, 100);
+              // 如果是主标题，查找同 section 内的副标题并延迟显示
+              if (entry.target.classList.contains('section-title')) {
+                const section = entry.target.closest('.section');
+                if (section) {
+                  const subtitle = section.querySelector('.section-subtitle');
+                  if (subtitle && subtitle.classList.contains('ready')) {
+                    console.log('    📝 副标题 → visible (100ms 延迟)');
+                    setTimeout(() => {
+                      subtitle.classList.add('visible');
+                    }, 100);
+                  }
+                }
               }
               
               // 停止监听
@@ -1109,52 +1111,14 @@
           threshold: 0.01
         });
         
-        // 4. 监听所有板块
-        const sections = document.querySelectorAll('.section');
-        console.log('📋 找到板块数量:', sections.length);
-        
-        sections.forEach(section => {
-          observer.observe(section);
-          console.log('  👁️ 监听板块:', section.id || 'anonymous');
+        // 4. 直接监听所有标题元素（修复：不再监听父级 section）
+        titles.forEach(title => {
+          observer.observe(title);
+          console.log('  👁️ 监听标题:', title.tagName, title.textContent?.substring(0, 20));
         });
         
         console.log('✅ 文字动画初始化完成');
       })();
-    });
-    // Apple 风格文字动画 - 在 DOMContentLoaded 外再执行一次确保触发
-    window.addEventListener('load', function() {
-      console.log('🔍 文字动画初始化 (window load)...');
-      
-      var titles = document.querySelectorAll('.section-title, .section-subtitle');
-      console.log('📝 找到标题:', titles.length);
-      
-      titles.forEach(function(title) {
-        title.classList.add('ready');
-      });
-      
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var section = entry.target;
-            var title = section.querySelector('.section-title');
-            var subtitle = section.querySelector('.section-subtitle');
-            
-            if (title) title.classList.add('visible');
-            if (subtitle) setTimeout(function() { subtitle.classList.add('visible'); }, 100);
-            
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -100px 0px', threshold: 0.01 });
-      
-      var sections = document.querySelectorAll('.section');
-      console.log('📋 找到板块:', sections.length);
-      
-      sections.forEach(function(section) {
-        observer.observe(section);
-      });
-      
-      console.log('✅ 文字动画初始化完成 (window load)');
     });
   </script>
 </body>
