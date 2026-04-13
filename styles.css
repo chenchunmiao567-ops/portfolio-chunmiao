@@ -497,15 +497,9 @@ body {
   background: var(--color-white);
 }
 
-.advantage-icon {
-  font-size: 48px;
-  margin-bottom: var(--spacing-md);
-  display: block;
-}
-
 .advantage-heading {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-gray-dark);
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.01em;
@@ -513,8 +507,9 @@ body {
 
 .advantage-desc {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--color-gray-mid);
+  font-weight: 400;
 }
 
 /* 工作经历时间线 */
