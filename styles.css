@@ -3,7 +3,7 @@
    Design System v1.0
    =================================== */
 
-/* CSS 变量 - 颜色系统 */
+/* Apple 官方设计系统变量 v1.0 */
 :root {
   /* 主色调 - Apple 经典配色 */
   --color-white: #FFFFFF;
@@ -12,21 +12,23 @@
   --color-gray-dark: #1D1D1F;
   --color-black: #000000;
   
-  /* 强调色 - Apple 蓝 */
-  --color-blue: #0066CC;
+  /* 强调色 - Apple 官方蓝 */
+  --color-blue: #0071E3;
+  --color-blue-hover: #0077ED;
   --color-red: #FF0000;
   
-  /* 阴影 - Apple 风格柔和阴影 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  /* 阴影 - Apple 官方阴影系统 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* 默认 */
+  --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 标准 */
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 悬停 */
   
-  /* 圆角 - Apple 大圆角 */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  /* 圆角 - Apple 官方圆角系统 */
+  --radius-sm: 10px;   /* 小按钮/图标 */
+  --radius-md: 18px;   /* 中等卡片/轮播图 */
+  --radius-lg: 28px;   /* 大卡片/核心优势/视频 */
+  --radius-xl: 980px;  /* 胶囊按钮 */
   
-  /* 间距 */
+  /* 间距 - Apple 基于 8px 的间距系统 */
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -35,16 +37,27 @@
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
   --spacing-4xl: 80px;
-  --spacing-5xl: 120px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 120px;
+  --spacing-7xl: 160px;
   
   /* 字体 - Apple 系统字体 */
-  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, 
-                 "Helvetica Neue", Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro SC",
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC",
+                 "Microsoft YaHei", sans-serif;
   
-  /* 缓动 - Apple 风格流畅动画 */
-  --ease-apple: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 200ms var(--ease-apple);
-  --transition-normal: 300ms var(--ease-apple);
+  /* 缓动 - Apple 官方缓动曲线 */
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);        /* 高级缓动 */
+  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* 标准缓动 */
+  
+  /* 动画时长 - Apple 官方标准 */
+  --duration-fast: 100ms;    /* 微交互 */
+  --duration-base: 400ms;    /* 卡片动画 */
+  --duration-slow: 800ms;    /* 文字动画 */
+  
+  --transition-fast: 100ms var(--ease-apple);
+  --transition-normal: 400ms var(--ease-apple);
+  --transition-slow: 800ms var(--ease-apple);
 }
 
 /* 重置 */
@@ -487,22 +500,22 @@ body {
 .advantage-card {
   background: var(--color-white);
   padding: var(--spacing-2xl);
-  border-radius: 20px; /* Apple 风格圆角 */
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Apple 缓动曲线 */
+  border-radius: var(--radius-lg); /* 28px - Apple 大卡片标准 */
+  transition: all var(--duration-base) var(--ease-apple); /* 400ms */
   border: 1px solid rgba(0, 0, 0, 0.02);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* 初始阴影 */
-  will-change: transform, box-shadow; /* 性能优化 */
+  box-shadow: var(--shadow-sm);
+  will-change: transform, box-shadow;
 }
 
 .advantage-card:hover {
-  transform: translateY(-6px) scale(1.02); /* Apple 风格：上浮 + 轻微放大 */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); /* 阴影加深扩散 */
+  transform: translateY(-6px) scale(1.0161); /* Apple 官方放大比例 1.61% */
+  box-shadow: var(--shadow-lg);
   background: var(--color-white);
   border-color: rgba(0, 0, 0, 0.04);
 }
 
 .advantage-card:active {
-  transform: translateY(-2px) scale(0.99); /* 点击时轻微回弹 */
+  transform: translateY(-2px) scale(0.99);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
@@ -925,22 +938,22 @@ body {
   opacity: 1;
 }
 
-/* Apple 风格卡片设计 */
+/* Apple 风格轮播图卡片 */
 .carousel-image {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 4:3 比例，更接近 Apple 风格 */
+  padding-top: 75%; /* 4:3 比例 */
   background-color: var(--color-white);
-  border-radius: 18px;
+  border-radius: var(--radius-md); /* 18px - Apple 中等卡片 */
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-base) var(--ease-apple); /* 400ms */
   border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .carousel-image:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: scale(1.0161); /* Apple 官方放大比例 1.61% */
+  box-shadow: var(--shadow-lg);
 }
 
 .image-placeholder {
