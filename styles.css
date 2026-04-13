@@ -622,20 +622,28 @@ body {
   background-color: var(--color-white);
 }
 
-/* Apple 风格标题和文字 */
+/* Apple 风格标题和文字动画 - 渐进增强 */
+
+/* 默认状态 - 无 JS 时可见（降级方案） */
 .section-title {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #1d1d1f; /* Apple 风格深灰色 */
+  color: #1d1d1f;
   margin-bottom: var(--spacing-4xl);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section-title.visible {
+/* JS 加载后 - 准备动画 */
+.section-title.ready {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 滚动触发 - 动画完成 */
+.section-title.ready.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -647,18 +655,23 @@ body {
   }
 }
 
+/* 副标题同样逻辑 */
 .section-subtitle {
   font-size: 17px;
   font-weight: 400;
-  color: #86868b; /* Apple 风格灰色 */
+  color: #86868b;
   margin-top: -20px;
   margin-bottom: var(--spacing-4xl);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
 }
 
-.section-subtitle.visible {
+.section-subtitle.ready {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.section-subtitle.ready.visible {
   opacity: 1;
   transform: translateY(0);
 }
