@@ -215,6 +215,23 @@ body {
   opacity: 0.8;
 }
 
+.hero-email {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-blue);
+  margin-top: var(--spacing-md);
+  display: inline-block;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  opacity: 0.9;
+}
+
+.hero-email:hover {
+  color: var(--color-gray-dark);
+  opacity: 1;
+  text-decoration: underline;
+}
+
 /* 关于我区域 */
 .about-content {
   max-width: 700px; /* 调整宽度，让统计卡片更平衡 */
@@ -279,7 +296,35 @@ body {
   white-space: nowrap;
 }
 
-/* 联系方式（单行横向布局，无背景） */
+/* 联系方式（紧凑单行布局） */
+.about-contact-compact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-4xl);
+  padding: 0;
+  background: transparent;
+  border: none;
+  flex-wrap: wrap;
+}
+
+.contact-compact-item {
+  font-size: 15px;
+  color: var(--color-gray-dark);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.contact-compact-separator {
+  font-size: 14px;
+  color: var(--color-gray-mid);
+  opacity: 0.5;
+  font-weight: 300;
+}
+
+/* 联系方式（单行横向布局，无背景） - 保留旧样式兼容 */
 .about-contact {
   display: flex;
   justify-content: center;
@@ -337,13 +382,13 @@ body {
 }
 
 .skills-title {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   color: var(--color-gray-dark);
   margin-bottom: var(--spacing-xl);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.6;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  opacity: 1;
 }
 
 .skills-grid {
