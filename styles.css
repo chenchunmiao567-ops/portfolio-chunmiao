@@ -811,9 +811,9 @@ body {
 
 .carousel-container {
   position: relative;
-  max-width: 100%; /* 占满整个屏幕宽度 */
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: visible; /* 允许渐隐效果溢出 */
+  overflow: hidden;
   padding: var(--spacing-md) 0;
 }
 
@@ -824,7 +824,7 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px;
+  width: 80px;
   z-index: 5;
   pointer-events: none;
 }
@@ -842,30 +842,23 @@ body {
 .carousel-track {
   display: flex;
   transition: transform 0.5s var(--ease-apple);
-  gap: var(--spacing-lg);
-  padding: var(--spacing-md); /* 内边距，避免渐隐遮挡 */
+  gap: var(--spacing-xl);
 }
 
 .carousel-item {
-  flex: 0 0 calc(50% - var(--spacing-lg) * 0.5); /* 移动端 2 列 */
+  flex: 0 0 calc(100% - var(--spacing-xl)); /* 移动端 1 列，超大 */
   min-width: 0;
 }
 
 @media (min-width: 768px) {
   .carousel-item {
-    flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.667); /* 平板 3 列 */
+    flex: 0 0 calc(50% - var(--spacing-xl) * 0.5); /* 平板 2 列 */
   }
 }
 
 @media (min-width: 1024px) {
   .carousel-item {
-    flex: 0 0 calc(25% - var(--spacing-lg) * 0.75); /* 桌面 4 列，图片更大 */
-  }
-}
-
-@media (min-width: 1400px) {
-  .carousel-item {
-    flex: 0 0 calc(20% - var(--spacing-lg) * 0.8); /* 超大屏 5 列 */
+    flex: 0 0 calc(50% - var(--spacing-xl) * 0.5); /* 桌面 2 列，超大 */
   }
 }
 

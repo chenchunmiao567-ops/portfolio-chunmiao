@@ -797,6 +797,7 @@
       });
 
       // AE 特效轮播图
+      const carouselContainer = document.querySelector('.carousel-container');
       const carouselTrack = document.querySelector('.carousel-track');
       const carouselPrev = document.querySelector('.carousel-prev');
       const carouselNext = document.querySelector('.carousel-next');
@@ -811,16 +812,39 @@
         // 响应式：计算每屏显示数量
         function updateItemsPerView() {
           if (window.innerWidth < 768) {
-            itemsPerView = 2; // 移动端 2 个
-          } else if (window.innerWidth < 1024) {
-            itemsPerView = 3; // 平板端 3 个
-          } else if (window.innerWidth < 1400) {
-            itemsPerView = 4; // 桌面端 4 个
+            itemsPerView = 1; // 移动端 1 个
           } else {
-            itemsPerView = 5; // 超大屏 5 个
+            itemsPerView = 2; // 平板/桌面 2 个
           }
           updateCarousel();
         }
+
+        // 自动轮播
+        let autoPlayInterval = null;
+
+        function startAutoPlay() {
+          stopAutoPlay(); // 清除旧的
+          autoPlayInterval = setInterval(() => {
+            const maxIndex = Math.floor((itemCount - itemsPerView) / itemsPerView) * itemsPerView;
+            if (currentIndex >= maxIndex) {
+              currentIndex = 0; // 循环到开头
+            } else {
+              currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
+            }
+            updateCarousel();
+          }, 3000); // 3 秒切换一次
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+          }
+        }
+
+        // 鼠标悬停时暂停轮播
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
         
         // 创建指示点
         function createDots() {
@@ -903,7 +927,10 @@
         createDots();
         window.addEventListener('resize', updateItemsPerView);
         
-        console.log('✅ 轮播图初始化完成');
+        // 启动自动轮播
+        startAutoPlay();
+        
+        console.log('✅ 轮播图初始化完成（含自动轮播）');
       }
 
       // 联系方式 Copy 功能
