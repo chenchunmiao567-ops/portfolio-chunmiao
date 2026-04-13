@@ -811,40 +811,32 @@
         
         // 响应式：计算每屏显示数量
         function updateItemsPerView() {
-          if (window.innerWidth < 768) {
-            itemsPerView = 1; // 移动端 1 张
-          } else {
-            itemsPerView = 3; // 平板/桌面 3 张
-          }
+          itemsPerView = 1; // 固定单张展示
           updateCarousel();
         }
 
-        // 单张缓慢轮播（显示 3 张，每次滚动 1 张）
+        // 单张自动轮播
         let autoPlayInterval = null;
         let isTransitioning = false;
 
-        // 克隆实现无缝循环
+        // 克隆第一张和最后一张实现无缝循环
         function cloneCarouselItems() {
           const items = document.querySelectorAll('.carousel-item');
-          // 克隆前 3 张放到末尾
-          for (let i = 0; i < 3; i++) {
-            const clone = items[i].cloneNode(true);
-            clone.classList.add('carousel-clone');
-            carouselTrack.appendChild(clone);
-          }
-          // 克隆后 3 张放到开头
-          for (let i = items.length - 3; i < items.length; i++) {
-            const clone = items[i].cloneNode(true);
-            clone.classList.add('carousel-clone');
-            carouselTrack.insertBefore(clone, carouselTrack.firstChild);
-          }
+          // 克隆第一张放到末尾
+          const firstClone = items[0].cloneNode(true);
+          firstClone.classList.add('carousel-clone');
+          carouselTrack.appendChild(firstClone);
+          // 克隆最后一张放到开头
+          const lastClone = items[items.length - 1].cloneNode(true);
+          lastClone.classList.add('carousel-clone');
+          carouselTrack.insertBefore(lastClone, carouselTrack.firstChild);
         }
 
         function startAutoPlay() {
           stopAutoPlay();
           autoPlayInterval = setInterval(() => {
             nextSlide();
-          }, 3000); // 3 秒滚动一张
+          }, 4000); // 4 秒切换一张
         }
 
         function stopAutoPlay() {
@@ -859,24 +851,24 @@
           isTransitioning = true;
           
           const totalItems = document.querySelectorAll('.carousel-item').length;
-          const originalItemCount = totalItems - 6; // 减去克隆的（前后各 3 张）
+          const originalItemCount = totalItems - 2; // 减去克隆的
           
           currentIndex++;
           
-          // 如果超过最后一张，无缝跳回
-          if (currentIndex >= originalItemCount + 3) {
+          // 如果超过最后一张，无缝跳回第一张
+          if (currentIndex >= originalItemCount + 1) { // +1 是因为末尾有克隆
             carouselTrack.style.transition = 'none';
-            currentIndex = 3; // 跳到第一个真实位置
+            currentIndex = 1; // 跳到第一张真实位置（克隆的后面）
             updateCarousel();
             setTimeout(() => {
-              carouselTrack.style.transition = 'transform 0.5s var(--ease-apple)';
+              carouselTrack.style.transition = 'transform 0.6s var(--ease-apple)';
               isTransitioning = false;
             }, 50);
           } else {
             updateCarousel();
             setTimeout(() => {
               isTransitioning = false;
-            }, 500);
+            }, 600);
           }
         }
 
@@ -885,24 +877,24 @@
           isTransitioning = true;
           
           const totalItems = document.querySelectorAll('.carousel-item').length;
-          const originalItemCount = totalItems - 6;
+          const originalItemCount = totalItems - 2;
           
           currentIndex--;
           
-          // 如果小于第一张，无缝跳到末尾
-          if (currentIndex < 3) {
+          // 如果小于第一张，无缝跳到最后一张
+          if (currentIndex < 1) {
             carouselTrack.style.transition = 'none';
             currentIndex = originalItemCount;
             updateCarousel();
             setTimeout(() => {
-              carouselTrack.style.transition = 'transform 0.5s var(--ease-apple)';
+              carouselTrack.style.transition = 'transform 0.6s var(--ease-apple)';
               isTransitioning = false;
             }, 50);
           } else {
             updateCarousel();
             setTimeout(() => {
               isTransitioning = false;
-            }, 500);
+            }, 600);
           }
         }
 
