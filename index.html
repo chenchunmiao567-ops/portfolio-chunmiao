@@ -546,6 +546,78 @@
               <p>AIGC 描述</p>
             </div>
           </div>
+          <!-- 图片 7 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AE 特效示例 4</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>特效标题 4</h4>
+              <p>特效描述</p>
+            </div>
+          </div>
+          <!-- 图片 8 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AE 特效示例 5</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>特效标题 5</h4>
+              <p>特效描述</p>
+            </div>
+          </div>
+          <!-- 图片 9 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AE 特效示例 6</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>特效标题 6</h4>
+              <p>特效描述</p>
+            </div>
+          </div>
+          <!-- 图片 10 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AIGC 示例 4</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>AIGC 标题 4</h4>
+              <p>AIGC 描述</p>
+            </div>
+          </div>
+          <!-- 图片 11 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AIGC 示例 5</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>AIGC 标题 5</h4>
+              <p>AIGC 描述</p>
+            </div>
+          </div>
+          <!-- 图片 12 -->
+          <div class="carousel-item">
+            <div class="carousel-image">
+              <div class="image-placeholder">
+                <span>AIGC 示例 6</span>
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h4>AIGC 标题 6</h4>
+              <p>AIGC 描述</p>
+            </div>
+          </div>
         </div>
         <button class="carousel-btn carousel-prev" aria-label="Previous">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -723,8 +795,10 @@
         function updateItemsPerView() {
           if (window.innerWidth < 768) {
             itemsPerView = 1; // 移动端 1 个
+          } else if (window.innerWidth < 1024) {
+            itemsPerView = 3; // 平板端 3 个
           } else {
-            itemsPerView = 3; // 桌面端 3 个
+            itemsPerView = 6; // 桌面端 6 个
           }
           updateCarousel();
         }

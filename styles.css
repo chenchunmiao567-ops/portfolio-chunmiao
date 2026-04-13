@@ -828,16 +828,16 @@ body {
   min-width: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .carousel-item {
-    flex: 0 0 calc(25% - var(--spacing-lg) * 0.75);
+    flex: 0 0 calc(16.666% - var(--spacing-lg) * 0.833); /* 6 列 */
   }
 }
 
 .carousel-image {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* 1:1 正方形 */
+  padding-top: 56.25%; /* 16:9 比例 */
   background-color: var(--color-off-white);
   border-radius: var(--radius-lg);
   overflow: hidden;
