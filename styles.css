@@ -483,18 +483,27 @@ body {
   }
 }
 
+/* Apple 风格核心优势卡片 */
 .advantage-card {
-  background: var(--color-off-white);
+  background: var(--color-white);
   padding: var(--spacing-2xl);
-  border-radius: var(--radius-lg);
-  transition: var(--transition-normal);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px; /* Apple 风格圆角 */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Apple 缓动曲线 */
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* 初始阴影 */
+  will-change: transform, box-shadow; /* 性能优化 */
 }
 
 .advantage-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.02); /* Apple 风格：上浮 + 轻微放大 */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); /* 阴影加深扩散 */
   background: var(--color-white);
+  border-color: rgba(0, 0, 0, 0.04);
+}
+
+.advantage-card:active {
+  transform: translateY(-2px) scale(0.99); /* 点击时轻微回弹 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .advantage-heading {
@@ -697,20 +706,27 @@ body {
   }
 }
 
-/* 视频卡片 */
+/* Apple 风格视频卡片 */
 .video-card {
   background: var(--color-white);
-  border-radius: var(--radius-lg);
+  border-radius: 20px; /* Apple 风格圆角 */
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  transition: var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  will-change: transform, box-shadow;
 }
 
 .video-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px) scale(1.02); /* Apple 风格：上浮 + 放大 */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.04);
+}
+
+.video-card:active {
+  transform: translateY(-2px) scale(0.99);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .video-thumbnail {
