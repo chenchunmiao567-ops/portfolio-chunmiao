@@ -811,32 +811,61 @@ body {
 
 .carousel-container {
   position: relative;
-  max-width: 1400px; /* 加宽容器 */
+  max-width: 100%; /* 占满整个屏幕宽度 */
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible; /* 允许渐隐效果溢出 */
   padding: var(--spacing-md) 0;
+}
+
+/* 左右渐隐效果 */
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s var(--ease-apple);
   gap: var(--spacing-lg);
+  padding: var(--spacing-md); /* 内边距，避免渐隐遮挡 */
 }
 
 .carousel-item {
-  flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.667);
+  flex: 0 0 calc(50% - var(--spacing-lg) * 0.5); /* 移动端 2 列 */
   min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.667); /* 平板 3 列 */
+  }
 }
 
 @media (min-width: 1024px) {
   .carousel-item {
-    flex: 0 0 calc(16.666% - var(--spacing-lg) * 0.833); /* 6 列 */
+    flex: 0 0 calc(25% - var(--spacing-lg) * 0.75); /* 桌面 4 列，图片更大 */
   }
 }
 
 @media (min-width: 1400px) {
   .carousel-item {
-    flex: 0 0 calc(14.285% - var(--spacing-lg) * 0.857); /* 7 列，图片更大 */
+    flex: 0 0 calc(20% - var(--spacing-lg) * 0.8); /* 超大屏 5 列 */
   }
 }
 

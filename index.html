@@ -811,11 +811,13 @@
         // 响应式：计算每屏显示数量
         function updateItemsPerView() {
           if (window.innerWidth < 768) {
-            itemsPerView = 1; // 移动端 1 个
+            itemsPerView = 2; // 移动端 2 个
           } else if (window.innerWidth < 1024) {
             itemsPerView = 3; // 平板端 3 个
+          } else if (window.innerWidth < 1400) {
+            itemsPerView = 4; // 桌面端 4 个
           } else {
-            itemsPerView = 6; // 桌面端 6 个
+            itemsPerView = 5; // 超大屏 5 个
           }
           updateCarousel();
         }
