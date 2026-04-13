@@ -604,8 +604,22 @@ body {
   }
 }
 
-.section-alt {
+/* 交替背景色 - Apple 官网风格 */
+/* 偶数板块用浅灰色，创造视觉节奏 */
+#brand,  /* 品牌宣传片 */
+#mg,     /* MG 动画 */
+#ae,     /* AE 特效 */
+#contact /* 联系我 */
+{
   background-color: var(--color-off-white);
+}
+
+/* 奇数板块保持白色 */
+#about,  /* 关于我 */
+#3d,     /* 三维动画 */
+#short   /* 短视频 */
+{
+  background-color: var(--color-white);
 }
 
 .section-title {
