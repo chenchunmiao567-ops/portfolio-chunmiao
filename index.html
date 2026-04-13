@@ -1121,6 +1121,41 @@
         console.log('✅ 文字动画初始化完成');
       })();
     });
+    // Apple 风格文字动画 - 在 DOMContentLoaded 外再执行一次确保触发
+    window.addEventListener('load', function() {
+      console.log('🔍 文字动画初始化 (window load)...');
+      
+      var titles = document.querySelectorAll('.section-title, .section-subtitle');
+      console.log('📝 找到标题:', titles.length);
+      
+      titles.forEach(function(title) {
+        title.classList.add('ready');
+      });
+      
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var section = entry.target;
+            var title = section.querySelector('.section-title');
+            var subtitle = section.querySelector('.section-subtitle');
+            
+            if (title) title.classList.add('visible');
+            if (subtitle) setTimeout(function() { subtitle.classList.add('visible'); }, 100);
+            
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -100px 0px', threshold: 0.01 });
+      
+      var sections = document.querySelectorAll('.section');
+      console.log('📋 找到板块:', sections.length);
+      
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+      
+      console.log('✅ 文字动画初始化完成 (window load)');
+    });
   </script>
 </body>
 </html>
