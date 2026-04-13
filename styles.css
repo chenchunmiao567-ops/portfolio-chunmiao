@@ -981,8 +981,16 @@ body {
 .contact-text {
   font-size: 17px;
   color: var(--color-gray-mid);
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+.contact-intro {
+  font-size: 15px;
+  color: var(--color-gray-mid);
   margin-bottom: var(--spacing-3xl);
   font-weight: 400;
+  opacity: 0.8;
 }
 
 .contact-grid {
@@ -1013,12 +1021,45 @@ body {
   transition: var(--transition-normal);
   text-decoration: none;
   min-width: 180px;
+  position: relative;
+  cursor: default;
+}
+
+.contact-clickable {
+  cursor: pointer;
 }
 
 .contact-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(0, 0, 0, 0.1);
+}
+
+.copy-tooltip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-blue);
+  background: var(--color-white);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: var(--transition-fast);
+  pointer-events: none;
+}
+
+.contact-clickable:hover .copy-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-clickable:active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-icon {

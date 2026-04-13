@@ -705,33 +705,26 @@
     <div class="container">
       <h2 class="section-title">联系我</h2>
       <div class="contact-content">
-        <p class="contact-name">陈春苗 Chunmiao Chen</p>
+        <p class="contact-name">陈春苗 / Chunmiao Chen</p>
         <p class="contact-text">多媒体设计师 · 专注品牌视频宣传</p>
+        <p class="contact-intro">有合作意向？欢迎随时联系</p>
         <div class="contact-grid">
-          <a href="tel:15107829142" class="contact-item">
+          <div class="contact-item contact-clickable" data-copy="15107829142" title="点击复制手机号">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             <span class="contact-label">手机/微信</span>
             <span class="contact-value">15107829142</span>
-          </a>
-          <a href="mailto:chenchunmiao3@foxmail.com" class="contact-item">
+            <span class="copy-tooltip">Copy</span>
+          </div>
+          <div class="contact-item contact-clickable" data-copy="chenchunmiao3@foxmail.com" title="点击复制邮箱">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
             <span class="contact-label">邮箱</span>
             <span class="contact-value">chenchunmiao3@foxmail.com</span>
-          </a>
-          <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-              <line x1="9" y1="9" x2="9.01" y2="9"/>
-              <line x1="15" y1="9" x2="15.01" y2="9"/>
-            </svg>
-            <span class="contact-label">微信号</span>
-            <span class="contact-value">c_Dreamback</span>
+            <span class="copy-tooltip">Copy</span>
           </div>
         </div>
       </div>
@@ -910,6 +903,66 @@
         
         console.log('✅ 轮播图初始化完成');
       }
+
+      // 联系方式 Copy 功能
+      const contactClickables = document.querySelectorAll('.contact-clickable');
+      
+      contactClickables.forEach(item => {
+        item.addEventListener('click', async () => {
+          const copyText = item.getAttribute('data-copy');
+          const tooltip = item.querySelector('.copy-tooltip');
+          
+          try {
+            await navigator.clipboard.writeText(copyText);
+            
+            // 显示复制成功提示
+            const originalText = tooltip.textContent;
+            tooltip.textContent = 'Copied!';
+            tooltip.style.background = 'var(--color-blue)';
+            tooltip.style.color = 'var(--color-white)';
+            
+            // 1.5 秒后恢复
+            setTimeout(() => {
+              tooltip.textContent = originalText;
+              tooltip.style.background = 'var(--color-white)';
+              tooltip.style.color = 'var(--color-blue)';
+            }, 1500);
+            
+            console.log('✅ 已复制:', copyText);
+          } catch (err) {
+            // 降级方案：创建临时 textarea
+            const textarea = document.createElement('textarea');
+            textarea.value = copyText;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+              document.execCommand('copy');
+              
+              const originalText = tooltip.textContent;
+              tooltip.textContent = 'Copied!';
+              tooltip.style.background = 'var(--color-blue)';
+              tooltip.style.color = 'var(--color-white)';
+              
+              setTimeout(() => {
+                tooltip.textContent = originalText;
+                tooltip.style.background = 'var(--color-white)';
+                tooltip.style.color = 'var(--color-blue)';
+              }, 1500);
+              
+              console.log('✅ 已复制:', copyText);
+            } catch (e) {
+              console.error('❌ 复制失败:', e);
+            }
+            
+            document.body.removeChild(textarea);
+          }
+        });
+      });
+      
+      console.log('✅ Copy 功能初始化完成');
     });
   </script>
 </body>
