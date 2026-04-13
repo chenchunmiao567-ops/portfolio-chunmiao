@@ -811,7 +811,7 @@ body {
 
 .carousel-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1400px; /* 加宽容器 */
   margin: 0 auto;
   overflow: hidden;
   padding: var(--spacing-md) 0;
@@ -831,6 +831,12 @@ body {
 @media (min-width: 1024px) {
   .carousel-item {
     flex: 0 0 calc(16.666% - var(--spacing-lg) * 0.833); /* 6 列 */
+  }
+}
+
+@media (min-width: 1400px) {
+  .carousel-item {
+    flex: 0 0 calc(14.285% - var(--spacing-lg) * 0.857); /* 7 列，图片更大 */
   }
 }
 
@@ -868,20 +874,20 @@ body {
 }
 
 .carousel-caption {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
   text-align: center;
 }
 
 .carousel-caption h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-gray-dark);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
 
 .carousel-caption p {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-gray-mid);
   line-height: 1.4;
 }
