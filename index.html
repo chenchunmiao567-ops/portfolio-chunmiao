@@ -1058,7 +1058,7 @@
       
       console.log('✅ Copy 功能初始化完成');
 
-      // Apple 风格滚动动画 - 修复版
+      // Apple 风格滚动动画 - 修复版（基于 Apple 官网真实参数）
       document.addEventListener('DOMContentLoaded', () => {
         // 1. 给所有目标元素添加"ready"类
         const titles = document.querySelectorAll('.section-title, .section-subtitle');
@@ -1066,25 +1066,35 @@
           title.classList.add('ready');
         });
 
-        // 2. 创建 Observer（监听板块，不是标题）
+        // 2. 创建 Observer（Apple 标准：-100px rootMargin）
         const observerOptions = {
           root: null,
-          rootMargin: '0px 0px -150px 0px', // 元素进入视口 150px 时触发
-          threshold: 0.01 // 1% 可见就触发
+          rootMargin: '0px 0px -100px 0px',  /* Apple 标准：进入视口 100px 时触发 */
+          threshold: 0.01
         };
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const section = entry.target;
-              const titles = section.querySelectorAll('.section-title, .section-subtitle');
               
-              // 错开添加 visible 类
-              titles.forEach((title, index) => {
+              // Apple 三级延迟策略：0ms → 100ms → 200ms
+              const title = section.querySelector('.section-title');
+              const subtitle = section.querySelector('.section-subtitle');
+              
+              if (title) {
+                // 主标题：立即显示（延迟 0ms）
                 setTimeout(() => {
                   title.classList.add('visible');
-                }, index * 150); // 每个元素延迟 150ms
-              });
+                }, 0);
+              }
+              
+              if (subtitle) {
+                // 副标题：延迟 100ms（Apple 官方）
+                setTimeout(() => {
+                  subtitle.classList.add('visible');
+                }, 100);
+              }
 
               // 3. 动画完成后停止监听（一次性）
               observer.unobserve(entry.target);
@@ -1097,7 +1107,7 @@
           observer.observe(section);
         });
 
-        console.log('✅ Apple 风格滚动动画初始化完成（修复版）');
+        console.log('✅ Apple 风格滚动动画初始化完成（基于官网真实参数）');
       });
     });
   </script>

@@ -644,7 +644,7 @@ body {
   background-color: var(--color-white);
 }
 
-/* Apple 风格标题和文字动画 - 渐进增强 */
+/* Apple 风格标题和文字动画 - 修复版（基于 Apple 官网真实参数） */
 
 /* 默认状态 - 无 JS 时可见（降级方案） */
 .section-title {
@@ -656,12 +656,12 @@ body {
   margin-bottom: var(--spacing-4xl);
 }
 
-/* JS 加载后 - 准备动画 */
+/* JS 加载后 - 准备动画（Apple 标准：上浮 20px） */
 .section-title.ready {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);  /* Apple 官方：20px，不是 40px */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* 滚动触发 - 动画完成 */
@@ -677,7 +677,7 @@ body {
   }
 }
 
-/* 副标题同样逻辑 */
+/* 副标题同样逻辑（Apple 标准：延迟 100ms） */
 .section-subtitle {
   font-size: 17px;
   font-weight: 400;
@@ -688,9 +688,9 @@ body {
 
 .section-subtitle.ready {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  transform: translateY(20px);  /* Apple 官方：20px */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 官方：延迟 100ms */
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
 }
 
 .section-subtitle.ready.visible {
