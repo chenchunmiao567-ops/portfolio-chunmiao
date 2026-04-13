@@ -815,28 +815,30 @@ body {
   margin: 0 auto;
   overflow: hidden;
   padding: 0;
+  background: var(--color-white); /* 白色背景，与板块区分 */
+  border-radius: var(--radius-lg);
 }
 
-/* 左右渐隐效果（完全隐藏边缘） */
+/* 左右渐隐效果（更强，完全遮挡边缘） */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 60px;
+  width: 100px; /* 加宽渐隐区域 */
   z-index: 5;
   pointer-events: none;
 }
 
 .carousel-container::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+  background: linear-gradient(to right, var(--color-white) 0%, var(--color-white) 30%, transparent 100%);
 }
 
 .carousel-container::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
+  background: linear-gradient(to left, var(--color-white) 0%, var(--color-white) 30%, transparent 100%);
 }
 
 .carousel-track {
