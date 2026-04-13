@@ -496,9 +496,9 @@ body {
   }
 }
 
-/* Apple 风格核心优势卡片 - 增强对比度 */
+/* Apple 风格核心优势卡片 - 浅灰色背景 */
 .advantage-card {
-  background: var(--color-white);
+  background: var(--color-off-white); /* 浅灰色背景，与白色区分 */
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg); /* 28px - Apple 大卡片标准 */
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
@@ -510,7 +510,7 @@ body {
 .advantage-card:hover {
   transform: translateY(-6px) scale(1.0161); /* Apple 官方放大比例 1.61% */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* 阴影加深 */
-  background: var(--color-white);
+  background: var(--color-white); /* 悬停时变白色，创造对比 */
   border-color: rgba(0, 0, 0, 0.1); /* 悬停时边框加深 */
 }
 
@@ -626,41 +626,39 @@ body {
   }
 }
 
-/* Apple 风格板块背景系统 */
+/* 板块背景 - 恢复简洁交替方案 */
 
-/* 关于我板块 - Apple 风格渐变背景 */
-.section-about {
-  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+/* 关于我板块 - 恢复纯白色 */
+#about {
+  background-color: var(--color-white);
 }
 
-/* 品牌宣传片板块 - 白色背景 */
+/* 品牌宣传片板块 - 浅灰色 */
 #brand {
-  background-color: var(--color-white);
+  background-color: var(--color-off-white);
 }
 
-/* 三维动画板块 - 浅灰背景 */
+/* 三维动画板块 - 白色 */
 #3d {
-  background-color: var(--color-off-white);
+  background-color: var(--color-white);
 }
 
-/* MG 动画板块 - 白色背景 */
+/* MG 动画板块 - 浅灰色 */
 #mg {
-  background-color: var(--color-white);
-}
-
-/* 短视频板块 - 浅灰背景 */
-#short {
   background-color: var(--color-off-white);
 }
 
-/* AE 特效板块 - 白色背景 */
-#ae {
+/* 短视频板块 - 白色 */
+#short {
   background-color: var(--color-white);
 }
 
-/* 联系我板块 - 浅灰背景 */
+/* AE 特效板块 - 浅灰色 */
+#ae {
+  background-color: var(--color-off-white);
+}
+
+/* 联系我板块 - 浅灰色 */
 #contact {
   background-color: var(--color-off-white);
 }
