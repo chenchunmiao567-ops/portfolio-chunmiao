@@ -1058,56 +1058,72 @@
       
       console.log('✅ Copy 功能初始化完成');
 
-      // Apple 风格滚动动画 - 修复版（基于 Apple 官网真实参数）
+      // Apple 风格滚动动画 - 调试增强版
       document.addEventListener('DOMContentLoaded', () => {
+        console.log('🔍 开始初始化文字动画...');
+        
         // 1. 给所有目标元素添加"ready"类
         const titles = document.querySelectorAll('.section-title, .section-subtitle');
-        titles.forEach(title => {
+        console.log(`📝 找到 ${titles.length} 个标题元素`);
+        
+        titles.forEach((title, index) => {
           title.classList.add('ready');
+          console.log(`  ✅ 已添加 ready 类：${title.tagName} #${index + 1}`);
         });
 
-        // 2. 创建 Observer（Apple 标准：-100px rootMargin）
+        // 2. 创建 Observer
         const observerOptions = {
           root: null,
-          rootMargin: '0px 0px -100px 0px',  /* Apple 标准：进入视口 100px 时触发 */
+          rootMargin: '0px 0px -100px 0px',
           threshold: 0.01
         };
 
         const observer = new IntersectionObserver((entries) => {
+          console.log('👀 Observer 触发:', entries.length, '个元素');
+          
           entries.forEach(entry => {
+            console.log('  元素可见度:', entry.isIntersecting);
+            
             if (entry.isIntersecting) {
               const section = entry.target;
+              console.log('  板块:', section.id || 'anonymous');
               
-              // Apple 三级延迟策略：0ms → 100ms → 200ms
               const title = section.querySelector('.section-title');
               const subtitle = section.querySelector('.section-subtitle');
               
               if (title) {
-                // 主标题：立即显示（延迟 0ms）
+                console.log('    📝 主标题 - 延迟 0ms');
                 setTimeout(() => {
                   title.classList.add('visible');
+                  console.log('    ✅ 主标题添加 visible 类');
                 }, 0);
               }
               
               if (subtitle) {
-                // 副标题：延迟 100ms（Apple 官方）
+                console.log('    📝 副标题 - 延迟 100ms');
                 setTimeout(() => {
                   subtitle.classList.add('visible');
+                  console.log('    ✅ 副标题添加 visible 类');
                 }, 100);
               }
 
-              // 3. 动画完成后停止监听（一次性）
+              // 3. 停止监听
               observer.unobserve(entry.target);
+              console.log('  ✅ 停止监听该板块');
             }
           });
         }, observerOptions);
 
         // 4. 监听所有板块
-        document.querySelectorAll('.section').forEach(section => {
+        const sections = document.querySelectorAll('.section');
+        console.log(`📋 找到 ${sections.length} 个板块`);
+        
+        sections.forEach((section, index) => {
           observer.observe(section);
+          console.log(`  👁️ 开始监听板块 #${index + 1}: ${section.id || 'anonymous'}`);
         });
 
-        console.log('✅ Apple 风格滚动动画初始化完成（基于官网真实参数）');
+        console.log('✅ Apple 风格滚动动画初始化完成');
       });
     });
   </script>
