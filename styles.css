@@ -215,21 +215,33 @@ body {
   opacity: 0.8;
 }
 
-.hero-email {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-blue);
+.hero-contact {
   margin-top: var(--spacing-md);
-  display: inline-block;
-  text-decoration: none;
-  transition: var(--transition-fast);
-  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
-.hero-email:hover {
-  color: var(--color-gray-dark);
-  opacity: 1;
-  text-decoration: underline;
+.hero-contact-item {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-gray-mid);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hero-contact-item:hover {
+  color: var(--color-blue);
+}
+
+.hero-contact-separator {
+  font-size: 14px;
+  color: var(--color-gray-mid);
+  opacity: 0.4;
+  font-weight: 300;
 }
 
 /* 关于我区域 */
