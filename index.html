@@ -1057,6 +1057,43 @@
       });
       
       console.log('✅ Copy 功能初始化完成');
+
+      // Apple 风格滚动动画 - 文字缓动上浮
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const section = entry.target.closest('.section');
+            if (section) {
+              const titles = section.querySelectorAll('.section-title, .section-subtitle');
+              titles.forEach((title, index) => {
+                setTimeout(() => {
+                  title.classList.add('visible');
+                }, index * 150);
+              });
+            }
+          }
+        });
+      }, observerOptions);
+
+      // 监听所有板块
+      document.querySelectorAll('.section').forEach(section => {
+        const title = section.querySelector('.section-title');
+        if (title) {
+          observer.observe(title);
+        }
+        const subtitle = section.querySelector('.section-subtitle');
+        if (subtitle) {
+          observer.observe(subtitle);
+        }
+      });
+
+      console.log('✅ Apple 风格滚动动画初始化完成');
     });
   </script>
 </body>
