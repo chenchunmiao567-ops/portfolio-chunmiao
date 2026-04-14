@@ -1,4 +1,4 @@
-/* ===================================
+﻿/* ===================================
    Chunmiao Portfolio - Apple Style
    Design System v2.0
    Updated: 2026-04-14
@@ -7,23 +7,23 @@
 
 /* Apple 官方设计系统变量 v2.0 */
 :root {
-  /* 主色�?- Apple 经典配色 */
+  /* 主色�?- Apple 经典配色 */
   --color-white: #FFFFFF;
   --color-off-white: #F5F5F7;
   --color-gray-mid: #86868B;
   --color-gray-dark: #1D1D1F;
   --color-black: #000000;
   
-  /* 强调�?- Apple 官方�?*/
+  /* 强调�?- Apple 官方�?*/
   --color-blue: #0071E3;
   --color-blue-hover: #0077ED;
   --color-blue-active: #0052A3;
   --color-red: #FF0000;
   
-  /* 功能性色�?- WCAG AA 合规 */
-  --color-primary: #0071E3;      /* 主按钮、链�?*/
-  --color-secondary: #86868B;    /* 次要文字、边�?*/
-  --color-success: #34C759;      /* 成功状�?*/
+  /* 功能性色�?- WCAG AA 合规 */
+  --color-primary: #0071E3;      /* 主按钮、链�?*/
+  --color-secondary: #86868B;    /* 次要文字、边�?*/
+  --color-success: #34C759;      /* 成功状�?*/
   --color-error: #FF3B30;        /* 错误提示 */
   --color-warning: #FF9500;      /* 警告提示 */
   --color-info: #007AFF;         /* 信息提示 */
@@ -33,16 +33,16 @@
   --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 标准 */
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 悬停 */
   --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* 键盘聚焦 */
-  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 错误状�?*/
+  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 错误状�?*/
   
   /* 圆角 - Apple 官方圆角系统 */
-  --radius-sm: 10px;   /* 小按�?图标 */
-  --radius-md: 18px;   /* 中等卡片/轮播�?*/
-  --radius-lg: 28px;   /* 大卡�?核心优势/视频 */
+  --radius-sm: 10px;   /* 小按�?图标 */
+  --radius-md: 18px;   /* 中等卡片/轮播�?*/
+  --radius-lg: 28px;   /* 大卡�?核心优势/视频 */
   --radius-xl: 980px;  /* 胶囊按钮 */
-  --radius-xs: 6px;    /* 标签、徽�?*/
+  --radius-xs: 6px;    /* 标签、徽�?*/
   
-  /* 间距 - Apple 基于 8px 的间距系�?*/
+  /* 间距 - Apple 基于 8px 的间距系�?*/
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -65,7 +65,7 @@
   --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* 标准缓动 */
   
   /* 动画时长 - Apple 官方标准 */
-  --duration-fast: 100ms;    /* 微交�?*/
+  --duration-fast: 100ms;    /* 微交�?*/
   --duration-base: 400ms;    /* 卡片动画 */
   --duration-slow: 800ms;    /* 文字动画 */
   
@@ -112,13 +112,13 @@ body {
   }
 }
 
-/* 导航�?*/
+/* 导航�?*/
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 56px; /* 增加高度，更舒�?*/
+  height: 56px; /* 增加高度，更舒�?*/
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -173,7 +173,7 @@ body {
 }
 
 .nav-links a {
-  font-size: 14px; /* 稍大一�?*/
+  font-size: 14px; /* 稍大一�?*/
   font-weight: 500; /* 中等字重 */
   color: var(--color-gray-dark);
   text-decoration: none;
@@ -193,7 +193,7 @@ body {
   padding: var(--spacing-4xl) var(--spacing-md);
   padding-top: calc(var(--spacing-4xl) + 48px);
   text-align: center;
-  /* Apple 风格微妙渐变 - 纯净简�?*/
+  /* Apple 风格微妙渐变 - 纯净简�?*/
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.98) 0%, 
     rgba(245, 245, 247, 0.95) 100%);
@@ -289,9 +289,9 @@ body {
   font-weight: 300;
 }
 
-/* 关于我区�?*/
+/* 关于我区�?*/
 .about-content {
-  max-width: 700px; /* 调整宽度，让统计卡片更平�?*/
+  max-width: 700px; /* 调整宽度，让统计卡片更平�?*/
   margin: 0 auto;
 }
 
@@ -306,11 +306,11 @@ body {
 
 @media (min-width: 768px) {
   .about-intro {
-    font-size: 22px; /* 桌面端更�?*/
+    font-size: 22px; /* 桌面端更�?*/
   }
 }
 
-/* 关于我板块内的统计数据（无背景，突出显示�?*/
+/* 关于我板块内的统计数据（无背景，突出显示�?*/
 .about-stats-inline {
   display: flex;
   justify-content: center;
@@ -353,7 +353,7 @@ body {
   white-space: nowrap;
 }
 
-/* 联系方式（紧凑单行布局�?*/
+/* 联系方式（紧凑单行布局�?*/
 .about-contact-compact {
   display: flex;
   justify-content: center;
@@ -381,7 +381,7 @@ body {
   font-weight: 300;
 }
 
-/* 联系方式（单行横向布局，无背景�?- 保留旧样式兼�?*/
+/* 联系方式（单行横向布局，无背景�?- 保留旧样式兼�?*/
 .about-contact {
   display: flex;
   justify-content: center;
@@ -456,7 +456,7 @@ body {
 }
 
 .skill-tag {
-  padding: 12px 24px; /* 增加内边�?*/
+  padding: 12px 24px; /* 增加内边�?*/
   background: transparent;
   color: var(--color-gray-dark);
   border-radius: var(--radius-md);
@@ -513,11 +513,11 @@ body {
   }
 }
 
-/* Apple 风格核心优势卡片 - 浅灰色背�?*/
+/* Apple 风格核心优势卡片 - 浅灰色背�?*/
 .advantage-card {
-  background: var(--color-off-white); /* 浅灰色背景，与白色区�?*/
+  background: var(--color-off-white); /* 浅灰色背景，与白色区�?*/
   padding: var(--spacing-2xl);
-  border-radius: var(--radius-lg); /* 28px - Apple 大卡片标�?*/
+  border-radius: var(--radius-lg); /* 28px - Apple 大卡片标�?*/
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
   border: 1px solid rgba(0, 0, 0, 0.06); /* 加深边框 */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 初始阴影加深 */
@@ -527,8 +527,8 @@ body {
 .advantage-card:hover {
   transform: translateY(-6px) scale(1.0161); /* Apple 官方放大比例 1.61% */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* 阴影加深 */
-  background: var(--color-white); /* 悬停时变白色，创造对�?*/
-  border-color: rgba(0, 0, 0, 0.1); /* 悬停时边框加�?*/
+  background: var(--color-white); /* 悬停时变白色，创造对�?*/
+  border-color: rgba(0, 0, 0, 0.1); /* 悬停时边框加�?*/
 }
 
 .advantage-card:active {
@@ -551,7 +551,7 @@ body {
   font-weight: 400;
 }
 
-/* 工作经历时间�?*/
+/* 工作经历时间�?*/
 .about-experience {
   margin-top: var(--spacing-5xl);
   text-align: left;
@@ -643,14 +643,14 @@ body {
   }
 }
 
-/* 板块背景 - 恢复简洁交替方�?*/
+/* 板块背景 - 恢复简洁交替方�?*/
 
-/* 关于我板�?- 恢复纯白�?*/
+/* 关于我板�?- 恢复纯白�?*/
 #about {
   background-color: var(--color-white);
 }
 
-/* 品牌宣传片板�?- 浅灰�?*/
+/* 品牌宣传片板�?- 浅灰�?*/
 #brand {
   background-color: var(--color-off-white);
 }
@@ -660,29 +660,37 @@ body {
   background-color: var(--color-white);
 }
 
-/* MG 动画板块 - 浅灰�?*/
+/* MG 动画板块 - 浅灰�?*/
 #mg {
   background-color: var(--color-off-white);
 }
 
-/* 短视频板�?- 白色 */
+/* 短视频板�?- 白色 */
 #short {
   background-color: var(--color-white);
 }
 
-/* AE 特效板块 - 浅灰�?*/
+/* AE 特效板块 - 浅灰�?*/
 #ae {
   background-color: var(--color-off-white);
 }
 
-/* 联系我板�?- 浅灰�?*/
+/* 联系我板�?- 浅灰�?*/
 #contact {
   background-color: var(--color-off-white);
 }
 
-/* Apple 风格标题和文字动�?- 修复版（基于 Apple 官网真实参数�?*/
+/* 联系我板块内容延迟 */
+.contact-content .fade-in-up:nth-child(1) { transition-delay: 0ms; }    /* contact-name */
+.contact-content .fade-in-up:nth-child(2) { transition-delay: 150ms; }  /* contact-text */
+.contact-content .fade-in-up:nth-child(3) { transition-delay: 300ms; }  /* contact-intro */
+.contact-grid .fade-in-up:nth-child(1) { transition-delay: 450ms; }     /* 电话卡片 */
+.contact-grid .fade-in-up:nth-child(2) { transition-delay: 600ms; }     /* 邮箱卡片 */
 
-/* 默认状�?- �?JS 时可见（降级方案�?*/
+
+/* Apple 风格标题和文字动�?- 修复版（基于 Apple 官网真实参数�?*/
+
+/* 默认状�?- �?JS 时可见（降级方案�?*/
 .section-title {
   font-size: 32px;
   font-weight: 700;
@@ -692,10 +700,10 @@ body {
   margin-bottom: var(--spacing-4xl);
 }
 
-/* JS 加载�?- 准备动画（Apple 标准：上�?20px�?*/
+/* JS 加载�?- 准备动画（Apple 标准：上�?20px�?*/
 .section-title.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 官方�?0px，不�?40px */
+  transform: translateY(20px);  /* Apple 官方�?0px，不�?40px */
   transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -713,7 +721,7 @@ body {
   }
 }
 
-/* 副标题同样逻辑（Apple 标准：延�?100ms�?*/
+/* 副标题同样逻辑（Apple 标准：延�?100ms�?*/
 .section-subtitle {
   font-size: 17px;
   font-weight: 400;
@@ -724,8 +732,8 @@ body {
 
 .section-subtitle.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 官方�?0px */
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 官方：延�?100ms */
+  transform: translateY(20px);  /* Apple 官方�?0px */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 官方：延�?100ms */
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
 }
 
@@ -768,7 +776,7 @@ body {
 }
 
 .video-card:hover {
-  transform: translateY(-6px) scale(1.02); /* Apple 风格：上�?+ 放大 */
+  transform: translateY(-6px) scale(1.02); /* Apple 风格：上�?+ 放大 */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.04);
 }
@@ -886,7 +894,7 @@ body {
   }
 }
 
-/* 按钮 - 完整状态定�?v2.0 */
+/* 按钮 - 完整状态定�?v2.0 */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -897,10 +905,10 @@ body {
   transition: var(--transition-fast);
   border: none;
   cursor: pointer;
-  min-height: var(--touch-target-min);  /* 触摸目标 �?4px */
+  min-height: var(--touch-target-min);  /* 触摸目标 �?4px */
 }
 
-/* 主按�?- 5 种状态完整定�?*/
+/* 主按�?- 5 种状态完整定�?*/
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -973,7 +981,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* AE 特效轮播�?*/
+/* AE 特效轮播�?*/
 .section-subtitle {
   text-align: center;
   font-size: 17px;
@@ -983,7 +991,7 @@ body {
   font-weight: 400;
 }
 
-/* Apple 风格轮播�?*/
+/* Apple 风格轮播�?*/
 .carousel-container {
   position: relative;
   max-width: 1200px;
@@ -1031,7 +1039,7 @@ body {
   opacity: 1;
 }
 
-/* Apple 风格轮播图卡�?*/
+/* Apple 风格轮播图卡�?*/
 .carousel-image {
   position: relative;
   width: 100%;
@@ -1342,10 +1350,10 @@ body {
 
 /* 页脚 */
 /* ===================================
-   �����ӳ٣�Ԫ�����γ���
+   �����ӳ٣�Ԫ�����γ���
    =================================== */
 
-/* Hero �����ӳ� */
+/* Hero �����ӳ� */
 .hero-title.fade-in-up { transition-delay: 0ms; }
 .hero-subtitle.fade-in-up { transition-delay: 150ms; }
 .hero-tagline.fade-in-up { transition-delay: 300ms; }
@@ -1355,7 +1363,7 @@ body {
 .hero-contact-separator.fade-in-up:nth-of-type(2) { transition-delay: 600ms; }
 .hero-contact-item.fade-in-up:nth-of-type(3) { transition-delay: 650ms; }
 
-/* �����Ұ�� - intro ���������ӳ٣�0ms, 200ms, 400ms, 600ms, 800ms, 1000ms�� */
+/* �����Ұ�� - intro ���������ӳ٣�0ms, 200ms, 400ms, 600ms, 800ms, 1000ms�� */
 p.about-intro span.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
 p.about-intro span.fade-in-up:nth-of-type(2) { transition-delay: 200ms; }
 p.about-intro span.fade-in-up:nth-of-type(3) { transition-delay: 400ms; }
@@ -1363,23 +1371,23 @@ p.about-intro span.fade-in-up:nth-of-type(4) { transition-delay: 600ms; }
 p.about-intro span.fade-in-up:nth-of-type(5) { transition-delay: 800ms; }
 p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
-/* �����Ұ�� - ͳ�������ӳ� */
-.about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 900ms; }
-.about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1050ms; }
+/* �����Ұ�� - ͳ�������ӳ� */
+.about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 1200ms; }
+.about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1350ms; }
 
-/* ���ļ��ܱ�ǩ�ӳ� */
-.skills-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
-.skills-grid .fade-in-up:nth-child(2) { transition-delay: 100ms; }
-.skills-grid .fade-in-up:nth-child(3) { transition-delay: 200ms; }
-.skills-grid .fade-in-up:nth-child(4) { transition-delay: 300ms; }
-.skills-grid .fade-in-up:nth-child(5) { transition-delay: 400ms; }
-.skills-grid .fade-in-up:nth-child(6) { transition-delay: 500ms; }
-.skills-grid .fade-in-up:nth-child(7) { transition-delay: 600ms; }
-.skills-grid .fade-in-up:nth-child(8) { transition-delay: 700ms; }
-.skills-grid .fade-in-up:nth-child(9) { transition-delay: 800ms; }
-.skills-grid .fade-in-up:nth-child(10) { transition-delay: 900ms; }
+/* ���ļ��ܱ�ǩ�ӳ� */
+.skills-grid .fade-in-up:nth-child(1) { transition-delay: 1400ms; }
+.skills-grid .fade-in-up:nth-child(2) { transition-delay: 1500ms; }
+.skills-grid .fade-in-up:nth-child(3) { transition-delay: 1600ms; }
+.skills-grid .fade-in-up:nth-child(4) { transition-delay: 1700ms; }
+.skills-grid .fade-in-up:nth-child(5) { transition-delay: 1800ms; }
+.skills-grid .fade-in-up:nth-child(6) { transition-delay: 1900ms; }
+.skills-grid .fade-in-up:nth-child(7) { transition-delay: 2000ms; }
+.skills-grid .fade-in-up:nth-child(8) { transition-delay: 2100ms; }
+.skills-grid .fade-in-up:nth-child(9) { transition-delay: 2200ms; }
+.skills-grid .fade-in-up:nth-child(10) { transition-delay: 2300ms; }
 
-/* �������ƿ�Ƭ�ӳ� */
+/* �������ƿ�Ƭ�ӳ� */
 .advantages-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .advantages-grid .fade-in-up:nth-child(2) { transition-delay: 150ms; }
 .advantages-grid .fade-in-up:nth-child(3) { transition-delay: 300ms; }
@@ -1387,7 +1395,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .advantages-grid .fade-in-up:nth-child(5) { transition-delay: 600ms; }
 .advantages-grid .fade-in-up:nth-child(6) { transition-delay: 750ms; }
 
-/* ��Ƶ��Ƭ�ӳ� */
+/* ��Ƶ��Ƭ�ӳ� */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .video-grid .fade-in-up:nth-child(2) { transition-delay: 80ms; }
 .video-grid .fade-in-up:nth-child(3) { transition-delay: 160ms; }
@@ -1395,15 +1403,26 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .video-grid .fade-in-up:nth-child(5) { transition-delay: 320ms; }
 .video-grid .fade-in-up:nth-child(6) { transition-delay: 400ms; }
 
-/* ���������ӳ� */
-.experience-timeline .fade-in-up:nth-child(1) { transition-delay: 0ms; }
-.experience-timeline .fade-in-up:nth-child(2) { transition-delay: 200ms; }
-.experience-timeline .fade-in-up:nth-child(3) { transition-delay: 400ms; }
-.experience-timeline .fade-in-up:nth-child(4) { transition-delay: 600ms; }
-.experience-timeline .fade-in-up:nth-child(5) { transition-delay: 800ms; }
-.experience-timeline .fade-in-up:nth-child(6) { transition-delay: 1000ms; }
+/* ���������ӳ� */
+/* 工作经历 - 每个项目依次出现（修复：匹配.experience-item） */
+.experience-timeline .experience-item.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
+.experience-timeline .experience-item.fade-in-up:nth-of-type(2) { transition-delay: 300ms; }
+.experience-timeline .experience-item.fade-in-up:nth-of-type(3) { transition-delay: 600ms; }
+.experience-timeline .experience-item.fade-in-up:nth-of-type(4) { transition-delay: 900ms; }
+.experience-timeline .experience-item.fade-in-up:nth-of-type(5) { transition-delay: 1200ms; }
+.experience-timeline .experience-item.fade-in-up:nth-of-type(6) { transition-delay: 1500ms; }
 
-/* �ֲ���Ƭ�ӳ� */
+/* 工作经历项目内段落依次出现 */
+.experience-item .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 100ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 200ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(4) { transition-delay: 300ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(5) { transition-delay: 400ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(6) { transition-delay: 500ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(7) { transition-delay: 600ms; }
+.experience-item .experience-details p.fade-in-up:nth-of-type(8) { transition-delay: 700ms; }
+
+/* �ֲ���Ƭ�ӳ� */
 .carousel-track .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .carousel-track .fade-in-up:nth-child(2) { transition-delay: 100ms; }
 .carousel-track .fade-in-up:nth-child(3) { transition-delay: 200ms; }
@@ -1472,7 +1491,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   transform: translateY(-2px);
 }
 
-/* 移动端优�?*/
+/* 移动端优�?*/
 @media (max-width: 767px) {
   .back-to-top {
     bottom: 24px;
@@ -1520,7 +1539,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .video-card:nth-child(5) { animation-delay: 0.5s; }
 .video-card:nth-child(6) { animation-delay: 0.55s; }
 
-/* 移动端优�?*/
+/* 移动端优�?*/
 @media (max-width: 767px) {
   .hero {
     min-height: 60vh;
@@ -1544,7 +1563,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
 /* ===================================
    Apple 风格通用入场动画 - Fade In Up
-   所有卡�?内容元素依次淡入上浮
+   所有卡�?内容元素依次淡入上浮
    =================================== */
 
 /* 初始状态：隐藏 + 上浮 30px */
@@ -1555,7 +1574,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 触发显示：淡�?+ 复位 */
+/* 触发显示：淡�?+ 复位 */
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -1578,7 +1597,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
    Added: 2026-04-14
    =================================== */
 
-/* 输入�?- 完整状态定�?*/
+/* 输入�?- 完整状态定�?*/
 .input {
   width: 100%;
   padding: 12px 16px;
