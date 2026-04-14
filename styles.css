@@ -1,48 +1,48 @@
-﻿/* ===================================
+/* ===================================
    Chunmiao Portfolio - Apple Style
    Design System v2.0
    Updated: 2026-04-14
    Based on: VoltAgent/awesome-design-md standard
    =================================== */
 
-/* Apple 瀹樻柟璁捐绯荤粺鍙橀噺 v2.0 */
+/* Apple 官方设计系统变量 v2.0 */
 :root {
-  /* 涓昏壊璋?- Apple 缁忓吀閰嶈壊 */
+  /* 主色�?- Apple 经典配色 */
   --color-white: #FFFFFF;
   --color-off-white: #F5F5F7;
   --color-gray-mid: #86868B;
   --color-gray-dark: #1D1D1F;
   --color-black: #000000;
   
-  /* 寮鸿皟鑹?- Apple 瀹樻柟钃?*/
+  /* 强调�?- Apple 官方�?*/
   --color-blue: #0071E3;
   --color-blue-hover: #0077ED;
   --color-blue-active: #0052A3;
   --color-red: #FF0000;
   
-  /* 鍔熻兘鎬ц壊褰?- WCAG AA 鍚堣 */
-  --color-primary: #0071E3;      /* 涓绘寜閽€侀摼鎺?*/
-  --color-secondary: #86868B;    /* 娆¤鏂囧瓧銆佽竟妗?*/
-  --color-success: #34C759;      /* 鎴愬姛鐘舵€?*/
-  --color-error: #FF3B30;        /* 閿欒鎻愮ず */
-  --color-warning: #FF9500;      /* 璀﹀憡鎻愮ず */
-  --color-info: #007AFF;         /* 淇℃伅鎻愮ず */
+  /* 功能性色�?- WCAG AA 合规 */
+  --color-primary: #0071E3;      /* 主按钮、链�?*/
+  --color-secondary: #86868B;    /* 次要文字、边�?*/
+  --color-success: #34C759;      /* 成功状�?*/
+  --color-error: #FF3B30;        /* 错误提示 */
+  --color-warning: #FF9500;      /* 警告提示 */
+  --color-info: #007AFF;         /* 信息提示 */
   
-  /* 闃村奖 - Apple 瀹樻柟闃村奖绯荤粺 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* 榛樿 */
-  --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 鏍囧噯 */
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 鎮仠 */
-  --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* 閿洏鑱氱劍 */
-  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 閿欒鐘舵€?*/
+  /* 阴影 - Apple 官方阴影系统 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* 默认 */
+  --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 标准 */
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 悬停 */
+  --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* 键盘聚焦 */
+  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 错误状�?*/
   
-  /* 鍦嗚 - Apple 瀹樻柟鍦嗚绯荤粺 */
-  --radius-sm: 10px;   /* 灏忔寜閽?鍥炬爣 */
-  --radius-md: 18px;   /* 涓瓑鍗＄墖/杞挱鍥?*/
-  --radius-lg: 28px;   /* 澶у崱鐗?鏍稿績浼樺娍/瑙嗛 */
-  --radius-xl: 980px;  /* 鑳跺泭鎸夐挳 */
-  --radius-xs: 6px;    /* 鏍囩銆佸窘绔?*/
+  /* 圆角 - Apple 官方圆角系统 */
+  --radius-sm: 10px;   /* 小按�?图标 */
+  --radius-md: 18px;   /* 中等卡片/轮播�?*/
+  --radius-lg: 28px;   /* 大卡�?核心优势/视频 */
+  --radius-xl: 980px;  /* 胶囊按钮 */
+  --radius-xs: 6px;    /* 标签、徽�?*/
   
-  /* 闂磋窛 - Apple 鍩轰簬 8px 鐨勯棿璺濈郴缁?*/
+  /* 间距 - Apple 基于 8px 的间距系�?*/
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -55,36 +55,36 @@
   --spacing-6xl: 120px;
   --spacing-7xl: 160px;
   
-  /* 瀛椾綋 - Apple 绯荤粺瀛椾綋 */
+  /* 字体 - Apple 系统字体 */
   --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro SC",
                  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC",
                  "Microsoft YaHei", sans-serif;
   
-  /* 缂撳姩 - Apple 瀹樻柟缂撳姩鏇茬嚎 */
-  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);        /* 楂樼骇缂撳姩 */
-  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* 鏍囧噯缂撳姩 */
+  /* 缓动 - Apple 官方缓动曲线 */
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);        /* 高级缓动 */
+  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* 标准缓动 */
   
-  /* 鍔ㄧ敾鏃堕暱 - Apple 瀹樻柟鏍囧噯 */
-  --duration-fast: 100ms;    /* 寰氦浜?*/
-  --duration-base: 400ms;    /* 鍗＄墖鍔ㄧ敾 */
-  --duration-slow: 800ms;    /* 鏂囧瓧鍔ㄧ敾 */
+  /* 动画时长 - Apple 官方标准 */
+  --duration-fast: 100ms;    /* 微交�?*/
+  --duration-base: 400ms;    /* 卡片动画 */
+  --duration-slow: 800ms;    /* 文字动画 */
   
   --transition-fast: 100ms var(--ease-apple);
   --transition-normal: 400ms var(--ease-apple);
   --transition-slow: 800ms var(--ease-apple);
   
-  /* 瑙︽懜鐩爣 - Apple Human Interface Guidelines */
+  /* 触摸目标 - Apple Human Interface Guidelines */
   --touch-target-min: 44px;
 }
 
-/* 閲嶇疆 */
+/* 重置 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 鏆傛椂绂佺敤 CSS 骞虫粦婊氬姩锛岃 JavaScript 澶勭悊 */
+/* 暂时禁用 CSS 平滑滚动，让 JavaScript 处理 */
 html {
   scroll-behavior: auto;
 }
@@ -99,7 +99,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 瀹瑰櫒 */
+/* 容器 */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -112,13 +112,13 @@ body {
   }
 }
 
-/* 瀵艰埅鏍?*/
+/* 导航�?*/
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 56px; /* 澧炲姞楂樺害锛屾洿鑸掗€?*/
+  height: 56px; /* 增加高度，更舒�?*/
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -149,8 +149,8 @@ body {
 }
 
 .nav-logo {
-  font-size: 18px; /* 鍔犲ぇ瀛楀彿 */
-  font-weight: 700; /* 鍔犵矖 */
+  font-size: 18px; /* 加大字号 */
+  font-weight: 700; /* 加粗 */
   color: var(--color-gray-dark);
   text-decoration: none;
   transition: var(--transition-fast);
@@ -163,7 +163,7 @@ body {
 
 .nav-links {
   display: none;
-  gap: var(--spacing-2xl); /* 澧炲姞闂磋窛 */
+  gap: var(--spacing-2xl); /* 增加间距 */
 }
 
 @media (min-width: 768px) {
@@ -173,8 +173,8 @@ body {
 }
 
 .nav-links a {
-  font-size: 14px; /* 绋嶅ぇ涓€鐐?*/
-  font-weight: 500; /* 涓瓑瀛楅噸 */
+  font-size: 14px; /* 稍大一�?*/
+  font-weight: 500; /* 中等字重 */
   color: var(--color-gray-dark);
   text-decoration: none;
   transition: var(--transition-fast);
@@ -184,7 +184,7 @@ body {
   color: var(--color-blue);
 }
 
-/* Hero 鍖哄煙 */
+/* Hero 区域 */
 .hero {
   min-height: 50vh;
   display: flex;
@@ -193,7 +193,7 @@ body {
   padding: var(--spacing-4xl) var(--spacing-md);
   padding-top: calc(var(--spacing-4xl) + 48px);
   text-align: center;
-  /* Apple 椋庢牸寰娓愬彉 - 绾噣绠€娲?*/
+  /* Apple 风格微妙渐变 - 纯净简�?*/
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.98) 0%, 
     rgba(245, 245, 247, 0.95) 100%);
@@ -210,7 +210,7 @@ body {
 }
 
 .hero-title {
-  font-size: 68px; /* Apple 椋庢牸鏀惧ぇ */
+  font-size: 68px; /* Apple 风格放大 */
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -220,12 +220,12 @@ body {
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 96px; /* Apple 椋庢牸鏀惧ぇ */
+    font-size: 96px; /* Apple 风格放大 */
   }
 }
 
 .hero-subtitle {
-  font-size: 28px; /* Apple 椋庢牸鏀惧ぇ */
+  font-size: 28px; /* Apple 风格放大 */
   font-weight: 500;
   color: var(--color-gray-mid);
   line-height: 1.4;
@@ -234,7 +234,7 @@ body {
 
 @media (min-width: 768px) {
   .hero-subtitle {
-    font-size: 34px; /* Apple 椋庢牸鏀惧ぇ */
+    font-size: 34px; /* Apple 风格放大 */
   }
 }
 
@@ -289,14 +289,14 @@ body {
   font-weight: 300;
 }
 
-/* 鍏充簬鎴戝尯鍩?*/
+/* 关于我区�?*/
 .about-content {
-  max-width: 700px; /* 璋冩暣瀹藉害锛岃缁熻鍗＄墖鏇村钩琛?*/
+  max-width: 700px; /* 调整宽度，让统计卡片更平�?*/
   margin: 0 auto;
 }
 
 .about-intro {
-  font-size: 20px; /* 鍔犲ぇ瀛楀彿 */
+  font-size: 20px; /* 加大字号 */
   line-height: 1.8;
   color: var(--color-gray-mid);
   margin-bottom: var(--spacing-4xl);
@@ -306,11 +306,11 @@ body {
 
 @media (min-width: 768px) {
   .about-intro {
-    font-size: 22px; /* 妗岄潰绔洿澶?*/
+    font-size: 22px; /* 桌面端更�?*/
   }
 }
 
-/* 鍏充簬鎴戞澘鍧楀唴鐨勭粺璁℃暟鎹紙鏃犺儗鏅紝绐佸嚭鏄剧ず锛?*/
+/* 关于我板块内的统计数据（无背景，突出显示�?*/
 .about-stats-inline {
   display: flex;
   justify-content: center;
@@ -328,7 +328,7 @@ body {
 
 .stat-number-inline {
   display: block;
-  font-size: 72px; /* Apple 椋庢牸鏀惧ぇ */
+  font-size: 72px; /* Apple 风格放大 */
   font-weight: 700;
   color: var(--color-gray-dark);
   line-height: 1;
@@ -338,7 +338,7 @@ body {
 
 @media (min-width: 768px) {
   .stat-number-inline {
-    font-size: 96px; /* Apple 椋庢牸鏀惧ぇ */
+    font-size: 96px; /* Apple 风格放大 */
   }
 }
 
@@ -353,7 +353,7 @@ body {
   white-space: nowrap;
 }
 
-/* 鑱旂郴鏂瑰紡锛堢揣鍑戝崟琛屽竷灞€锛?*/
+/* 联系方式（紧凑单行布局�?*/
 .about-contact-compact {
   display: flex;
   justify-content: center;
@@ -381,7 +381,7 @@ body {
   font-weight: 300;
 }
 
-/* 鑱旂郴鏂瑰紡锛堝崟琛屾í鍚戝竷灞€锛屾棤鑳屾櫙锛?- 淇濈暀鏃ф牱寮忓吋瀹?*/
+/* 联系方式（单行横向布局，无背景�?- 保留旧样式兼�?*/
 .about-contact {
   display: flex;
   justify-content: center;
@@ -428,7 +428,7 @@ body {
   line-height: 1.4;
 }
 
-/* 閭鐗规畩澶勭悊 */
+/* 邮箱特殊处理 */
 .contact-item:nth-child(2) .contact-value {
   white-space: nowrap;
   font-size: 14px;
@@ -456,13 +456,13 @@ body {
 }
 
 .skill-tag {
-  padding: 12px 24px; /* 澧炲姞鍐呰竟璺?*/
+  padding: 12px 24px; /* 增加内边�?*/
   background: transparent;
   color: var(--color-gray-dark);
   border-radius: var(--radius-md);
   font-size: 15px;
-  font-weight: 600; /* 鍔犵矖 */
-  border: 1px solid rgba(0, 0, 0, 0.12); /* 鍔犳繁杈规 */
+  font-weight: 600; /* 加粗 */
+  border: 1px solid rgba(0, 0, 0, 0.12); /* 加深边框 */
   transition: var(--transition-fast);
   cursor: default;
 }
@@ -471,10 +471,10 @@ body {
   background: var(--color-gray-dark);
   color: var(--color-white);
   border-color: var(--color-gray-dark);
-  transform: translateY(-2px); /* 澧炲姞鎮诞鏁堟灉 */
+  transform: translateY(-2px); /* 增加悬浮效果 */
 }
 
-/* 鏍稿績浼樺娍 */
+/* 核心优势 */
 .about-advantages {
   margin-top: var(--spacing-5xl);
   text-align: left;
@@ -513,22 +513,22 @@ body {
   }
 }
 
-/* Apple 椋庢牸鏍稿績浼樺娍鍗＄墖 - 娴呯伆鑹茶儗鏅?*/
+/* Apple 风格核心优势卡片 - 浅灰色背�?*/
 .advantage-card {
-  background: var(--color-off-white); /* 娴呯伆鑹茶儗鏅紝涓庣櫧鑹插尯鍒?*/
+  background: var(--color-off-white); /* 浅灰色背景，与白色区�?*/
   padding: var(--spacing-2xl);
-  border-radius: var(--radius-lg); /* 28px - Apple 澶у崱鐗囨爣鍑?*/
+  border-radius: var(--radius-lg); /* 28px - Apple 大卡片标�?*/
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
-  border: 1px solid rgba(0, 0, 0, 0.06); /* 鍔犳繁杈规 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 鍒濆闃村奖鍔犳繁 */
+  border: 1px solid rgba(0, 0, 0, 0.06); /* 加深边框 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 初始阴影加深 */
   will-change: transform, box-shadow;
 }
 
 .advantage-card:hover {
-  transform: translateY(-6px) scale(1.0161); /* Apple 瀹樻柟鏀惧ぇ姣斾緥 1.61% */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* 闃村奖鍔犳繁 */
-  background: var(--color-white); /* 鎮仠鏃跺彉鐧借壊锛屽垱閫犲姣?*/
-  border-color: rgba(0, 0, 0, 0.1); /* 鎮仠鏃惰竟妗嗗姞娣?*/
+  transform: translateY(-6px) scale(1.0161); /* Apple 官方放大比例 1.61% */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* 阴影加深 */
+  background: var(--color-white); /* 悬停时变白色，创造对�?*/
+  border-color: rgba(0, 0, 0, 0.1); /* 悬停时边框加�?*/
 }
 
 .advantage-card:active {
@@ -551,14 +551,14 @@ body {
   font-weight: 400;
 }
 
-/* 宸ヤ綔缁忓巻鏃堕棿绾?*/
+/* 工作经历时间�?*/
 .about-experience {
   margin-top: var(--spacing-5xl);
   text-align: left;
 }
 
 .experience-main-title {
-  font-size: 40px; /* Apple 椋庢牸鏀惧ぇ */
+  font-size: 40px; /* Apple 风格放大 */
   font-weight: 700;
   color: var(--color-gray-dark);
   margin-bottom: var(--spacing-4xl);
@@ -567,7 +567,7 @@ body {
 
 @media (min-width: 768px) {
   .experience-main-title {
-    font-size: 48px; /* Apple 椋庢牸鏀惧ぇ */
+    font-size: 48px; /* Apple 风格放大 */
   }
 }
 
@@ -588,7 +588,7 @@ body {
 }
 
 .experience-item::before {
-  content: none; /* 鍒犻櫎鍦嗙偣 */
+  content: none; /* 删除圆点 */
 }
 
 .experience-time {
@@ -632,57 +632,57 @@ body {
   font-weight: 600;
 }
 
-/* Section - Apple 椋庢牸鍔犲ぇ闂磋窛 */
+/* Section - Apple 风格加大间距 */
 .section {
-  padding: 120px 0; /* Apple 椋庢牸闂磋窛 */
+  padding: 120px 0; /* Apple 风格间距 */
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 160px 0; /* Apple 椋庢牸闂磋窛 */
+    padding: 160px 0; /* Apple 风格间距 */
   }
 }
 
-/* 鏉垮潡鑳屾櫙 - 鎭㈠绠€娲佷氦鏇挎柟妗?*/
+/* 板块背景 - 恢复简洁交替方�?*/
 
-/* 鍏充簬鎴戞澘鍧?- 鎭㈠绾櫧鑹?*/
+/* 关于我板�?- 恢复纯白�?*/
 #about {
   background-color: var(--color-white);
 }
 
-/* 鍝佺墝瀹ｄ紶鐗囨澘鍧?- 娴呯伆鑹?*/
+/* 品牌宣传片板�?- 浅灰�?*/
 #brand {
   background-color: var(--color-off-white);
 }
 
-/* 涓夌淮鍔ㄧ敾鏉垮潡 - 鐧借壊 */
+/* 三维动画板块 - 白色 */
 #3d {
   background-color: var(--color-white);
 }
 
-/* MG 鍔ㄧ敾鏉垮潡 - 娴呯伆鑹?*/
+/* MG 动画板块 - 浅灰�?*/
 #mg {
   background-color: var(--color-off-white);
 }
 
-/* 鐭棰戞澘鍧?- 鐧借壊 */
+/* 短视频板�?- 白色 */
 #short {
   background-color: var(--color-white);
 }
 
-/* AE 鐗规晥鏉垮潡 - 娴呯伆鑹?*/
+/* AE 特效板块 - 浅灰�?*/
 #ae {
   background-color: var(--color-off-white);
 }
 
-/* 鑱旂郴鎴戞澘鍧?- 娴呯伆鑹?*/
+/* 联系我板�?- 浅灰�?*/
 #contact {
   background-color: var(--color-off-white);
 }
 
-/* Apple 椋庢牸鏍囬鍜屾枃瀛楀姩鐢?- 淇鐗堬紙鍩轰簬 Apple 瀹樼綉鐪熷疄鍙傛暟锛?*/
+/* Apple 风格标题和文字动�?- 修复版（基于 Apple 官网真实参数�?*/
 
-/* 榛樿鐘舵€?- 鏃?JS 鏃跺彲瑙侊紙闄嶇骇鏂规锛?*/
+/* 默认状�?- �?JS 时可见（降级方案�?*/
 .section-title {
   font-size: 32px;
   font-weight: 700;
@@ -692,15 +692,15 @@ body {
   margin-bottom: var(--spacing-4xl);
 }
 
-/* JS 鍔犺浇鍚?- 鍑嗗鍔ㄧ敾锛圓pple 鏍囧噯锛氫笂娴?20px锛?*/
+/* JS 加载�?- 准备动画（Apple 标准：上�?20px�?*/
 .section-title.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 瀹樻柟锛?0px锛屼笉鏄?40px */
+  transform: translateY(20px);  /* Apple 官方�?0px，不�?40px */
   transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 婊氬姩瑙﹀彂 - 鍔ㄧ敾瀹屾垚 */
+/* 滚动触发 - 动画完成 */
 .section-title.ready.visible {
   opacity: 1;
   transform: translateY(0);
@@ -713,7 +713,7 @@ body {
   }
 }
 
-/* 鍓爣棰樺悓鏍烽€昏緫锛圓pple 鏍囧噯锛氬欢杩?100ms锛?*/
+/* 副标题同样逻辑（Apple 标准：延�?100ms�?*/
 .section-subtitle {
   font-size: 17px;
   font-weight: 400;
@@ -724,8 +724,8 @@ body {
 
 .section-subtitle.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 瀹樻柟锛?0px */
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 瀹樻柟锛氬欢杩?100ms */
+  transform: translateY(20px);  /* Apple 官方�?0px */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 官方：延�?100ms */
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
 }
 
@@ -734,7 +734,7 @@ body {
   transform: translateY(0);
 }
 
-/* 瑙嗛缃戞牸 */
+/* 视频网格 */
 .video-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -755,10 +755,10 @@ body {
   }
 }
 
-/* Apple 椋庢牸瑙嗛鍗＄墖 */
+/* Apple 风格视频卡片 */
 .video-card {
   background: var(--color-white);
-  border-radius: 20px; /* Apple 椋庢牸鍦嗚 */
+  border-radius: 20px; /* Apple 风格圆角 */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -768,7 +768,7 @@ body {
 }
 
 .video-card:hover {
-  transform: translateY(-6px) scale(1.02); /* Apple 椋庢牸锛氫笂娴?+ 鏀惧ぇ */
+  transform: translateY(-6px) scale(1.02); /* Apple 风格：上�?+ 放大 */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.04);
 }
@@ -853,7 +853,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* 鑱旂郴鍖哄煙 */
+/* 联系区域 */
 .contact-content {
   text-align: center;
   max-width: 600px;
@@ -886,7 +886,7 @@ body {
   }
 }
 
-/* 鎸夐挳 - 瀹屾暣鐘舵€佸畾涔?v2.0 */
+/* 按钮 - 完整状态定�?v2.0 */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -897,10 +897,10 @@ body {
   transition: var(--transition-fast);
   border: none;
   cursor: pointer;
-  min-height: var(--touch-target-min);  /* 瑙︽懜鐩爣 鈮?4px */
+  min-height: var(--touch-target-min);  /* 触摸目标 �?4px */
 }
 
-/* 涓绘寜閽?- 5 绉嶇姸鎬佸畬鏁村畾涔?*/
+/* 主按�?- 5 种状态完整定�?*/
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -934,7 +934,7 @@ body {
   transform: none;
 }
 
-/* 娆¤鎸夐挳 */
+/* 次要按钮 */
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
@@ -973,7 +973,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* AE 鐗规晥杞挱鍥?*/
+/* AE 特效轮播�?*/
 .section-subtitle {
   text-align: center;
   font-size: 17px;
@@ -983,7 +983,7 @@ body {
   font-weight: 400;
 }
 
-/* Apple 椋庢牸杞挱鍥?*/
+/* Apple 风格轮播�?*/
 .carousel-container {
   position: relative;
   max-width: 1200px;
@@ -992,7 +992,7 @@ body {
   padding: var(--spacing-2xl) 0;
 }
 
-/* 宸﹀彸娓愰殣鏁堟灉 - Apple 椋庢牸鏌斿拰娓愬彉 */
+/* 左右渐隐效果 - Apple 风格柔和渐变 */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
@@ -1016,7 +1016,7 @@ body {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Apple 椋庢牸缂撳姩 */
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Apple 风格缓动 */
   gap: 24px;
 }
 
@@ -1031,13 +1031,13 @@ body {
   opacity: 1;
 }
 
-/* Apple 椋庢牸杞挱鍥惧崱鐗?*/
+/* Apple 风格轮播图卡�?*/
 .carousel-image {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 4:3 姣斾緥 */
+  padding-top: 75%; /* 4:3 比例 */
   background-color: var(--color-white);
-  border-radius: var(--radius-md); /* 18px - Apple 涓瓑鍗＄墖 */
+  border-radius: var(--radius-md); /* 18px - Apple 中等卡片 */
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
@@ -1045,7 +1045,7 @@ body {
 }
 
 .carousel-image:hover {
-  transform: scale(1.0161); /* Apple 瀹樻柟鏀惧ぇ姣斾緥 1.61% */
+  transform: scale(1.0161); /* Apple 官方放大比例 1.61% */
   box-shadow: var(--shadow-lg);
 }
 
@@ -1086,7 +1086,7 @@ body {
   font-weight: 400;
 }
 
-/* Apple 椋庢牸瀵艰埅鎸夐挳 */
+/* Apple 风格导航按钮 */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -1209,7 +1209,7 @@ body {
   transform: scale(1.2);
 }
 
-/* 鑱旂郴鍖哄煙浼樺寲 */
+/* 联系区域优化 */
 .contact-content {
   text-align: center;
   max-width: 800px;
@@ -1340,12 +1340,12 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* 椤佃剼 */
+/* 页脚 */
 /* ===================================
-   阶梯延迟：元素依次出现
+   �����ӳ٣�Ԫ�����γ���
    =================================== */
 
-/* Hero 区域延迟 */
+/* Hero �����ӳ� */
 .hero-title.fade-in-up { transition-delay: 0ms; }
 .hero-subtitle.fade-in-up { transition-delay: 150ms; }
 .hero-tagline.fade-in-up { transition-delay: 300ms; }
@@ -1355,14 +1355,19 @@ body {
 .hero-contact-separator.fade-in-up:nth-of-type(2) { transition-delay: 600ms; }
 .hero-contact-item.fade-in-up:nth-of-type(3) { transition-delay: 650ms; }
 
-/* 关于我板块 - intro 文字逐行延迟 */
+/* �����Ұ�� - intro ���������ӳ٣�0ms, 200ms, 400ms, 600ms, 800ms, 1000ms�� */
+p.about-intro span.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
+p.about-intro span.fade-in-up:nth-of-type(2) { transition-delay: 200ms; }
+p.about-intro span.fade-in-up:nth-of-type(3) { transition-delay: 400ms; }
+p.about-intro span.fade-in-up:nth-of-type(4) { transition-delay: 600ms; }
+p.about-intro span.fade-in-up:nth-of-type(5) { transition-delay: 800ms; }
+p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
-
-/* 关于我板块 - 统计数字延迟 */
+/* �����Ұ�� - ͳ�������ӳ� */
 .about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 900ms; }
 .about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1050ms; }
 
-/* 核心技能标签延迟 */
+/* ���ļ��ܱ�ǩ�ӳ� */
 .skills-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .skills-grid .fade-in-up:nth-child(2) { transition-delay: 100ms; }
 .skills-grid .fade-in-up:nth-child(3) { transition-delay: 200ms; }
@@ -1374,7 +1379,7 @@ body {
 .skills-grid .fade-in-up:nth-child(9) { transition-delay: 800ms; }
 .skills-grid .fade-in-up:nth-child(10) { transition-delay: 900ms; }
 
-/* 核心优势卡片延迟 */
+/* �������ƿ�Ƭ�ӳ� */
 .advantages-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .advantages-grid .fade-in-up:nth-child(2) { transition-delay: 150ms; }
 .advantages-grid .fade-in-up:nth-child(3) { transition-delay: 300ms; }
@@ -1382,7 +1387,7 @@ body {
 .advantages-grid .fade-in-up:nth-child(5) { transition-delay: 600ms; }
 .advantages-grid .fade-in-up:nth-child(6) { transition-delay: 750ms; }
 
-/* 视频卡片延迟 */
+/* ��Ƶ��Ƭ�ӳ� */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .video-grid .fade-in-up:nth-child(2) { transition-delay: 80ms; }
 .video-grid .fade-in-up:nth-child(3) { transition-delay: 160ms; }
@@ -1390,7 +1395,7 @@ body {
 .video-grid .fade-in-up:nth-child(5) { transition-delay: 320ms; }
 .video-grid .fade-in-up:nth-child(6) { transition-delay: 400ms; }
 
-/* 工作经历延迟 */
+/* ���������ӳ� */
 .experience-timeline .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .experience-timeline .fade-in-up:nth-child(2) { transition-delay: 200ms; }
 .experience-timeline .fade-in-up:nth-child(3) { transition-delay: 400ms; }
@@ -1398,7 +1403,7 @@ body {
 .experience-timeline .fade-in-up:nth-child(5) { transition-delay: 800ms; }
 .experience-timeline .fade-in-up:nth-child(6) { transition-delay: 1000ms; }
 
-/* 轮播卡片延迟 */
+/* �ֲ���Ƭ�ӳ� */
 .carousel-track .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .carousel-track .fade-in-up:nth-child(2) { transition-delay: 100ms; }
 .carousel-track .fade-in-up:nth-child(3) { transition-delay: 200ms; }
@@ -1417,7 +1422,7 @@ body {
   color: var(--color-gray-mid);
 }
 
-/* 鍥炲埌椤堕儴鎸夐挳 */
+/* 回到顶部按钮 */
 .back-to-top {
   position: fixed;
   bottom: 40px;
@@ -1467,7 +1472,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* 绉诲姩绔紭鍖?*/
+/* 移动端优�?*/
 @media (max-width: 767px) {
   .back-to-top {
     bottom: 24px;
@@ -1482,7 +1487,7 @@ body {
   }
 }
 
-/* 鍔ㄧ敾 - Fade In */
+/* 动画 - Fade In */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1515,7 +1520,7 @@ body {
 .video-card:nth-child(5) { animation-delay: 0.5s; }
 .video-card:nth-child(6) { animation-delay: 0.55s; }
 
-/* 绉诲姩绔紭鍖?*/
+/* 移动端优�?*/
 @media (max-width: 767px) {
   .hero {
     min-height: 60vh;
@@ -1538,11 +1543,11 @@ body {
 }
 
 /* ===================================
-   Apple 椋庢牸閫氱敤鍏ュ満鍔ㄧ敾 - Fade In Up
-   鎵€鏈夊崱鐗?鍐呭鍏冪礌渚濇娣″叆涓婃诞
+   Apple 风格通用入场动画 - Fade In Up
+   所有卡�?内容元素依次淡入上浮
    =================================== */
 
-/* 鍒濆鐘舵€侊細闅愯棌 + 涓婃诞 30px */
+/* 初始状态：隐藏 + 上浮 30px */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -1550,13 +1555,13 @@ body {
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 瑙﹀彂鏄剧ず锛氭贰鍏?+ 澶嶄綅 */
+/* 触发显示：淡�?+ 复位 */
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 闃舵寤惰繜锛氳鍏冪礌渚濇鍑虹幇 */
+/* 阶梯延迟：让元素依次出现 */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .video-grid .fade-in-up:nth-child(2) { transition-delay: 50ms; }
 .video-grid .fade-in-up:nth-child(3) { transition-delay: 100ms; }
@@ -1573,7 +1578,7 @@ body {
    Added: 2026-04-14
    =================================== */
 
-/* 杈撳叆妗?- 瀹屾暣鐘舵€佸畾涔?*/
+/* 输入�?- 完整状态定�?*/
 .input {
   width: 100%;
   padding: 12px 16px;
@@ -1621,7 +1626,7 @@ body {
   box-shadow: 0 0 0 4px rgba(52,199,89,0.1);
 }
 
-/* 鍔熻兘鎬ц壊褰╃被 */
+/* 功能性色彩类 */
 .text-primary { color: var(--color-primary); }
 .text-secondary { color: var(--color-secondary); }
 .text-success { color: var(--color-success); }
@@ -1641,7 +1646,7 @@ body {
 .border-error { border-color: var(--color-error); }
 .border-warning { border-color: var(--color-warning); }
 
-/* 鐘舵€佹寚绀哄櫒 */
+/* 状态指示器 */
 .status-dot {
   display: inline-block;
   width: 8px;
@@ -1655,7 +1660,7 @@ body {
 .status-dot.warning { background-color: var(--color-warning); }
 .status-dot.info { background-color: var(--color-info); }
 
-/* 寰界珷/鏍囩 */
+/* 徽章/标签 */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -1686,7 +1691,7 @@ body {
   color: var(--color-warning);
 }
 
-/* 鍙闂€у伐鍏风被 */
+/* 可访问性工具类 */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1704,7 +1709,7 @@ body {
   outline-offset: 2px;
 }
 
-/* 瑙︽懜鐩爣浼樺寲 */
+/* 触摸目标优化 */
 .touch-target {
   min-width: var(--touch-target-min);
   min-height: var(--touch-target-min);
@@ -1714,7 +1719,7 @@ body {
   padding: 8px;
 }
 
-/* 鍝嶅簲寮忓伐鍏风被 */
+/* 响应式工具类 */
 @media (max-width: 767px) {
   .hide-mobile { display: none !important; }
   .show-mobile { display: block !important; }
@@ -1728,51 +1733,4 @@ body {
 @media (min-width: 1024px) {
   .hide-desktop { display: none !important; }
   .show-desktop { display: block !important; }
-
-
-/* ===================================
-   关于我板块 - intro 文字逐行柔和动画（强制覆盖）
-   =================================== */
-p.about-intro span.fade-in-up:nth-of-type(1) { 
-  transition-delay: 0ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-p.about-intro span.fade-in-up:nth-of-type(2) { 
-  transition-delay: 200ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-p.about-intro span.fade-in-up:nth-of-type(3) { 
-  transition-delay: 400ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-p.about-intro span.fade-in-up:nth-of-type(4) { 
-  transition-delay: 600ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-p.about-intro span.fade-in-up:nth-of-type(5) { 
-  transition-delay: 800ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-p.about-intro span.fade-in-up:nth-of-type(6) { 
-  transition-delay: 1000ms !important; 
-  opacity: 0 !important;
-  transform: translateY(10px) !important;
-}
-
-p.about-intro span.fade-in-up {
-  display: inline-block !important;
-  transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1) !important,
-              transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-p.about-intro span.fade-in-up.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
 }
