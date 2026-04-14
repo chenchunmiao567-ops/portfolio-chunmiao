@@ -184,7 +184,7 @@ body {
 
 /* Hero 区域 */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1179,15 +1179,23 @@ body {
   transform: translateY(-2px);
 }
 
-/* 动画 - Fade In Up（统一入场动画） */
+/* 动画 - Fade In Up（统一入场动画，带错开延迟） */
 .fade-in-up,
 .section-title,
 .section-subtitle {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* 依次出现的延迟 */
+.fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.fade-in-up:nth-child(2) { transition-delay: 80ms; }
+.fade-in-up:nth-child(3) { transition-delay: 160ms; }
+.fade-in-up:nth-child(4) { transition-delay: 240ms; }
+.fade-in-up:nth-child(5) { transition-delay: 320ms; }
+.fade-in-up:nth-child(6) { transition-delay: 400ms; }
 
 .fade-in-up.visible,
 .section-title.visible,

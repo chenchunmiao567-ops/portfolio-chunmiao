@@ -264,25 +264,22 @@
 
   // ========== 滚动动画 ==========
   function initScrollAnimations() {
-    // 使用 Intersection Observer 触发动画
+    const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
+    
     const observerOptions = {
-      rootMargin: '0px 0px -50px 0px',
+      rootMargin: '0px 0px -10% 0px',
       threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    // 观察所有需要动画的元素
-    document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle').forEach(el => {
-      observer.observe(el);
-    });
+    animatedElements.forEach(el => observer.observe(el));
   }
 
   // ========== 回到顶部 ==========
