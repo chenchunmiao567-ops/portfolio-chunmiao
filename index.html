@@ -738,6 +738,13 @@
     </div>
   </footer>
 
+  <!-- 回到顶部按钮 -->
+  <button id="backToTop" class="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
   <!-- 平滑滚动 -->
   <script>
     // 等待 DOM 加载完成
@@ -1167,6 +1174,33 @@
         console.log('✅ 内容动画初始化完成');
       })();
     });
+
+    // 回到顶部按钮 - 滚动到底部时显示
+    const backToTop = document.getElementById('backToTop');
+    
+    if (backToTop) {
+      // 检测是否滚动到底部
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // 当滚动到距离底部 300px 以内时显示
+        if (scrollTop + windowHeight >= documentHeight - 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      
+      // 点击回到顶部
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
   </script>
 </body>
 </html>

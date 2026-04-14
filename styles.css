@@ -1352,6 +1352,71 @@ body {
   color: var(--color-gray-mid);
 }
 
+/* 回到顶部按钮 */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-dark);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-off-white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* 移动端优化 */
+@media (max-width: 767px) {
+  .back-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 /* 动画 - Fade In */
 @keyframes fadeIn {
   from {
