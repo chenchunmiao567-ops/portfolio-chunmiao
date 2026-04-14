@@ -61,7 +61,7 @@
   
   /* 缓动 - Apple 官方缓动曲线 */
   --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);
+  --ease-apple-standard: cubic-bezier(0.16, 1, 0.3, 1);
   
   /* 动画时长 - Apple 官方标准 */
   --duration-fast: 100ms;
@@ -127,7 +127,7 @@ body {
 
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -184,7 +184,7 @@ body {
 
 /* Hero 区域 */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -440,7 +440,7 @@ body {
   border-radius: var(--radius-lg);
   transition: all var(--duration-base) var(--ease-apple);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   will-change: transform, box-shadow;
 }
 
@@ -658,7 +658,7 @@ body {
 /* 视频卡片 */
 .video-card {
   background: var(--color-white);
-  border-radius: 20px;
+  border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1179,8 +1179,33 @@ body {
   transform: translateY(-2px);
 }
 
-/* 动画 - Fade In */
-@keyframes fadeIn {
+/* 动画 - Fade In Up（统一入场动画，带错开延迟） */
+.fade-in-up,
+.section-title,
+.section-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 依次出现的延迟 */
+.fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.fade-in-up:nth-child(2) { transition-delay: 80ms; }
+.fade-in-up:nth-child(3) { transition-delay: 160ms; }
+.fade-in-up:nth-child(4) { transition-delay: 240ms; }
+.fade-in-up:nth-child(5) { transition-delay: 320ms; }
+.fade-in-up:nth-child(6) { transition-delay: 400ms; }
+
+.fade-in-up.visible,
+.section-title.visible,
+.section-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero 区域独立动画（页面加载时直接播放） */
+@keyframes heroFadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -1191,48 +1216,10 @@ body {
   }
 }
 
-.hero-content,
-.section-title {
-  animation: fadeIn 0.6s var(--ease-apple) forwards;
-  opacity: 0;
-}
-
 .hero-content {
-  animation-delay: 0.1s;
-}
-
-.section-title {
-  animation-delay: 0.2s;
-}
-
-/* Apple 风格通用入场动画 - Fade In Up */
-.fade-in-up {
+  animation: heroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 视频卡片动画延迟 */
-.video-grid .fade-in-up:nth-child(1) {}
-.video-grid .fade-in-up:nth-child(2) {}
-.video-grid .fade-in-up:nth-child(3) {}
-.video-grid .fade-in-up:nth-child(4) {}
-.video-grid .fade-in-up:nth-child(5) {}
-.video-grid .fade-in-up:nth-child(6) {}
-
-/* 轮播图动画延迟 */
-.carousel-track .fade-in-up:nth-child(1) {}
-.carousel-track .fade-in-up:nth-child(2) {}
-.carousel-track .fade-in-up:nth-child(3) {}
-.carousel-track .fade-in-up:nth-child(4) {}
-.carousel-track .fade-in-up:nth-child(5) {}
-.carousel-track .fade-in-up:nth-child(6) {}
 
 /* 移动端适配 */
 @media (max-width: 767px) {
