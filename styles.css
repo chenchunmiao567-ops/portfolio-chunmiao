@@ -377,7 +377,7 @@ body {
 }
 
 .skill-tag {
-  padding: 12px 24px;
+  padding: 16px 24px;
   background: transparent;
   color: var(--color-gray-dark);
   border-radius: var(--radius-md);
@@ -881,7 +881,7 @@ body {
 .carousel-btn:hover {
   background: var(--color-blue);
   border-color: var(--color-blue);
-  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 .carousel-btn:hover svg {
@@ -1060,7 +1060,7 @@ body {
 /* 按钮 */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 16px 24px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -1079,7 +1079,7 @@ body {
 
 .btn-primary:hover {
   background-color: var(--color-blue-hover);
-  box-shadow: 0 4px 12px rgba(0,113,227,0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
@@ -1160,7 +1160,7 @@ body {
 
 .back-to-top:hover {
   background: var(--color-off-white);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
