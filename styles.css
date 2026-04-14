@@ -1372,10 +1372,13 @@ p.about-intro span.fade-in-up:nth-of-type(5) { transition-delay: 800ms; }
 p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
 /* ???????? - ?????????? */
-.about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 1200ms; }
-.about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1350ms; }
+.about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 1000ms; }
+.about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1150ms; }
 
 /* ???????????? */
+/* 核心技能标题 - 统计数字之后 */
+.skills-title.fade-in-up { transition-delay: 1300ms; }
+
 .skills-grid .fade-in-up:nth-child(1) { transition-delay: 1400ms; }
 .skills-grid .fade-in-up:nth-child(2) { transition-delay: 1500ms; }
 .skills-grid .fade-in-up:nth-child(3) { transition-delay: 1600ms; }
@@ -1388,12 +1391,15 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .skills-grid .fade-in-up:nth-child(10) { transition-delay: 2300ms; }
 
 /* ????????????? */
-.advantages-grid .advantage-card.fade-in-up:nth-child(1) { transition-delay: 1600ms; }
-.advantages-grid .advantage-card.fade-in-up:nth-child(2) { transition-delay: 1750ms; }
-.advantages-grid .advantage-card.fade-in-up:nth-child(3) { transition-delay: 1900ms; }
-.advantages-grid .advantage-card.fade-in-up:nth-child(4) { transition-delay: 2050ms; }
-.advantages-grid .advantage-card.fade-in-up:nth-child(5) { transition-delay: 2200ms; }
-.advantages-grid .advantage-card.fade-in-up:nth-child(6) { transition-delay: 2350ms; }
+/* 核心优势标题 - 核心技能完成后 */
+.advantages-title.fade-in-up { transition-delay: 2300ms; }
+
+.advantages-grid .advantage-card.fade-in-up:nth-child(1) { transition-delay: 2400ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(2) { transition-delay: 2550ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(3) { transition-delay: 2700ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(4) { transition-delay: 2850ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(5) { transition-delay: 3000ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(6) { transition-delay: 3150ms; }
 
 /* ????????? */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
