@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画测试</title>
+  <style>
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+    }
+    
+    .section-title.ready {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .section-title.ready.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <h2 class="section-title">测试标题</h2>
+  </section>
+  
+  <section class="section">
+    <h2 class="section-title">第二个标题</h2>
+  </section>
+  
+  <section class="section">
+    <h2 class="section-title">第三个标题</h2>
+  </section>
+  
+  <script>
+    window.onload = function() {
+      console.log('🔍 动画初始化开始...');
+      
+      var titles = document.querySelectorAll('.section-title');
+      console.log('找到标题:', titles.length);
+      
+      titles.forEach(function(title) {
+        title.classList.add('ready');
+        console.log('添加 ready 类');
+      });
+      
+      var observer = new IntersectionObserver(function(entries) {
+        console.log('Observer 触发');
+        
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            console.log('元素可见');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.01
+      });
+      
+      var sections = document.querySelectorAll('.section');
+      console.log('找到板块:', sections.length);
+      
+      sections.forEach(function(section) {
+        observer.observe(section);
+        console.log('监听板块');
+      });
+      
+      console.log('✅ 动画初始化完成');
+    };
+  </script>
+</body>
+</html>
