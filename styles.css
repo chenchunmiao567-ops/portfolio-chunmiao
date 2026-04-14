@@ -1430,8 +1430,7 @@ body {
 }
 
 .hero-content,
-.section-title,
-.video-card {
+.section-title {
   animation: fadeIn 0.6s var(--ease-apple) forwards;
   opacity: 0;
 }
