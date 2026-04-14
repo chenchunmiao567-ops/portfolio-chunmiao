@@ -1356,27 +1356,7 @@ body {
 .hero-contact-item.fade-in-up:nth-of-type(3) { transition-delay: 650ms; }
 
 /* 关于我板块 - intro 文字逐行延迟 */
-/* 关于我板块 - intro 文字逐行延迟（6 行依次出现，柔和动画） */
-.about-intro .fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
-.about-intro .fade-in-up:nth-of-type(2) { transition-delay: 200ms; }
-.about-intro .fade-in-up:nth-of-type(3) { transition-delay: 400ms; }
-.about-intro .fade-in-up:nth-of-type(4) { transition-delay: 600ms; }
-.about-intro .fade-in-up:nth-of-type(5) { transition-delay: 800ms; }
-.about-intro .fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
-/* 关于我板块 - intro 文字柔和动画 */
-.about-intro .fade-in-up {
-  opacity: 0;
-  transform: translateY(10px); /* 减小上浮距离，更柔和 */
-  transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1), /* 延长动画时间 */
-              transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-block; /* 确保每行独立 */
-}
-
-.about-intro .fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* 关于我板块 - 统计数字延迟 */
 .about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 900ms; }
@@ -1748,5 +1728,51 @@ body {
 @media (min-width: 1024px) {
   .hide-desktop { display: none !important; }
   .show-desktop { display: block !important; }
+
+
+/* ===================================
+   关于我板块 - intro 文字逐行柔和动画（强制覆盖）
+   =================================== */
+p.about-intro span.fade-in-up:nth-of-type(1) { 
+  transition-delay: 0ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+p.about-intro span.fade-in-up:nth-of-type(2) { 
+  transition-delay: 200ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+p.about-intro span.fade-in-up:nth-of-type(3) { 
+  transition-delay: 400ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+p.about-intro span.fade-in-up:nth-of-type(4) { 
+  transition-delay: 600ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+p.about-intro span.fade-in-up:nth-of-type(5) { 
+  transition-delay: 800ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+p.about-intro span.fade-in-up:nth-of-type(6) { 
+  transition-delay: 1000ms !important; 
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
 }
 
+p.about-intro span.fade-in-up {
+  display: inline-block !important;
+  transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1) !important,
+              transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+p.about-intro span.fade-in-up.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+}
