@@ -365,8 +365,30 @@ body {
   font-size: 24px;
   font-weight: 700;
   color: var(--color-gray-dark);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
   letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.skills-subtitle {
+  font-size: 15px;
+  color: var(--color-gray-mid);
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+}
+
+.skills-category {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.skills-category-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .skills-grid {
@@ -386,6 +408,14 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.12);
   transition: var(--transition-fast);
   cursor: default;
+  position: relative;
+}
+
+.skill-tag.skill-slide-in {
+  opacity: 0;
+  animation: skillSlideIn 1000ms var(--ease-apple) forwards;
+  animation-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
 }
 
 .skill-tag:hover {
@@ -393,6 +423,26 @@ body {
   color: var(--color-white);
   border-color: var(--color-gray-dark);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Apple 风格阶梯式动效
+   参考：https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
+   缓动曲线：cubic-bezier(0.16, 1, 0.3, 1) - Apple 官方缓动
+   时长：1000ms - 舒缓优雅
+   延迟：每元素递增 120ms - 形成流畅节奏
+   位移：40px - 明显但不夸张
+   缩放：0.96 → 1 - 轻微放大
+*/
+@keyframes skillSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* 核心优势 */
