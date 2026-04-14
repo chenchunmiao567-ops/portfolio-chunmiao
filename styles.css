@@ -61,7 +61,7 @@
   
   /* 缓动 - Apple 官方缓动曲线 */
   --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);
+  --ease-apple-standard: cubic-bezier(0.16, 1, 0.3, 1);
   
   /* 动画时长 - Apple 官方标准 */
   --duration-fast: 100ms;
@@ -127,7 +127,7 @@ body {
 
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -440,7 +440,7 @@ body {
   border-radius: var(--radius-lg);
   transition: all var(--duration-base) var(--ease-apple);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   will-change: transform, box-shadow;
 }
 
@@ -658,7 +658,7 @@ body {
 /* 视频卡片 */
 .video-card {
   background: var(--color-white);
-  border-radius: 20px;
+  border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
