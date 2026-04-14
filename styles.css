@@ -1,9 +1,11 @@
 /* ===================================
    Chunmiao Portfolio - Apple Style
-   Design System v1.0
+   Design System v2.0
+   Updated: 2026-04-14
+   Based on: VoltAgent/awesome-design-md standard
    =================================== */
 
-/* Apple 官方设计系统变量 v1.0 */
+/* Apple 官方设计系统变量 v2.0 */
 :root {
   /* 主色调 - Apple 经典配色 */
   --color-white: #FFFFFF;
@@ -15,18 +17,30 @@
   /* 强调色 - Apple 官方蓝 */
   --color-blue: #0071E3;
   --color-blue-hover: #0077ED;
+  --color-blue-active: #0052A3;
   --color-red: #FF0000;
+  
+  /* 功能性色彩 - WCAG AA 合规 */
+  --color-primary: #0071E3;      /* 主按钮、链接 */
+  --color-secondary: #86868B;    /* 次要文字、边框 */
+  --color-success: #34C759;      /* 成功状态 */
+  --color-error: #FF3B30;        /* 错误提示 */
+  --color-warning: #FF9500;      /* 警告提示 */
+  --color-info: #007AFF;         /* 信息提示 */
   
   /* 阴影 - Apple 官方阴影系统 */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* 默认 */
   --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 标准 */
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 悬停 */
+  --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* 键盘聚焦 */
+  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 错误状态 */
   
   /* 圆角 - Apple 官方圆角系统 */
   --radius-sm: 10px;   /* 小按钮/图标 */
   --radius-md: 18px;   /* 中等卡片/轮播图 */
   --radius-lg: 28px;   /* 大卡片/核心优势/视频 */
   --radius-xl: 980px;  /* 胶囊按钮 */
+  --radius-xs: 6px;    /* 标签、徽章 */
   
   /* 间距 - Apple 基于 8px 的间距系统 */
   --spacing-xs: 8px;
@@ -58,6 +72,9 @@
   --transition-fast: 100ms var(--ease-apple);
   --transition-normal: 400ms var(--ease-apple);
   --transition-slow: 800ms var(--ease-apple);
+  
+  /* 触摸目标 - Apple Human Interface Guidelines */
+  --touch-target-min: 44px;
 }
 
 /* 重置 */
@@ -869,7 +886,7 @@ body {
   }
 }
 
-/* 按钮 */
+/* 按钮 - 完整状态定义 v2.0 */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -880,16 +897,73 @@ body {
   transition: var(--transition-fast);
   border: none;
   cursor: pointer;
+  min-height: var(--touch-target-min);  /* 触摸目标 ≥44px */
 }
 
+/* 主按钮 - 5 种状态完整定义 */
 .btn-primary {
-  background-color: var(--color-blue);
+  background-color: var(--color-primary);
   color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0,113,227,0.2);
 }
 
 .btn-primary:hover {
-  background-color: #0052a3;
-  transform: translateY(-1px);
+  background-color: var(--color-blue-hover);
+  box-shadow: 0 4px 12px rgba(0,113,227,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background-color: var(--color-blue-active);
+  box-shadow: 0 1px 4px rgba(0,113,227,0.2);
+  transform: translateY(0);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: var(--color-off-white);
+  color: var(--color-gray-mid);
+  opacity: 0.5;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 次要按钮 */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn-secondary:disabled,
+.btn-secondary.disabled {
+  background-color: var(--color-off-white);
+  color: var(--color-gray-mid);
+  border-color: var(--color-gray-mid);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .contact-actions {
@@ -1364,3 +1438,165 @@ body {
 .fade-in-up:nth-child(8) { transition-delay: 350ms; }
 .fade-in-up:nth-child(9) { transition-delay: 400ms; }
 .fade-in-up:nth-child(10) { transition-delay: 450ms; }
+
+/* ===================================
+   Design System v2.0 - New Components
+   Added: 2026-04-14
+   =================================== */
+
+/* 输入框 - 完整状态定义 */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: var(--font-family);
+  color: var(--color-gray-dark);
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  min-height: var(--touch-target-min);
+}
+
+.input:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+}
+
+.input::placeholder {
+  color: var(--color-gray-mid);
+  opacity: 0.7;
+}
+
+.input:disabled,
+.input.disabled {
+  background-color: var(--color-off-white);
+  color: var(--color-gray-mid);
+  border-color: rgba(0, 0, 0, 0.08);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.input.error {
+  border-color: var(--color-error);
+  box-shadow: var(--shadow-error);
+}
+
+.input.success {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 4px rgba(52,199,89,0.1);
+}
+
+/* 功能性色彩类 */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-success { color: var(--color-success); }
+.text-error { color: var(--color-error); }
+.text-warning { color: var(--color-warning); }
+.text-info { color: var(--color-info); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-success { background-color: var(--color-success); }
+.bg-error { background-color: var(--color-error); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-info { background-color: var(--color-info); }
+
+.border-primary { border-color: var(--color-primary); }
+.border-success { border-color: var(--color-success); }
+.border-error { border-color: var(--color-error); }
+.border-warning { border-color: var(--color-warning); }
+
+/* 状态指示器 */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-dot.success { background-color: var(--color-success); }
+.status-dot.error { background-color: var(--color-error); }
+.status-dot.warning { background-color: var(--color-warning); }
+.status-dot.info { background-color: var(--color-info); }
+
+/* 徽章/标签 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-xs);
+  line-height: 1;
+}
+
+.badge-primary {
+  background-color: rgba(0,113,227,0.1);
+  color: var(--color-primary);
+}
+
+.badge-success {
+  background-color: rgba(52,199,89,0.1);
+  color: var(--color-success);
+}
+
+.badge-error {
+  background-color: rgba(255,59,48,0.1);
+  color: var(--color-error);
+}
+
+.badge-warning {
+  background-color: rgba(255,149,0,0.1);
+  color: var(--color-warning);
+}
+
+/* 可访问性工具类 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 触摸目标优化 */
+.touch-target {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+/* 响应式工具类 */
+@media (max-width: 767px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: block !important; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-tablet { display: none !important; }
+  .show-tablet { display: block !important; }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop { display: none !important; }
+  .show-desktop { display: block !important; }
+}
