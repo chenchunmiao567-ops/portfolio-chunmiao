@@ -5,44 +5,44 @@
    Based on: VoltAgent/awesome-design-md standard
    =================================== */
 
-/* Apple 官方设计系统变量 v2.0 */
+/* Apple �ٷ����ϵͳ���� v2.0 */
 :root {
-  /* 主色�?- Apple 经典配色 */
+  /* ��ɫ??- Apple ������ɫ */
   --color-white: #FFFFFF;
   --color-off-white: #F5F5F7;
   --color-gray-mid: #86868B;
   --color-gray-dark: #1D1D1F;
   --color-black: #000000;
   
-  /* 强调�?- Apple 官方�?*/
+  /* ǿ��??- Apple �ٷ�??*/
   --color-blue: #0071E3;
   --color-blue-hover: #0077ED;
   --color-blue-active: #0052A3;
   --color-red: #FF0000;
   
-  /* 功能性色�?- WCAG AA 合规 */
-  --color-primary: #0071E3;      /* 主按钮、链�?*/
-  --color-secondary: #86868B;    /* 次要文字、边�?*/
-  --color-success: #34C759;      /* 成功状�?*/
-  --color-error: #FF3B30;        /* 错误提示 */
-  --color-warning: #FF9500;      /* 警告提示 */
-  --color-info: #007AFF;         /* 信息提示 */
+  /* ������ɫ??- WCAG AA �Ϲ� */
+  --color-primary: #0071E3;      /* ����ť����??*/
+  --color-secondary: #86868B;    /* ��Ҫ���֡���??*/
+  --color-success: #34C759;      /* �ɹ�״??*/
+  --color-error: #FF3B30;        /* ������ʾ */
+  --color-warning: #FF9500;      /* ������ʾ */
+  --color-info: #007AFF;         /* ��Ϣ��ʾ */
   
-  /* 阴影 - Apple 官方阴影系统 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* 默认 */
-  --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple 标准 */
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* 悬停 */
-  --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* 键盘聚焦 */
-  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* 错误状�?*/
+  /* ��Ӱ - Apple �ٷ���Ӱϵͳ */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);         /* Ĭ�� */
+  --shadow-md: 8px 8px 16px rgba(0, 0, 0, 0.08);      /* Apple ��׼ */
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);       /* ��ͣ */
+  --shadow-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px #0071E3;  /* ���̾۽� */
+  --shadow-error: 0 0 0 4px rgba(255,59,48,0.1);      /* ����״??*/
   
-  /* 圆角 - Apple 官方圆角系统 */
-  --radius-sm: 10px;   /* 小按�?图标 */
-  --radius-md: 18px;   /* 中等卡片/轮播�?*/
-  --radius-lg: 28px;   /* 大卡�?核心优势/视频 */
-  --radius-xl: 980px;  /* 胶囊按钮 */
-  --radius-xs: 6px;    /* 标签、徽�?*/
+  /* Բ�� - Apple �ٷ�Բ��ϵͳ */
+  --radius-sm: 10px;   /* С��??ͼ�� */
+  --radius-md: 18px;   /* �еȿ�Ƭ/�ֲ�??*/
+  --radius-lg: 28px;   /* ��??��������/��Ƶ */
+  --radius-xl: 980px;  /* ���Ұ�ť */
+  --radius-xs: 6px;    /* ��ǩ����??*/
   
-  /* 间距 - Apple 基于 8px 的间距系�?*/
+  /* ��� - Apple ���� 8px �ļ��ϵ??*/
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -55,36 +55,36 @@
   --spacing-6xl: 120px;
   --spacing-7xl: 160px;
   
-  /* 字体 - Apple 系统字体 */
+  /* ���� - Apple ϵͳ���� */
   --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro SC",
                  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC",
                  "Microsoft YaHei", sans-serif;
   
-  /* 缓动 - Apple 官方缓动曲线 */
-  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);        /* 高级缓动 */
-  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* 标准缓动 */
+  /* ���� - Apple �ٷ��������� */
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);        /* �߼����� */
+  --ease-apple-standard: cubic-bezier(0, 0, 0.5, 1);  /* ��׼���� */
   
-  /* 动画时长 - Apple 官方标准 */
-  --duration-fast: 100ms;    /* 微交�?*/
-  --duration-base: 400ms;    /* 卡片动画 */
-  --duration-slow: 800ms;    /* 文字动画 */
+  /* ����ʱ�� - Apple �ٷ���׼ */
+  --duration-fast: 100ms;    /* ΢��??*/
+  --duration-base: 400ms;    /* ��Ƭ���� */
+  --duration-slow: 800ms;    /* ���ֶ��� */
   
   --transition-fast: 100ms var(--ease-apple);
   --transition-normal: 400ms var(--ease-apple);
   --transition-slow: 800ms var(--ease-apple);
   
-  /* 触摸目标 - Apple Human Interface Guidelines */
+  /* ����Ŀ�� - Apple Human Interface Guidelines */
   --touch-target-min: 44px;
 }
 
-/* 重置 */
+/* ���� */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 暂时禁用 CSS 平滑滚动，让 JavaScript 处理 */
+/* ��ʱ���� CSS ƽ���������� JavaScript ���� */
 html {
   scroll-behavior: auto;
 }
@@ -99,7 +99,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 容器 */
+/* ���� */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -112,13 +112,13 @@ body {
   }
 }
 
-/* 导航�?*/
+/* ����??*/
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 56px; /* 增加高度，更舒�?*/
+  height: 56px; /* ���Ӹ߶ȣ�����??*/
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -149,8 +149,8 @@ body {
 }
 
 .nav-logo {
-  font-size: 18px; /* 加大字号 */
-  font-weight: 700; /* 加粗 */
+  font-size: 18px; /* �Ӵ��ֺ� */
+  font-weight: 700; /* �Ӵ� */
   color: var(--color-gray-dark);
   text-decoration: none;
   transition: var(--transition-fast);
@@ -163,7 +163,7 @@ body {
 
 .nav-links {
   display: none;
-  gap: var(--spacing-2xl); /* 增加间距 */
+  gap: var(--spacing-2xl); /* ���Ӽ�� */
 }
 
 @media (min-width: 768px) {
@@ -173,8 +173,8 @@ body {
 }
 
 .nav-links a {
-  font-size: 14px; /* 稍大一�?*/
-  font-weight: 500; /* 中等字重 */
+  font-size: 14px; /* �Դ�һ??*/
+  font-weight: 500; /* �е����� */
   color: var(--color-gray-dark);
   text-decoration: none;
   transition: var(--transition-fast);
@@ -184,7 +184,7 @@ body {
   color: var(--color-blue);
 }
 
-/* Hero 区域 */
+/* Hero ���� */
 .hero {
   min-height: 50vh;
   display: flex;
@@ -193,7 +193,7 @@ body {
   padding: var(--spacing-4xl) var(--spacing-md);
   padding-top: calc(var(--spacing-4xl) + 48px);
   text-align: center;
-  /* Apple 风格微妙渐变 - 纯净简�?*/
+  /* Apple ���΢��� - ������??*/
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.98) 0%, 
     rgba(245, 245, 247, 0.95) 100%);
@@ -210,7 +210,7 @@ body {
 }
 
 .hero-title {
-  font-size: 68px; /* Apple 风格放大 */
+  font-size: 68px; /* Apple ���Ŵ� */
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -220,12 +220,12 @@ body {
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 96px; /* Apple 风格放大 */
+    font-size: 96px; /* Apple ���Ŵ� */
   }
 }
 
 .hero-subtitle {
-  font-size: 28px; /* Apple 风格放大 */
+  font-size: 28px; /* Apple ���Ŵ� */
   font-weight: 500;
   color: var(--color-gray-mid);
   line-height: 1.4;
@@ -234,7 +234,7 @@ body {
 
 @media (min-width: 768px) {
   .hero-subtitle {
-    font-size: 34px; /* Apple 风格放大 */
+    font-size: 34px; /* Apple ���Ŵ� */
   }
 }
 
@@ -289,14 +289,14 @@ body {
   font-weight: 300;
 }
 
-/* 关于我区�?*/
+/* ��������??*/
 .about-content {
-  max-width: 700px; /* 调整宽度，让统计卡片更平�?*/
+  max-width: 700px; /* ������ȣ���ͳ�ƿ�Ƭ��ƽ??*/
   margin: 0 auto;
 }
 
 .about-intro {
-  font-size: 20px; /* 加大字号 */
+  font-size: 20px; /* �Ӵ��ֺ� */
   line-height: 1.8;
   color: var(--color-gray-mid);
   margin-bottom: var(--spacing-4xl);
@@ -306,11 +306,11 @@ body {
 
 @media (min-width: 768px) {
   .about-intro {
-    font-size: 22px; /* 桌面端更�?*/
+    font-size: 22px; /* ����˸�??*/
   }
 }
 
-/* 关于我板块内的统计数据（无背景，突出显示�?*/
+/* �����Ұ���ڵ�ͳ�����ݣ��ޱ�����ͻ����ʾ??*/
 .about-stats-inline {
   display: flex;
   justify-content: center;
@@ -328,7 +328,7 @@ body {
 
 .stat-number-inline {
   display: block;
-  font-size: 72px; /* Apple 风格放大 */
+  font-size: 72px; /* Apple ���Ŵ� */
   font-weight: 700;
   color: var(--color-gray-dark);
   line-height: 1;
@@ -338,7 +338,7 @@ body {
 
 @media (min-width: 768px) {
   .stat-number-inline {
-    font-size: 96px; /* Apple 风格放大 */
+    font-size: 96px; /* Apple ���Ŵ� */
   }
 }
 
@@ -353,7 +353,7 @@ body {
   white-space: nowrap;
 }
 
-/* 联系方式（紧凑单行布局�?*/
+/* ��ϵ��ʽ����յ��в���??*/
 .about-contact-compact {
   display: flex;
   justify-content: center;
@@ -381,7 +381,7 @@ body {
   font-weight: 300;
 }
 
-/* 联系方式（单行横向布局，无背景�?- 保留旧样式兼�?*/
+/* ��ϵ��ʽ�����к��򲼾֣��ޱ���??- �������ʽ��??*/
 .about-contact {
   display: flex;
   justify-content: center;
@@ -428,7 +428,7 @@ body {
   line-height: 1.4;
 }
 
-/* 邮箱特殊处理 */
+/* �������⴦�� */
 .contact-item:nth-child(2) .contact-value {
   white-space: nowrap;
   font-size: 14px;
@@ -456,13 +456,13 @@ body {
 }
 
 .skill-tag {
-  padding: 12px 24px; /* 增加内边�?*/
+  padding: 12px 24px; /* �����ڱ�??*/
   background: transparent;
   color: var(--color-gray-dark);
   border-radius: var(--radius-md);
   font-size: 15px;
-  font-weight: 600; /* 加粗 */
-  border: 1px solid rgba(0, 0, 0, 0.12); /* 加深边框 */
+  font-weight: 600; /* �Ӵ� */
+  border: 1px solid rgba(0, 0, 0, 0.12); /* ����߿� */
   transition: var(--transition-fast);
   cursor: default;
 }
@@ -471,10 +471,10 @@ body {
   background: var(--color-gray-dark);
   color: var(--color-white);
   border-color: var(--color-gray-dark);
-  transform: translateY(-2px); /* 增加悬浮效果 */
+  transform: translateY(-2px); /* ��������Ч�� */
 }
 
-/* 核心优势 */
+/* �������� */
 .about-advantages {
   margin-top: var(--spacing-5xl);
   text-align: left;
@@ -513,22 +513,22 @@ body {
   }
 }
 
-/* Apple 风格核心优势卡片 - 浅灰色背�?*/
+/* Apple ���������ƿ�Ƭ - ǳ��ɫ��??*/
 .advantage-card {
-  background: var(--color-off-white); /* 浅灰色背景，与白色区�?*/
+  background: var(--color-off-white); /* ǳ��ɫ���������ɫ��??*/
   padding: var(--spacing-2xl);
-  border-radius: var(--radius-lg); /* 28px - Apple 大卡片标�?*/
+  border-radius: var(--radius-lg); /* 28px - Apple ��Ƭ��??*/
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
-  border: 1px solid rgba(0, 0, 0, 0.06); /* 加深边框 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 初始阴影加深 */
+  border: 1px solid rgba(0, 0, 0, 0.06); /* ����߿� */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* ��ʼ��Ӱ���� */
   will-change: transform, box-shadow;
 }
 
 .advantage-card:hover {
-  transform: translateY(-6px) scale(1.0161); /* Apple 官方放大比例 1.61% */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* 阴影加深 */
-  background: var(--color-white); /* 悬停时变白色，创造对�?*/
-  border-color: rgba(0, 0, 0, 0.1); /* 悬停时边框加�?*/
+  transform: translateY(-6px) scale(1.0161); /* Apple �ٷ��Ŵ���� 1.61% */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); /* ��Ӱ���� */
+  background: var(--color-white); /* ��ͣʱ���ɫ�������??*/
+  border-color: rgba(0, 0, 0, 0.1); /* ��ͣʱ�߿��??*/
 }
 
 .advantage-card:active {
@@ -551,14 +551,14 @@ body {
   font-weight: 400;
 }
 
-/* 工作经历时间�?*/
+/* ��������ʱ��??*/
 .about-experience {
   margin-top: var(--spacing-5xl);
   text-align: left;
 }
 
 .experience-main-title {
-  font-size: 40px; /* Apple 风格放大 */
+  font-size: 40px; /* Apple ���Ŵ� */
   font-weight: 700;
   color: var(--color-gray-dark);
   margin-bottom: var(--spacing-4xl);
@@ -567,7 +567,7 @@ body {
 
 @media (min-width: 768px) {
   .experience-main-title {
-    font-size: 48px; /* Apple 风格放大 */
+    font-size: 48px; /* Apple ���Ŵ� */
   }
 }
 
@@ -588,7 +588,7 @@ body {
 }
 
 .experience-item::before {
-  content: none; /* 删除圆点 */
+  content: none; /* ɾ��Բ�� */
 }
 
 .experience-time {
@@ -632,65 +632,65 @@ body {
   font-weight: 600;
 }
 
-/* Section - Apple 风格加大间距 */
+/* Section - Apple ���Ӵ��� */
 .section {
-  padding: 120px 0; /* Apple 风格间距 */
+  padding: 120px 0; /* Apple ����� */
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 160px 0; /* Apple 风格间距 */
+    padding: 160px 0; /* Apple ����� */
   }
 }
 
-/* 板块背景 - 恢复简洁交替方�?*/
+/* ��鱳�� - �ָ���ཻ�淽??*/
 
-/* 关于我板�?- 恢复纯白�?*/
+/* �����Ұ�??- �ָ�����??*/
 #about {
   background-color: var(--color-white);
 }
 
-/* 品牌宣传片板�?- 浅灰�?*/
+/* Ʒ������Ƭ��??- ǳ��??*/
 #brand {
   background-color: var(--color-off-white);
 }
 
-/* 三维动画板块 - 白色 */
+/* ��ά������� - ��ɫ */
 #3d {
   background-color: var(--color-white);
 }
 
-/* MG 动画板块 - 浅灰�?*/
+/* MG ������� - ǳ��??*/
 #mg {
   background-color: var(--color-off-white);
 }
 
-/* 短视频板�?- 白色 */
+/* ����Ƶ��??- ��ɫ */
 #short {
   background-color: var(--color-white);
 }
 
-/* AE 特效板块 - 浅灰�?*/
+/* AE ��Ч��� - ǳ��??*/
 #ae {
   background-color: var(--color-off-white);
 }
 
-/* 联系我板�?- 浅灰�?*/
+/* ��ϵ�Ұ�??- ǳ��??*/
 #contact {
   background-color: var(--color-off-white);
 }
 
-/* 联系我板块内容延迟 */
-.contact-content .fade-in-up:nth-child(1) { transition-delay: 0ms; }    /* contact-name */
-.contact-content .fade-in-up:nth-child(2) { transition-delay: 150ms; }  /* contact-text */
-.contact-content .fade-in-up:nth-child(3) { transition-delay: 300ms; }  /* contact-intro */
-.contact-grid .fade-in-up:nth-child(1) { transition-delay: 450ms; }     /* 电话卡片 */
-.contact-grid .fade-in-up:nth-child(2) { transition-delay: 600ms; }     /* 邮箱卡片 */
+/* ��ϵ�Ұ�������ӳ� */
+.contact-name.fade-in-up { transition-delay: 0ms; }
+.contact-text.fade-in-up { transition-delay: 150ms; }
+.contact-intro.fade-in-up { transition-delay: 300ms; }
+.contact-grid .contact-item.fade-in-up:nth-of-type(1) { transition-delay: 450ms; }
+.contact-grid .contact-item.fade-in-up:nth-of-type(2) { transition-delay: 600ms; }
 
 
-/* Apple 风格标题和文字动�?- 修复版（基于 Apple 官网真实参数�?*/
+/* Apple ����������ֶ�??- �޸��棨���� Apple ������ʵ����??*/
 
-/* 默认状�?- �?JS 时可见（降级方案�?*/
+/* Ĭ��״??- ??JS ʱ�ɼ�����������??*/
 .section-title {
   font-size: 32px;
   font-weight: 700;
@@ -700,15 +700,15 @@ body {
   margin-bottom: var(--spacing-4xl);
 }
 
-/* JS 加载�?- 准备动画（Apple 标准：上�?20px�?*/
+/* JS ����??- ׼��������Apple ��׼����??20px??*/
 .section-title.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 官方�?0px，不�?40px */
+  transform: translateY(20px);  /* Apple �ٷ�??0px����??40px */
   transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 滚动触发 - 动画完成 */
+/* �������� - ������� */
 .section-title.ready.visible {
   opacity: 1;
   transform: translateY(0);
@@ -721,7 +721,7 @@ body {
   }
 }
 
-/* 副标题同样逻辑（Apple 标准：延�?100ms�?*/
+/* ������ͬ���߼���Apple ��׼����??100ms??*/
 .section-subtitle {
   font-size: 17px;
   font-weight: 400;
@@ -732,8 +732,8 @@ body {
 
 .section-subtitle.ready {
   opacity: 0;
-  transform: translateY(20px);  /* Apple 官方�?0px */
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple 官方：延�?100ms */
+  transform: translateY(20px);  /* Apple �ٷ�??0px */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,  /* Apple �ٷ�����??100ms */
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
 }
 
@@ -742,7 +742,7 @@ body {
   transform: translateY(0);
 }
 
-/* 视频网格 */
+/* ��Ƶ���� */
 .video-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -763,10 +763,10 @@ body {
   }
 }
 
-/* Apple 风格视频卡片 */
+/* Apple �����Ƶ��Ƭ */
 .video-card {
   background: var(--color-white);
-  border-radius: 20px; /* Apple 风格圆角 */
+  border-radius: 20px; /* Apple ���Բ�� */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -776,7 +776,7 @@ body {
 }
 
 .video-card:hover {
-  transform: translateY(-6px) scale(1.02); /* Apple 风格：上�?+ 放大 */
+  transform: translateY(-6px) scale(1.02); /* Apple �����??+ �Ŵ� */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.04);
 }
@@ -861,7 +861,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* 联系区域 */
+/* ��ϵ���� */
 .contact-content {
   text-align: center;
   max-width: 600px;
@@ -894,7 +894,7 @@ body {
   }
 }
 
-/* 按钮 - 完整状态定�?v2.0 */
+/* ��ť - ����״̬��??v2.0 */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -905,10 +905,10 @@ body {
   transition: var(--transition-fast);
   border: none;
   cursor: pointer;
-  min-height: var(--touch-target-min);  /* 触摸目标 �?4px */
+  min-height: var(--touch-target-min);  /* ����Ŀ�� ??4px */
 }
 
-/* 主按�?- 5 种状态完整定�?*/
+/* ����??- 5 ��״̬������??*/
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -942,7 +942,7 @@ body {
   transform: none;
 }
 
-/* 次要按钮 */
+/* ��Ҫ��ť */
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
@@ -981,7 +981,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* AE 特效轮播�?*/
+/* AE ��Ч�ֲ�??*/
 .section-subtitle {
   text-align: center;
   font-size: 17px;
@@ -991,7 +991,7 @@ body {
   font-weight: 400;
 }
 
-/* Apple 风格轮播�?*/
+/* Apple ����ֲ�??*/
 .carousel-container {
   position: relative;
   max-width: 1200px;
@@ -1000,7 +1000,7 @@ body {
   padding: var(--spacing-2xl) 0;
 }
 
-/* 左右渐隐效果 - Apple 风格柔和渐变 */
+/* ���ҽ���Ч�� - Apple �����ͽ��� */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
@@ -1024,7 +1024,7 @@ body {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Apple 风格缓动 */
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Apple ��񻺶� */
   gap: 24px;
 }
 
@@ -1039,13 +1039,13 @@ body {
   opacity: 1;
 }
 
-/* Apple 风格轮播图卡�?*/
+/* Apple ����ֲ�ͼ��??*/
 .carousel-image {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 4:3 比例 */
+  padding-top: 75%; /* 4:3 ���� */
   background-color: var(--color-white);
-  border-radius: var(--radius-md); /* 18px - Apple 中等卡片 */
+  border-radius: var(--radius-md); /* 18px - Apple �еȿ�Ƭ */
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-base) var(--ease-apple); /* 400ms */
@@ -1053,7 +1053,7 @@ body {
 }
 
 .carousel-image:hover {
-  transform: scale(1.0161); /* Apple 官方放大比例 1.61% */
+  transform: scale(1.0161); /* Apple �ٷ��Ŵ���� 1.61% */
   box-shadow: var(--shadow-lg);
 }
 
@@ -1094,7 +1094,7 @@ body {
   font-weight: 400;
 }
 
-/* Apple 风格导航按钮 */
+/* Apple ��񵼺���ť */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -1217,7 +1217,7 @@ body {
   transform: scale(1.2);
 }
 
-/* 联系区域优化 */
+/* ��ϵ�����Ż� */
 .contact-content {
   text-align: center;
   max-width: 800px;
@@ -1348,12 +1348,12 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* 页脚 */
+/* ҳ�� */
 /* ===================================
-   �����ӳ٣�Ԫ�����γ���
+   ??????????????��???
    =================================== */
 
-/* Hero �����ӳ� */
+/* Hero ??????? */
 .hero-title.fade-in-up { transition-delay: 0ms; }
 .hero-subtitle.fade-in-up { transition-delay: 150ms; }
 .hero-tagline.fade-in-up { transition-delay: 300ms; }
@@ -1363,7 +1363,7 @@ body {
 .hero-contact-separator.fade-in-up:nth-of-type(2) { transition-delay: 600ms; }
 .hero-contact-item.fade-in-up:nth-of-type(3) { transition-delay: 650ms; }
 
-/* �����Ұ�� - intro ���������ӳ٣�0ms, 200ms, 400ms, 600ms, 800ms, 1000ms�� */
+/* ???????? - intro ????????????0ms, 200ms, 400ms, 600ms, 800ms, 1000ms?? */
 p.about-intro span.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
 p.about-intro span.fade-in-up:nth-of-type(2) { transition-delay: 200ms; }
 p.about-intro span.fade-in-up:nth-of-type(3) { transition-delay: 400ms; }
@@ -1371,11 +1371,11 @@ p.about-intro span.fade-in-up:nth-of-type(4) { transition-delay: 600ms; }
 p.about-intro span.fade-in-up:nth-of-type(5) { transition-delay: 800ms; }
 p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 
-/* �����Ұ�� - ͳ�������ӳ� */
+/* ???????? - ?????????? */
 .about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 1200ms; }
 .about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1350ms; }
 
-/* ���ļ��ܱ�ǩ�ӳ� */
+/* ???????????? */
 .skills-grid .fade-in-up:nth-child(1) { transition-delay: 1400ms; }
 .skills-grid .fade-in-up:nth-child(2) { transition-delay: 1500ms; }
 .skills-grid .fade-in-up:nth-child(3) { transition-delay: 1600ms; }
@@ -1387,15 +1387,15 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .skills-grid .fade-in-up:nth-child(9) { transition-delay: 2200ms; }
 .skills-grid .fade-in-up:nth-child(10) { transition-delay: 2300ms; }
 
-/* �������ƿ�Ƭ�ӳ� */
-.advantages-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
-.advantages-grid .fade-in-up:nth-child(2) { transition-delay: 150ms; }
-.advantages-grid .fade-in-up:nth-child(3) { transition-delay: 300ms; }
-.advantages-grid .fade-in-up:nth-child(4) { transition-delay: 450ms; }
-.advantages-grid .fade-in-up:nth-child(5) { transition-delay: 600ms; }
-.advantages-grid .fade-in-up:nth-child(6) { transition-delay: 750ms; }
+/* ????????????? */
+.advantages-grid .advantage-card.fade-in-up:nth-child(1) { transition-delay: 1600ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(2) { transition-delay: 1750ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(3) { transition-delay: 1900ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(4) { transition-delay: 2050ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(5) { transition-delay: 2200ms; }
+.advantages-grid .advantage-card.fade-in-up:nth-child(6) { transition-delay: 2350ms; }
 
-/* ��Ƶ��Ƭ�ӳ� */
+/* ????????? */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .video-grid .fade-in-up:nth-child(2) { transition-delay: 80ms; }
 .video-grid .fade-in-up:nth-child(3) { transition-delay: 160ms; }
@@ -1403,8 +1403,8 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .video-grid .fade-in-up:nth-child(5) { transition-delay: 320ms; }
 .video-grid .fade-in-up:nth-child(6) { transition-delay: 400ms; }
 
-/* ���������ӳ� */
-/* 工作经历 - 每个项目依次出现（修复：匹配.experience-item） */
+/* ??????????? */
+/* �������� - ÿ����Ŀ���γ��֣��޸���ƥ��.experience-item�� */
 .experience-timeline .experience-item.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
 .experience-timeline .experience-item.fade-in-up:nth-of-type(2) { transition-delay: 300ms; }
 .experience-timeline .experience-item.fade-in-up:nth-of-type(3) { transition-delay: 600ms; }
@@ -1412,7 +1412,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .experience-timeline .experience-item.fade-in-up:nth-of-type(5) { transition-delay: 1200ms; }
 .experience-timeline .experience-item.fade-in-up:nth-of-type(6) { transition-delay: 1500ms; }
 
-/* 工作经历项目内段落依次出现 */
+/* ����������Ŀ�ڶ������γ��� */
 .experience-item .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 0ms; }
 .experience-item .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 100ms; }
 .experience-item .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 200ms; }
@@ -1422,7 +1422,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .experience-item .experience-details p.fade-in-up:nth-of-type(7) { transition-delay: 600ms; }
 .experience-item .experience-details p.fade-in-up:nth-of-type(8) { transition-delay: 700ms; }
 
-/* �ֲ���Ƭ�ӳ� */
+/* ????????? */
 .carousel-track .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .carousel-track .fade-in-up:nth-child(2) { transition-delay: 100ms; }
 .carousel-track .fade-in-up:nth-child(3) { transition-delay: 200ms; }
@@ -1441,7 +1441,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   color: var(--color-gray-mid);
 }
 
-/* 回到顶部按钮 */
+/* �ص�������ť */
 .back-to-top {
   position: fixed;
   bottom: 40px;
@@ -1491,7 +1491,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   transform: translateY(-2px);
 }
 
-/* 移动端优�?*/
+/* �ƶ�����??*/
 @media (max-width: 767px) {
   .back-to-top {
     bottom: 24px;
@@ -1506,7 +1506,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   }
 }
 
-/* 动画 - Fade In */
+/* ���� - Fade In */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1539,7 +1539,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .video-card:nth-child(5) { animation-delay: 0.5s; }
 .video-card:nth-child(6) { animation-delay: 0.55s; }
 
-/* 移动端优�?*/
+/* �ƶ�����??*/
 @media (max-width: 767px) {
   .hero {
     min-height: 60vh;
@@ -1562,11 +1562,11 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 }
 
 /* ===================================
-   Apple 风格通用入场动画 - Fade In Up
-   所有卡�?内容元素依次淡入上浮
+   Apple ���ͨ���볡���� - Fade In Up
+   ���п�??����Ԫ�����ε����ϸ�
    =================================== */
 
-/* 初始状态：隐藏 + 上浮 30px */
+/* ��ʼ״̬������ + �ϸ� 30px */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -1574,13 +1574,13 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
               transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 触发显示：淡�?+ 复位 */
+/* ������ʾ����??+ ��λ */
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 阶梯延迟：让元素依次出现 */
+/* �����ӳ٣���Ԫ�����γ��� */
 .video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
 .video-grid .fade-in-up:nth-child(2) { transition-delay: 50ms; }
 .video-grid .fade-in-up:nth-child(3) { transition-delay: 100ms; }
@@ -1597,7 +1597,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
    Added: 2026-04-14
    =================================== */
 
-/* 输入�?- 完整状态定�?*/
+/* ����??- ����״̬��??*/
 .input {
   width: 100%;
   padding: 12px 16px;
@@ -1645,7 +1645,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   box-shadow: 0 0 0 4px rgba(52,199,89,0.1);
 }
 
-/* 功能性色彩类 */
+/* ������ɫ���� */
 .text-primary { color: var(--color-primary); }
 .text-secondary { color: var(--color-secondary); }
 .text-success { color: var(--color-success); }
@@ -1665,7 +1665,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .border-error { border-color: var(--color-error); }
 .border-warning { border-color: var(--color-warning); }
 
-/* 状态指示器 */
+/* ״ָ̬ʾ�� */
 .status-dot {
   display: inline-block;
   width: 8px;
@@ -1679,7 +1679,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
 .status-dot.warning { background-color: var(--color-warning); }
 .status-dot.info { background-color: var(--color-info); }
 
-/* 徽章/标签 */
+/* ����/��ǩ */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -1710,7 +1710,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   color: var(--color-warning);
 }
 
-/* 可访问性工具类 */
+/* �ɷ����Թ����� */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1728,7 +1728,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   outline-offset: 2px;
 }
 
-/* 触摸目标优化 */
+/* ����Ŀ���Ż� */
 .touch-target {
   min-width: var(--touch-target-min);
   min-height: var(--touch-target-min);
@@ -1738,7 +1738,7 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   padding: 8px;
 }
 
-/* 响应式工具类 */
+/* ��Ӧʽ������ */
 @media (max-width: 767px) {
   .hide-mobile { display: none !important; }
   .show-mobile { display: block !important; }
@@ -1753,3 +1753,64 @@ p.about-intro span.fade-in-up:nth-of-type(6) { transition-delay: 1000ms; }
   .hide-desktop { display: none !important; }
   .show-desktop { display: block !important; }
 }
+
+
+
+/* ===================================
+   工作经历动画时间轴（修复版）
+   每个工作经历项的内容按顺序出现
+   =================================== */
+
+/* 工作经历 1: 0ms 开始 */
+.experience-timeline .experience-item:nth-of-type(1) .experience-time.fade-in-up { transition-delay: 0ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-company.fade-in-up { transition-delay: 100ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-role.fade-in-up { transition-delay: 200ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 300ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 400ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 500ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(4) { transition-delay: 600ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(5) { transition-delay: 700ms; }
+.experience-timeline .experience-item:nth-of-type(1) .experience-details p.fade-in-up:nth-of-type(6) { transition-delay: 800ms; }
+
+/* 工作经历 2: 900ms 开始 */
+.experience-timeline .experience-item:nth-of-type(2) .experience-time.fade-in-up { transition-delay: 900ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-company.fade-in-up { transition-delay: 1000ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-role.fade-in-up { transition-delay: 1100ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 1200ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 1300ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 1400ms; }
+.experience-timeline .experience-item:nth-of-type(2) .experience-details p.fade-in-up:nth-of-type(4) { transition-delay: 1500ms; }
+
+/* 工作经历 3: 1600ms 开始 */
+.experience-timeline .experience-item:nth-of-type(3) .experience-time.fade-in-up { transition-delay: 1600ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-company.fade-in-up { transition-delay: 1700ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-role.fade-in-up { transition-delay: 1800ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 1900ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 2000ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 2100ms; }
+.experience-timeline .experience-item:nth-of-type(3) .experience-details p.fade-in-up:nth-of-type(4) { transition-delay: 2200ms; }
+
+/* 工作经历 4: 2300ms 开始 */
+.experience-timeline .experience-item:nth-of-type(4) .experience-time.fade-in-up { transition-delay: 2300ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-company.fade-in-up { transition-delay: 2400ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-role.fade-in-up { transition-delay: 2500ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 2600ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 2700ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 2800ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-details p.fade-in-up:nth-of-type(4) { transition-delay: 2900ms; }
+.experience-timeline .experience-item:nth-of-type(4) .experience-details p.fade-in-up:nth-of-type(5) { transition-delay: 3000ms; }
+
+/* 工作经历 5: 3100ms 开始 */
+.experience-timeline .experience-item:nth-of-type(5) .experience-time.fade-in-up { transition-delay: 3100ms; }
+.experience-timeline .experience-item:nth-of-type(5) .experience-company.fade-in-up { transition-delay: 3200ms; }
+.experience-timeline .experience-item:nth-of-type(5) .experience-role.fade-in-up { transition-delay: 3300ms; }
+.experience-timeline .experience-item:nth-of-type(5) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 3400ms; }
+.experience-timeline .experience-item:nth-of-type(5) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 3500ms; }
+.experience-timeline .experience-item:nth-of-type(5) .experience-details p.fade-in-up:nth-of-type(3) { transition-delay: 3600ms; }
+
+/* 工作经历 6: 3700ms 开始 */
+.experience-timeline .experience-item:nth-of-type(6) .experience-time.fade-in-up { transition-delay: 3700ms; }
+.experience-timeline .experience-item:nth-of-type(6) .experience-company.fade-in-up { transition-delay: 3800ms; }
+.experience-timeline .experience-item:nth-of-type(6) .experience-role.fade-in-up { transition-delay: 3900ms; }
+.experience-timeline .experience-item:nth-of-type(6) .experience-details p.fade-in-up:nth-of-type(1) { transition-delay: 4000ms; }
+.experience-timeline .experience-item:nth-of-type(6) .experience-details p.fade-in-up:nth-of-type(2) { transition-delay: 4100ms; }
