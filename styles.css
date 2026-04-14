@@ -1341,6 +1341,76 @@ body {
 }
 
 /* 椤佃剼 */
+/* ===================================
+   阶梯延迟：元素依次出现
+   =================================== */
+
+/* Hero 区域延迟 */
+.hero-title.fade-in-up { transition-delay: 0ms; }
+.hero-subtitle.fade-in-up { transition-delay: 150ms; }
+.hero-tagline.fade-in-up { transition-delay: 300ms; }
+.hero-contact-item.fade-in-up:nth-of-type(1) { transition-delay: 450ms; }
+.hero-contact-separator.fade-in-up:nth-of-type(1) { transition-delay: 500ms; }
+.hero-contact-item.fade-in-up:nth-of-type(2) { transition-delay: 550ms; }
+.hero-contact-separator.fade-in-up:nth-of-type(2) { transition-delay: 600ms; }
+.hero-contact-item.fade-in-up:nth-of-type(3) { transition-delay: 650ms; }
+
+/* 关于我板块 - intro 文字逐行延迟 */
+.about-intro .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.about-intro .fade-in-up:nth-child(2) { transition-delay: 150ms; }
+.about-intro .fade-in-up:nth-child(3) { transition-delay: 300ms; }
+.about-intro .fade-in-up:nth-child(4) { transition-delay: 450ms; }
+.about-intro .fade-in-up:nth-child(5) { transition-delay: 600ms; }
+.about-intro .fade-in-up:nth-child(6) { transition-delay: 750ms; }
+
+/* 关于我板块 - 统计数字延迟 */
+.about-stats-inline .stat-inline.fade-in-up:nth-child(1) { transition-delay: 900ms; }
+.about-stats-inline .stat-inline.fade-in-up:nth-child(2) { transition-delay: 1050ms; }
+
+/* 核心技能标签延迟 */
+.skills-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.skills-grid .fade-in-up:nth-child(2) { transition-delay: 100ms; }
+.skills-grid .fade-in-up:nth-child(3) { transition-delay: 200ms; }
+.skills-grid .fade-in-up:nth-child(4) { transition-delay: 300ms; }
+.skills-grid .fade-in-up:nth-child(5) { transition-delay: 400ms; }
+.skills-grid .fade-in-up:nth-child(6) { transition-delay: 500ms; }
+.skills-grid .fade-in-up:nth-child(7) { transition-delay: 600ms; }
+.skills-grid .fade-in-up:nth-child(8) { transition-delay: 700ms; }
+.skills-grid .fade-in-up:nth-child(9) { transition-delay: 800ms; }
+.skills-grid .fade-in-up:nth-child(10) { transition-delay: 900ms; }
+
+/* 核心优势卡片延迟 */
+.advantages-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.advantages-grid .fade-in-up:nth-child(2) { transition-delay: 150ms; }
+.advantages-grid .fade-in-up:nth-child(3) { transition-delay: 300ms; }
+.advantages-grid .fade-in-up:nth-child(4) { transition-delay: 450ms; }
+.advantages-grid .fade-in-up:nth-child(5) { transition-delay: 600ms; }
+.advantages-grid .fade-in-up:nth-child(6) { transition-delay: 750ms; }
+
+/* 视频卡片延迟 */
+.video-grid .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.video-grid .fade-in-up:nth-child(2) { transition-delay: 80ms; }
+.video-grid .fade-in-up:nth-child(3) { transition-delay: 160ms; }
+.video-grid .fade-in-up:nth-child(4) { transition-delay: 240ms; }
+.video-grid .fade-in-up:nth-child(5) { transition-delay: 320ms; }
+.video-grid .fade-in-up:nth-child(6) { transition-delay: 400ms; }
+
+/* 工作经历延迟 */
+.experience-timeline .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.experience-timeline .fade-in-up:nth-child(2) { transition-delay: 200ms; }
+.experience-timeline .fade-in-up:nth-child(3) { transition-delay: 400ms; }
+.experience-timeline .fade-in-up:nth-child(4) { transition-delay: 600ms; }
+.experience-timeline .fade-in-up:nth-child(5) { transition-delay: 800ms; }
+.experience-timeline .fade-in-up:nth-child(6) { transition-delay: 1000ms; }
+
+/* 轮播卡片延迟 */
+.carousel-track .fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.carousel-track .fade-in-up:nth-child(2) { transition-delay: 100ms; }
+.carousel-track .fade-in-up:nth-child(3) { transition-delay: 200ms; }
+.carousel-track .fade-in-up:nth-child(4) { transition-delay: 300ms; }
+.carousel-track .fade-in-up:nth-child(5) { transition-delay: 400ms; }
+.carousel-track .fade-in-up:nth-child(6) { transition-delay: 500ms; }
+
 .footer {
   background-color: var(--color-off-white);
   padding: var(--spacing-2xl) 0;
