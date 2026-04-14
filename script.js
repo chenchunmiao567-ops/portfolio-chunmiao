@@ -274,7 +274,20 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-          entry.target.classList.add('visible');
+          // 获取元素在父容器中的索引，按顺序添加延迟
+          const parent = entry.target.closest('.section') || entry.target.parentElement;
+          const siblings = parent ? Array.from(parent.querySelectorAll('.fade-in-up')) : [];
+          const index = siblings.indexOf(entry.target);
+          
+          // Apple 标准：100ms 间隔，依次浮现
+          const delay = index >= 0 ? index * 100 : 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          
+          // 动画触发后停止监听，避免重复触发
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
