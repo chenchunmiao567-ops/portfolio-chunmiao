@@ -264,35 +264,51 @@
 
   // ========== 滚动动画 ==========
   function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
+    console.log('🎬 初始化滚动动画...');
     
     const observerOptions = {
       rootMargin: '0px 0px -10% 0px',
       threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-          // 获取元素在父容器中的索引，按顺序添加延迟
-          const parent = entry.target.closest('.section') || entry.target.parentElement;
-          const siblings = parent ? Array.from(parent.querySelectorAll('.fade-in-up')) : [];
-          const index = siblings.indexOf(entry.target);
-          
-          // Apple 标准：100ms 间隔，依次浮现
-          const delay = index >= 0 ? index * 100 : 0;
-          
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-          
-          // 动画触发后停止监听，避免重复触发
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+    // 按容器分组处理，确保每个容器内的元素按 DOM 顺序依次浮现
+    // 包括：.section 和 .about-experience（工作经历板块）
+    const containers = document.querySelectorAll('.section, .about-experience');
+    
+    containers.forEach((container, containerIndex) => {
+      console.log(`  📦 容器 ${containerIndex + 1}:`, container.id || container.className.split(' ')[0]);
+      
+      // 找到该容器内所有需要动画的元素
+      const animatedElements = container.querySelectorAll('.fade-in-up');
+      
+      console.log(`     找到 ${animatedElements.length} 个动画元素`);
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+            // 获取元素在该容器内的 DOM 顺序索引
+            const allElements = Array.from(animatedElements);
+            const index = allElements.indexOf(entry.target);
+            
+            // Apple 标准：100ms 间隔，依次浮现
+            const delay = index >= 0 ? index * 100 : 0;
+            
+            console.log(`    ✅ ${entry.target.tagName} "${(entry.target.textContent || '').slice(0, 20)}..." index=${index}, delay=${delay}ms`);
+            
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+            
+            // 动画触发后停止监听，避免重复触发
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-    animatedElements.forEach(el => observer.observe(el));
+      animatedElements.forEach(el => observer.observe(el));
+    });
+    
+    console.log('✅ 滚动动画初始化完成');
   }
 
   // ========== 回到顶部 ==========
