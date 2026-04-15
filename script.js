@@ -268,7 +268,7 @@
     const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
     
     const observerOptions = {
-      rootMargin: '0px 0px -150px 0px',  // Apple 标准：元素进入视口 150px 时触发
+      rootMargin: '0px 0px 0px 0px',  // 元素底部接触视口底部时立即触发（修复：之前要进入 150px 才触发，导致动画太晚）
       threshold: 0.01                     // 1% 可见就触发（Apple 标准）
     };
 
@@ -295,7 +295,7 @@
               index = siblings.indexOf(entry.target);
             }
           } else if (entry.target.classList.contains('advantage-card')) {
-            // 核心优势卡片：和标题统一分组
+            // 核心优势卡片：和标题统一分组，前 3 个快，后 3 个慢
             const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
             if (section) {
               siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
@@ -326,7 +326,7 @@
             index = siblings.indexOf(entry.target);
           }
           
-          // Apple 标准：100-200ms 间隔，依次浮现（apple-animation-report.md）
+          // Apple 标准：100ms 间隔，依次浮现
           const delay = index >= 0 ? index * 100 : 0;
           
           setTimeout(() => {
