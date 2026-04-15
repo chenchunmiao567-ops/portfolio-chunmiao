@@ -262,24 +262,71 @@
     }
   }
 
-  // ========== 滚动动画 ==========
+  // ========== 滚动动画（Apple 官方标准） ==========
+  // 参数来源：apple-animation-report.md
   function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
     
     const observerOptions = {
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.1
+      rootMargin: '0px 0px -150px 0px',  // Apple 标准：元素进入视口 150px 时触发
+      threshold: 0.01                     // 1% 可见就触发（Apple 标准）
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-          // 获取元素在父容器中的索引，按顺序添加延迟
-          const parent = entry.target.closest('.section') || entry.target.parentElement;
-          const siblings = parent ? Array.from(parent.querySelectorAll('.fade-in-up')) : [];
-          const index = siblings.indexOf(entry.target);
+          // ✅ 按板块类型精确分组
+          let siblings;
+          let index = -1;
           
-          // Apple 标准：100ms 间隔，依次浮现
+          if (entry.target.classList.contains('skill-tag')) {
+            // 核心技能：按 data-order 排序
+            const skillsContainer = entry.target.closest('.skills-grid');
+            if (skillsContainer) {
+              siblings = Array.from(skillsContainer.querySelectorAll('.skill-tag[data-order]'));
+              siblings.sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
+              index = siblings.indexOf(entry.target);
+            }
+          } else if (entry.target.classList.contains('advantages-title')) {
+            // 核心优势标题：和卡片统一分组，标题索引 0，卡片索引 1-6
+            const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
+            if (section) {
+              siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
+              index = siblings.indexOf(entry.target);
+            }
+          } else if (entry.target.classList.contains('advantage-card')) {
+            // 核心优势卡片：和标题统一分组
+            const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
+            if (section) {
+              siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
+              index = siblings.indexOf(entry.target);
+            }
+          } else if (entry.target.closest('.experience-item')) {
+            // 工作经历：分层计算
+            const experienceItem = entry.target.closest('.experience-item');
+            
+            if (entry.target.closest('.experience-details')) {
+              // 在项目描述内部：只计算 p 标签，按 DOM 顺序
+              const details = entry.target.closest('.experience-details');
+              const ps = Array.from(details.querySelectorAll('p.fade-in-up'));
+              index = ps.indexOf(entry.target);
+              siblings = ps;
+            } else {
+              // 在外层：时间、公司、职位
+              const outerElements = Array.from(experienceItem.children).filter(
+                el => el.classList.contains('fade-in-up') && !el.classList.contains('experience-details')
+              );
+              index = outerElements.indexOf(entry.target);
+              siblings = outerElements;
+            }
+          } else {
+            // 其他板块：按 section 分组
+            const parent = entry.target.closest('.section') || entry.target.parentElement;
+            siblings = parent ? Array.from(parent.querySelectorAll('.fade-in-up')) : [];
+            index = siblings.indexOf(entry.target);
+          }
+          
+          // Apple 标准：100-200ms 间隔，依次浮现（apple-animation-report.md）
           const delay = index >= 0 ? index * 100 : 0;
           
           setTimeout(() => {

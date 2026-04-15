@@ -377,6 +377,7 @@ body {
   gap: var(--spacing-md);
 }
 
+/* ✅ 核心技能标签基础样式 */
 .skill-tag {
   padding: 16px 24px;
   background: transparent;
@@ -390,11 +391,10 @@ body {
   position: relative;
 }
 
-.skill-tag.skill-slide-in {
+/* ✅ 核心技能标签 + fade-in-up：Apple 标准动画初始状态 */
+.skill-tag.fade-in-up {
   opacity: 0;
-  animation: skillSlideIn 1000ms var(--ease-apple) forwards;
-  animation-delay: var(--delay, 0ms);
-  will-change: opacity, transform;
+  transform: translateY(40px);  /* Apple 标准：从下方 40px 上浮 */
 }
 
 .skill-tag:hover {
@@ -403,25 +403,6 @@ body {
   border-color: var(--color-gray-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Apple 风格阶梯式动效
-   参考：https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
-   缓动曲线：cubic-bezier(0.16, 1, 0.3, 1) - Apple 官方缓动
-   时长：1000ms - 舒缓优雅
-   延迟：每元素递增 120ms - 形成流畅节奏
-   位移：40px - 明显但不夸张
-   缩放：0.96 → 1 - 轻微放大
-*/
-@keyframes skillSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 
 /* 核心优势 */
@@ -471,6 +452,14 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   will-change: transform, box-shadow;
+}
+
+/* ✅ 核心优势卡片 + fade-in-up：Apple 标准动画初始状态 */
+.advantage-card.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);  /* Apple 标准：上浮 + 轻微缩放 */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .advantage-card:hover {
@@ -719,20 +708,43 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* 视频封面图（B 站官方 API） */
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;  /* 确保在渐变背景之上 */
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);  /* hover 时轻微放大 */
+}
+
+/* 确保缩略图容器在图片加载失败时显示渐变背景 */
+.video-thumbnail {
+  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+}
+
 .thumbnail-placeholder {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.2);  /* 更透明 */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition-normal);
+  opacity: 0;  /* 默认隐藏 */
 }
 
 .video-card:hover .thumbnail-placeholder {
   background: var(--color-white);
   transform: scale(1.1);
+  opacity: 1;  /* hover 时显示 */
 }
 
 .play-icon {
@@ -740,6 +752,7 @@ body {
   height: 32px;
   color: var(--color-red);
   margin-left: 4px;
+  opacity: 0.8;  /* 半透明效果 */
 }
 
 .video-info {
@@ -1208,24 +1221,18 @@ body {
   transform: translateY(-2px);
 }
 
-/* 动画 - Fade In Up（统一入场动画，带错开延迟） */
+/* 动画 - Fade In Up（Apple 官方标准） */
+/* 参数来源：apple-animation-report.md + apple-design-system-report.md */
 .fade-in-up,
 .section-title,
 .section-subtitle {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(40px);  /* Apple 标准：从下方 40px 上浮 */
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),  /* Apple 高级缓动曲线 */
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 依次出现的延迟 */
-.fade-in-up:nth-child(1) { transition-delay: 0ms; }
-.fade-in-up:nth-child(2) { transition-delay: 80ms; }
-.fade-in-up:nth-child(3) { transition-delay: 160ms; }
-.fade-in-up:nth-child(4) { transition-delay: 240ms; }
-.fade-in-up:nth-child(5) { transition-delay: 320ms; }
-.fade-in-up:nth-child(6) { transition-delay: 400ms; }
-
+/* ✅ 添加 visible 类后显示（JS 完全控制，移除 CSS 自动延迟） */
 .fade-in-up.visible,
 .section-title.visible,
 .section-subtitle.visible {

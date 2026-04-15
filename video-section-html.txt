@@ -1,0 +1,326 @@
+<!-- 品牌宣传片 -->
+  <section id="brand" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in-up">品牌宣传片</h2>
+      <p class="section-subtitle fade-in-up">为华为企业业务、思谋科技等品牌打造的形象宣传片</p>
+      <div class="video-grid">
+        
+        <!-- 视频卡片 1：华为企业业务形象片 -->
+        <article class="video-card fade-in-up" data-bvid="BV1WiegzMECE" data-time="108.8">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1WiegzMECE?t=108.8" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">华为企业业务形象片</h3>
+            <p class="video-desc">为华为企业业务打造的年度品牌形象片，通过真实的案例数据、覆盖行业传递品牌温度</p>
+            <div class="video-tags">
+              <span class="tag">策划</span>
+              <span class="tag">收集素材</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">字幕制作</span>
+            </div>
+            <span class="video-date">2021.09</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 2：云中苏大 -->
+        <article class="video-card fade-in-up" data-bvid="BV12hegzrEU9" data-time="2.1">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV12hegzrEU9?t=2.1" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">云中苏大</h3>
+            <p class="video-desc">为华为企业业务打造的案例宣传品牌形象片，通过云中苏大光网络真实的案例，为其他潜在客户提供了有效的数据支撑，强化了客户信任</p>
+            <div class="video-tags">
+              <span class="tag">策划</span>
+              <span class="tag">相机拍摄</span>
+              <span class="tag">无人机拍摄</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">字幕制作</span>
+            </div>
+            <span class="video-date">2023.05</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 3：行业数字化转型大会 - 预告视频 -->
+        <article class="video-card fade-in-up" data-bvid="BV1WiegzMErt" data-time="1.4">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1WiegzMErt?t=1.4" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">行业数字化转型大会 - 预告视频</h3>
+            <p class="video-desc">为行业数字化转型大会制作的预告宣传片</p>
+            <div class="video-tags">
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">字幕制作</span>
+            </div>
+            <span class="video-date">2021.03</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 4：共创行业新价值 -->
+        <article class="video-card fade-in-up" data-bvid="BV1KYegz3Ecb" data-time="0.5">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1KYegz3Ecb?t=0.5" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">共创行业新价值</h3>
+            <p class="video-desc">强化了华为企业业务始终与客户伙伴携手创造新价值的理念，增强了客户选择华为的信心</p>
+            <div class="video-tags">
+              <span class="tag">剪辑</span>
+            </div>
+            <span class="video-date">2021.05</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 5：田刚院士谈数学人才的机遇与选择 -->
+        <article class="video-card fade-in-up" data-bvid="BV1GGukzmEQd" data-time="71.1">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1GGukzmEQd?t=71.1" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">【茶思下午茶】田刚院士谈数学人才的机遇与选择</h3>
+            <p class="video-desc">中科院院士 - 田刚院士访谈</p>
+            <div class="video-tags">
+              <span class="tag">拍摄</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">中英字幕制作</span>
+              <span class="tag">内容梳理</span>
+            </div>
+            <span class="video-date">2023.06</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 6：彭实戈院士的数学人生 -->
+        <article class="video-card fade-in-up" data-bvid="BV1vjp9zDEsA" data-time="104.0">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1vjp9zDEsA?t=104.0" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">【茶思下午茶】彭实戈院士的数学人生</h3>
+            <p class="video-desc">中科院院士 - 彭实戈院士访谈</p>
+            <div class="video-tags">
+              <span class="tag">拍摄</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">中英字幕制作</span>
+              <span class="tag">内容梳理</span>
+            </div>
+            <span class="video-date">2023.08</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 7：Mérouane Debbah：大模型驱动下，通信技术是否面临范式重塑？ -->
+        <article class="video-card fade-in-up" data-bvid="BV1adX6YGEJv" data-time="34.4">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1adX6YGEJv?t=34.4" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">【茶思下午茶】Mérouane Debbah：大模型驱动下，通信技术是否面临范式重塑？</h3>
+            <p class="video-desc">阿联酋哈利法科技大学教授访谈</p>
+            <div class="video-tags">
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">中英字幕制作</span>
+              <span class="tag">内容梳理</span>
+            </div>
+            <span class="video-date">2023.08</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 8：思谋制造 - 小磁材缺陷检测 -->
+        <article class="video-card fade-in-up" data-bvid="BV1eXvAzME4i" data-time="7.3">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1eXvAzME4i?t=7.3" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">思谋制造 - 小磁材缺陷检测</h3>
+            <p class="video-desc">展示思谋科技自研 smore vimo 平台结合硬件，缺陷检测方案，能为客户解决小磁材缺陷检测难题</p>
+            <div class="video-tags">
+              <span class="tag">拍摄</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+              <span class="tag">字幕制作</span>
+            </div>
+            <span class="video-date">2022.05</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 9：SMT 智能一体机是什么 -->
+        <article class="video-card fade-in-up" data-bvid="BV15XvAzMEcu" data-time="4.7">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV15XvAzMEcu?t=4.7" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">SMT 智能一体机是什么</h3>
+            <p class="video-desc">展示思谋科技智能一体化设备 -SMT 料盘智能读码贴标机工作流程</p>
+            <div class="video-tags">
+              <span class="tag">拍摄</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+              <span class="tag">特效包装</span>
+            </div>
+            <span class="video-date">2022.08</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 三维动画 -->
+  <section id="3d" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in-up">三维动画</h2>
+      <p class="section-subtitle fade-in-up">三维建模、产品动画、特效制作</p>
+      <div class="video-grid">
+        
+        <!-- 视频卡片 10：三维合集 -->
+        <article class="video-card fade-in-up" data-bvid="BV1tgvkBJEn8" data-time="23.2">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1tgvkBJEn8?t=23.2" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">三维合集</h3>
+            <p class="video-desc">三维合集作品混剪</p>
+            <div class="video-tags">
+              <span class="tag">建模</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+            </div>
+            <span class="video-date">2025.07</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 11：小米音响 -->
+        <article class="video-card fade-in-up" data-bvid="BV1J2egzhEK5" data-time="3.3">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1J2egzhEK5?t=3.3" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">小米音响</h3>
+            <p class="video-desc">三维音响产品动画展示</p>
+            <div class="video-tags">
+              <span class="tag">三维制作</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+            </div>
+            <span class="video-date">2021.03</span>
+          </div>
+        </article>
+
+        <!-- 视频卡片 12：思谋科技 VN800 -->
+        <article class="video-card fade-in-up" data-bvid="BV1TgvkBJER3" data-time="1.4">
+          <div class="video-thumbnail">
+            <div class="thumbnail-placeholder">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <a href="https://www.bilibili.com/video/BV1TgvkBJER3?t=1.4" target="_blank" class="video-link" title="点击跳转到 B 站观看">
+              <span class="sr-only">观看视频</span>
+            </a>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">思谋科技 VN800</h3>
+            <p class="video-desc">思谋科技 VN800 扫码检测设备三维动画</p>
+            <div class="video-tags">
+              <span class="tag">三维制作</span>
+              <span class="tag">剪辑</span>
+              <span class="tag">调色</span>
+            </div>
+            <span class="video-date">2021.03</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
