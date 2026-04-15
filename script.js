@@ -268,7 +268,7 @@
     const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
     
     const observerOptions = {
-      rootMargin: '0px 0px -150px 0px',  // Apple 标准：元素进入视口 150px 时触发
+      rootMargin: '0px 0px 0px 0px',  // 元素底部接触视口底部时立即触发（修复：之前要进入 150px 才触发，导致动画太晚）
       threshold: 0.01                     // 1% 可见就触发（Apple 标准）
     };
 
