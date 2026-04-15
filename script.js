@@ -313,23 +313,11 @@
               index = siblings.indexOf(entry.target);
             }
           } else if (entry.target.closest('.experience-item')) {
-            // 工作经历：分层计算
+            // 工作经历：统一按 DOM 顺序计算（时间→公司→职位→项目 1→服务对象→项目 2→...）
             const experienceItem = entry.target.closest('.experience-item');
-            
-            if (entry.target.closest('.experience-details')) {
-              // 在项目描述内部：只计算 p 标签，按 DOM 顺序
-              const details = entry.target.closest('.experience-details');
-              const ps = Array.from(details.querySelectorAll('p.fade-in-up'));
-              index = ps.indexOf(entry.target);
-              siblings = ps;
-            } else {
-              // 在外层：时间、公司、职位
-              const outerElements = Array.from(experienceItem.children).filter(
-                el => el.classList.contains('fade-in-up') && !el.classList.contains('experience-details')
-              );
-              index = outerElements.indexOf(entry.target);
-              siblings = outerElements;
-            }
+            const allElements = Array.from(experienceItem.querySelectorAll(':scope > .fade-in-up, :scope .experience-details p.fade-in-up'));
+            index = allElements.indexOf(entry.target);
+            siblings = allElements;
           } else {
             // 其他板块：按 section 分组
             const parent = entry.target.closest('.section') || entry.target.parentElement;
