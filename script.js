@@ -279,17 +279,24 @@
           let siblings;
           let index = -1;
           
-          if (entry.target.classList.contains('skills-title')) {
-            // 核心技能标题：最先进入（索引 0）
-            index = 0;
+          if (entry.target.classList.contains('stat-inline')) {
+            // 统计数据：最先进入（索引 0-1）
+            const statsContainer = entry.target.closest('.about-stats-inline');
+            if (statsContainer) {
+              siblings = Array.from(statsContainer.querySelectorAll('.stat-inline'));
+              index = siblings.indexOf(entry.target);
+            }
+          } else if (entry.target.classList.contains('skills-title')) {
+            // 核心技能标题：在统计数据之后（索引 2）
+            index = 2;
             siblings = [entry.target];
           } else if (entry.target.classList.contains('skill-tag')) {
-            // 核心技能标签：按 data-order 排序（标签 1-10，延迟 100-1000ms）
+            // 核心技能标签：按 data-order 排序（标签 1-10，延迟 300-1200ms）
             const skillsContainer = entry.target.closest('.skills-grid');
             if (skillsContainer) {
               siblings = Array.from(skillsContainer.querySelectorAll('.skill-tag[data-order]'));
               siblings.sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
-              index = siblings.indexOf(entry.target) + 1;  // +1 因为标题是索引 0
+              index = siblings.indexOf(entry.target) + 3;  // +3 因为统计数据 2 个 + 标题 1 个
             }
           } else if (entry.target.classList.contains('advantages-title')) {
             // 核心优势标题：和卡片统一分组，标题索引 0，卡片索引 1-6
