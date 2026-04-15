@@ -295,7 +295,7 @@
               index = siblings.indexOf(entry.target);
             }
           } else if (entry.target.classList.contains('advantage-card')) {
-            // 核心优势卡片：和标题统一分组
+            // 核心优势卡片：和标题统一分组，前 3 个快，后 3 个慢
             const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
             if (section) {
               siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
@@ -327,7 +327,11 @@
           }
           
           // Apple 标准：100-200ms 间隔，依次浮现（apple-animation-report.md）
-          const delay = index >= 0 ? index * 100 : 0;
+          // 核心优势卡片：前 3 个快（100ms），后 3 个慢（150ms）
+          let delay = index >= 0 ? index * 100 : 0;
+          if (entry.target.classList.contains('advantage-card') && index > 4) {
+            delay = 300 + (index - 4) * 150;  // 后 3 个卡片延迟更长
+          }
           
           setTimeout(() => {
             entry.target.classList.add('visible');
