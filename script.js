@@ -326,12 +326,8 @@
             index = siblings.indexOf(entry.target);
           }
           
-          // Apple 标准：100-200ms 间隔，依次浮现（apple-animation-report.md）
-          // 核心优势卡片：前 3 个快（100ms），后 3 个慢（150ms）
-          let delay = index >= 0 ? index * 100 : 0;
-          if (entry.target.classList.contains('advantage-card') && index > 4) {
-            delay = 300 + (index - 4) * 150;  // 后 3 个卡片延迟更长
-          }
+          // Apple 标准：100ms 间隔，依次浮现
+          const delay = index >= 0 ? index * 100 : 0;
           
           setTimeout(() => {
             entry.target.classList.add('visible');
