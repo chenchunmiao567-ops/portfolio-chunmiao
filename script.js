@@ -279,13 +279,17 @@
           let siblings;
           let index = -1;
           
-          if (entry.target.classList.contains('skill-tag')) {
-            // 核心技能：按 data-order 排序
+          if (entry.target.classList.contains('skills-title')) {
+            // 核心技能标题：最先进入（索引 0）
+            index = 0;
+            siblings = [entry.target];
+          } else if (entry.target.classList.contains('skill-tag')) {
+            // 核心技能标签：按 data-order 排序（标签 1-10，延迟 100-1000ms）
             const skillsContainer = entry.target.closest('.skills-grid');
             if (skillsContainer) {
               siblings = Array.from(skillsContainer.querySelectorAll('.skill-tag[data-order]'));
               siblings.sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
-              index = siblings.indexOf(entry.target);
+              index = siblings.indexOf(entry.target) + 1;  // +1 因为标题是索引 0
             }
           } else if (entry.target.classList.contains('advantages-title')) {
             // 核心优势标题：和卡片统一分组，标题索引 0，卡片索引 1-6
