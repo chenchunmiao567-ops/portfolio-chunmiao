@@ -1328,3 +1328,97 @@ body {
   .hide-desktop { display: none !important; }
   .show-desktop { display: block !important; }
 }
+
+/* ========== 折叠展开样式（工作经历优化） ========== */
+.expand-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-off-white);
+  border: none;
+  border-radius: 980px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-apple);
+  margin-top: 16px;
+}
+
+.expand-toggle:hover {
+  background: #E8E8ED;
+  transform: scale(1.02);
+}
+
+.expand-toggle .arrow {
+  transition: transform 0.3s var(--ease-apple);
+}
+
+.expand-toggle.active .arrow {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s var(--ease-apple);
+}
+
+.collapsible-content.expanded {
+  max-height: 5000px;
+}
+
+.project-summary {
+  background: var(--color-off-white);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.project-summary h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-gray-dark);
+  margin-bottom: 12px;
+}
+
+.project-summary p {
+  font-size: 15px;
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
+
+.project-details {
+  padding: 24px;
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+.project-details h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-gray-dark);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.detail-section {
+  margin-bottom: 16px;
+}
+
+.detail-section strong {
+  display: inline-block;
+  min-width: 70px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.detail-section span {
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
