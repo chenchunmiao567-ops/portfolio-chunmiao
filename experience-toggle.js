@@ -1,4 +1,4 @@
-// 折叠展开功能（Apple 风格优化 v2）
+// 折叠展开功能（Apple 风格优化 v3 - 标题优雅淡入）
 function toggleDetails(button) {
   const content = button.nextElementSibling;
   const isExpanded = content.classList.contains('expanded');
@@ -21,6 +21,10 @@ function toggleDetails(button) {
       }, index * 50); // 快速收起
     });
     
+    // 移除标题 visible
+    const titles = content.querySelectorAll('h4');
+    titles.forEach(title => title.classList.remove('visible'));
+    
     // 等内容隐藏后再收缩高度
     setTimeout(() => {
       content.classList.remove('expanded');
@@ -30,40 +34,60 @@ function toggleDetails(button) {
     button.classList.add('active');
     content.classList.add('expanded');
     
-    // Apple 式动画：高度展开过程中，内容逐行优雅淡入
-    animateDetailSectionsAppleStyleV2(content);
+    // Apple 式动画：高度展开过程中，标题和内容依次优雅淡入
+    animateDetailSectionsAppleStyleV3(content);
   }
 }
 
-// Apple 风格的逐行动画 v2（更流畅优雅）
-function animateDetailSectionsAppleStyleV2(container) {
-  const sections = container.querySelectorAll('.detail-section');
+// Apple 风格的逐行动画 v3（标题 + 内容依次优雅淡入）
+function animateDetailSectionsAppleStyleV3(container) {
+  const projectDetails = container.querySelectorAll('.project-details');
   
-  // 重置所有 section 的状态
-  sections.forEach(section => {
-    section.classList.remove('visible');
+  // 重置所有状态
+  projectDetails.forEach(details => {
+    const h4 = details.querySelector('h4');
+    const sections = details.querySelectorAll('.detail-section');
+    
+    if (h4) h4.classList.remove('visible');
+    sections.forEach(section => section.classList.remove('visible'));
   });
   
   // 强制浏览器重排
   void container.offsetWidth;
   
-  // Apple 设计原则：
-  // 1. 高度展开到 40% 时开始第一行淡入
-  // 2. 每行间隔 150ms（更从容的节奏）
-  // 3. 使用更柔和的缓动曲线
+  // Apple 式动画流程：
+  // 1. 高度开始展开
+  // 2. 展开到 30% 时，标题淡入
+  // 3. 标题出现后 200ms，第一行内容淡入
+  // 4. 内容逐行淡入（每行 150ms）
   
-  let animationStarted = false;
+  let titleShown = false;
+  let contentStarted = false;
   let startTime = null;
-  const startThreshold = 0.4; // 40% 高度时开始
   
   function animateExpand(timestamp) {
     if (!startTime) startTime = timestamp;
     const progress = (timestamp - startTime) / 800; // 800ms 总展开时间
     
-    // 当展开到 40% 时开始淡入
-    if (!animationStarted && progress >= startThreshold) {
-      animationStarted = true;
-      startFadeInAnimation(sections);
+    // 展开到 30% 时，标题淡入
+    if (!titleShown && progress >= 0.3) {
+      titleShown = true;
+      projectDetails.forEach(details => {
+        const h4 = details.querySelector('h4');
+        if (h4) {
+          // 强制重排后添加 visible
+          void h4.offsetWidth;
+          h4.classList.add('visible');
+        }
+      });
+    }
+    
+    // 标题出现后 200ms，开始内容淡入
+    if (titleShown && !contentStarted) {
+      contentStarted = true;
+      setTimeout(() => {
+        startFadeInAnimationV3(projectDetails);
+      }, 200);
     }
     
     // 继续动画直到完成
@@ -75,16 +99,24 @@ function animateDetailSectionsAppleStyleV2(container) {
   requestAnimationFrame(animateExpand);
 }
 
-// 逐行淡入动画（更优雅的节奏）
-function startFadeInAnimation(sections) {
-  sections.forEach((section, index) => {
-    setTimeout(() => {
-      section.classList.add('visible');
-    }, index * 150); // 每行间隔 150ms，更从容
+// 逐行淡入动画 v3（标题先行，内容随后）
+function startFadeInAnimationV3(projectDetailsList) {
+  projectDetailsList.forEach((details, detailsIndex) => {
+    const sections = details.querySelectorAll('.detail-section');
+    
+    sections.forEach((section, index) => {
+      // 强制重排
+      void section.offsetWidth;
+      
+      // 逐行淡入
+      setTimeout(() => {
+        section.classList.add('visible');
+      }, index * 150); // 每行间隔 150ms
+    });
   });
 }
 
 // 页面加载后初始化
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('工作经历折叠功能已加载 - Apple 风格 v2');
+  console.log('工作经历折叠功能已加载 - Apple 风格 v3');
 });
