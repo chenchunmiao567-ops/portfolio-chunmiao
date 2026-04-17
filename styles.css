@@ -1411,14 +1411,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s var(--ease-apple), transform 0.4s var(--ease-apple);
-}
-
-.detail-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+  /* 初始状态由 JS 控制，确保收起时不可见 */
 }
 
 .detail-section:last-child {

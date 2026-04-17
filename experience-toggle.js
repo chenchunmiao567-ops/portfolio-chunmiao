@@ -7,12 +7,16 @@ function toggleDetails(button) {
   content.classList.toggle('expanded');
   button.classList.toggle('active');
   
-  // 更新按钮文字
-  const textNode = button.childNodes[0];
-  if (isExpanded) {
-    textNode.textContent = '查看完整项目详情 ';
-  } else {
-    textNode.textContent = '收起详情 ';
+  // 更新按钮文字（统一为"项目详情"）
+  const textSpan = button.querySelector('.btn-text');
+  if (textSpan) {
+    if (isExpanded) {
+      textSpan.textContent = '项目详情';
+      button.classList.remove('active');
+    } else {
+      textSpan.textContent = '项目详情';
+      button.classList.add('active');
+    }
   }
   
   // 展开时：逐行显示内容
@@ -21,18 +25,23 @@ function toggleDetails(button) {
   }
 }
 
-// 逐行动画函数
+// 逐行动画函数（与主页面一致的缓动上浮效果）
 function animateDetailSections(container) {
   const sections = container.querySelectorAll('.detail-section');
   
+  // 先重置所有section 的状态（确保动画可重复触发）
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+  });
+  
+  // 逐行触发动画
   sections.forEach((section, index) => {
-    // 清除之前的动画状态
-    section.classList.remove('visible');
-    
-    // 延迟显示（每行间隔 100ms）
     setTimeout(() => {
-      section.classList.add('visible');
-    }, index * 100);
+      section.style.opacity = '1';
+      section.style.transform = 'translateY(0)';
+    }, index * 120); // 每行间隔 120ms
   });
 }
 
