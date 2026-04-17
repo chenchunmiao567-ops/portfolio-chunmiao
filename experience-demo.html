@@ -90,6 +90,38 @@
           <span>最终视频在展会主展区循环播放，该视频后续被作为标杆素材，应用于多个营销渠道，成为海外市场拓展的关键品牌背书资产。</span>
         </div>
       </div>
+      
+      <div class="project-details">
+        <h4>项目二：华为全联接大会（HC 大会）全流程影像服务</h4>
+        <div class="detail-section">
+          <strong>背景：</strong>
+          <span>为年度旗舰活动"华为全联接大会"提供全周期影像支持，用于全球传播与客户转化。</span>
+        </div>
+        <div class="detail-section">
+          <strong>职责：</strong>
+          <span>前期 - 策划搭建、花絮拍摄脚本，组织团队分工并协调外部供应商完成拍摄、独立完成搭建视频；现场 - 重点客户参观跟拍；同步记录客户参观动态，实时整理影像素材；后期 - 按传播场景分类梳理素材，为社媒宣传提供即剪即用的内容基础。</span>
+        </div>
+        <div class="detail-section">
+          <strong>成果：</strong>
+          <span>高效响应与资产沉淀：针对管理层对会场搭建经验沉淀的特定需求，主导团队在一周内高效完成从策划到成片的全流程，视频作为关键过程资产用于内部复盘与知识传承。敏捷交付与标准建立：在华为全联接大会中，面对紧急需求，12 小时内完成搭建花絮的紧急成片，其成功经验被固化为标准操作流程，提升了团队整体应急响应能力。</span>
+        </div>
+      </div>
+      
+      <div class="project-details">
+        <h4>项目三：巴塞罗那世界移动通信大会（MWC）客户证言视频制作与产品发布协同（海外展会项目）</h4>
+        <div class="detail-section">
+          <strong>背景：</strong>
+          <span>为公司在全球顶级行业展会——巴塞罗那 MWC 上的品牌亮相，制作符合国际传播标准的客户证言视频及产品发布视频，核心目标为提升品牌在 EMEA（欧洲、中东、非洲）市场的认知度与信任度。</span>
+        </div>
+        <div class="detail-section">
+          <strong>职责：</strong>
+          <span>基于展会传播诉求，设计制作客户证言 keynote 视频；协助团队对接供应商完成视频，全程指导特效风格与内容呈现，确保品牌在内容层面视觉与体验层面、合规层面、素材使用层面符合海外传播标准。</span>
+        </div>
+        <div class="detail-section">
+          <strong>成果：</strong>
+          <span>最终视频在展会主展区循环播放，该视频后续被作为标杆素材，应用于多个营销渠道，成为海外市场拓展的关键品牌背书资产。</span>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -107,6 +139,22 @@
       } else {
         textNode.textContent = '收起详情 ';
       }
+      
+      // 展开时：逐行显示内容
+      if (!isExpanded) {
+        animateDetailSections(content);
+      }
+    }
+    
+    function animateDetailSections(container) {
+      const sections = container.querySelectorAll('.detail-section');
+      
+      sections.forEach((section, index) => {
+        section.classList.remove('visible');
+        setTimeout(() => {
+          section.classList.add('visible');
+        }, index * 100);
+      });
     }
   </script>
 </body>

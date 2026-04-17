@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作经历优化脚本</title>
+</head>
+<body>
+  <h1>工作经历优化 - 折叠展开式</h1>
+  <p>请按以下结构手动更新 index.html 中的工作经历部分：</p>
+  
+  <h2>结构示例（华为技术 2023.3-2025.6）</h2>
+  <pre>
+&lt;div class="experience-item"&gt;
+  &lt;div class="experience-time fade-in-up"&gt;2023.03 - 2025.06&lt;/div&gt;
+  &lt;div class="experience-company fade-in-up"&gt;华为技术有限公司 企业业务品牌部/茶思屋科技网站&lt;/div&gt;
+  &lt;div class="experience-role fade-in-up"&gt;视频编辑&lt;/div&gt;
+  
+  &lt;!-- 摘要（固定显示）--&gt;
+  &lt;div class="project-summary"&gt;
+    &lt;h4&gt;核心项目&lt;/h4&gt;
+    &lt;p&gt;• 华为茶思下午茶高端访谈栏目：打造高质量科学家访谈栏目，通过数据驱动优化实现视频浏览量提升 1973.6%&lt;/p&gt;
+    &lt;p&gt;• 华为全联接大会全流程影像服务：12 小时内完成紧急成片，成功经验固化为标准操作流程&lt;/p&gt;
+    &lt;p&gt;• 巴塞罗那 MWC 客户证言视频：视频成为海外市场拓展的关键品牌背书资产&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- 详情（折叠，点击展开）--&gt;
+  &lt;button class="expand-toggle" onclick="toggleDetails(this)"&gt;
+    查看完整项目详情
+    &lt;svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M6 9l6 6 6-6"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  
+  &lt;div class="collapsible-content"&gt;
+    &lt;div class="project-details"&gt;
+      &lt;h4&gt;项目一：华为茶思下午茶高端访谈栏目&lt;/h4&gt;
+      &lt;div class="detail-section"&gt;
+        &lt;strong&gt;背景：&lt;/strong&gt;
+        &lt;span&gt;为提升华为黄大年茶思屋科技网站在全球顶尖科学家群体中的影响力，打造高质量访谈栏目。&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="detail-section"&gt;
+        &lt;strong&gt;职责：&lt;/strong&gt;
+        &lt;span&gt;项目主导，负责茶思下午茶栏目板块内容全流程制作与运营（策划、拍摄、后期、数据复盘）。&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="detail-section"&gt;
+        &lt;strong&gt;行动：&lt;/strong&gt;
+        &lt;span&gt;全流程主导，独立完成从嘉宾访谈拍摄到后期剪辑、AE 动效包装及文案梳理的全过程。数据驱动优化：系统性分析用户浏览数据，针对栏目中 Mérouane Debbah 教授技术访谈在 B 站播放量较低（282 次）的情况，总结出"技术内容需优化叙事结构"的经验。&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="detail-section"&gt;
+        &lt;strong&gt;成果：&lt;/strong&gt;
+        &lt;span&gt;主导的「田刚院士谈数学人才的机遇与选择」视频在 B 站获得 5848 次播放，在【茶思下午茶】栏目中排名第二，通过分析优化有效提升了同类型视频浏览量（1973.6%）与专业调性。&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- 其他项目同理... --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </pre>
+  
+  <h2>JavaScript 函数（添加到 script.js 末尾）</h2>
+  <pre>
+function toggleDetails(button) {
+  const content = button.nextElementSibling;
+  const isExpanded = content.classList.contains('expanded');
+  
+  // 切换状态
+  content.classList.toggle('expanded');
+  button.classList.toggle('active');
+  
+  // 更新按钮文字
+  if (isExpanded) {
+    button.childNodes[0].textContent = '查看完整项目详情 ';
+  } else {
+    button.childNodes[0].textContent = '收起详情 ';
+  }
+}
+  </pre>
+</body>
+</html>

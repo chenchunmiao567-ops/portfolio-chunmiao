@@ -14,6 +14,26 @@ function toggleDetails(button) {
   } else {
     textNode.textContent = '收起详情 ';
   }
+  
+  // 展开时：逐行显示内容
+  if (!isExpanded) {
+    animateDetailSections(content);
+  }
+}
+
+// 逐行动画函数
+function animateDetailSections(container) {
+  const sections = container.querySelectorAll('.detail-section');
+  
+  sections.forEach((section, index) => {
+    // 清除之前的动画状态
+    section.classList.remove('visible');
+    
+    // 延迟显示（每行间隔 100ms）
+    setTimeout(() => {
+      section.classList.add('visible');
+    }, index * 100);
+  });
 }
 
 // 页面加载后初始化
