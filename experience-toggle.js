@@ -14,9 +14,18 @@ function toggleDetails(button) {
     button.classList.remove('active');
     
     // 淡出所有内容
+    const projectDetails = content.querySelectorAll('.project-details');
     const titles = content.querySelectorAll('h4');
     const sections = content.querySelectorAll('.detail-section');
     
+    // 先淡出文本框
+    projectDetails.forEach((details, index) => {
+      setTimeout(() => {
+        details.classList.remove('visible');
+      }, index * 50);
+    });
+    
+    // 再淡出标题和内容
     titles.forEach(title => title.classList.remove('visible'));
     sections.forEach((section, index) => {
       setTimeout(() => {
@@ -27,7 +36,7 @@ function toggleDetails(button) {
     // 等淡出完成后再收缩高度
     setTimeout(() => {
       content.classList.remove('expanded');
-    }, 400);
+    }, 500);
   } else {
     // 展开：Apple 官方风格 - 完全展开后停顿，然后整体淡入
     button.classList.add('active');
@@ -47,6 +56,9 @@ function animateDetailSectionsAppleOfficial(container) {
   
   // 重置所有状态
   projectDetails.forEach(details => {
+    // 文本框先淡入
+    details.classList.remove('visible');
+    
     const h4 = details.querySelector('h4');
     const sections = details.querySelectorAll('.detail-section');
     
@@ -59,21 +71,26 @@ function animateDetailSectionsAppleOfficial(container) {
   
   // Apple 官方设计：
   // 完全展开后等待 950ms（800ms 展开 + 150ms 停顿）
-  // 然后所有内容优雅淡入
+  // 然后文本框 → 标题 → 内容 依次优雅淡入
   setTimeout(() => {
     startFadeInAppleOfficial(projectDetails);
   }, 950);
 }
 
-// Apple 官方淡入动画（同时淡入，间隔 80ms）
+// Apple 官方淡入动画（文本框先行，标题 + 内容紧随）
 function startFadeInAppleOfficial(projectDetailsList) {
   let globalIndex = 0;
   
   projectDetailsList.forEach((details) => {
-    const h4 = details.querySelector('h4');
-    const sections = details.querySelectorAll('.detail-section');
+    // 1. 文本框先淡入
+    void details.offsetWidth; // 强制重排
+    setTimeout(() => {
+      details.classList.add('visible');
+    }, globalIndex * 80);
+    globalIndex++;
     
-    // 标题先淡入
+    // 2. 标题淡入
+    const h4 = details.querySelector('h4');
     if (h4) {
       void h4.offsetWidth; // 强制重排
       setTimeout(() => {
@@ -82,7 +99,8 @@ function startFadeInAppleOfficial(projectDetailsList) {
       globalIndex++;
     }
     
-    // 内容紧随其后淡入（间隔 80ms）
+    // 3. 内容紧随其后淡入（间隔 80ms）
+    const sections = details.querySelectorAll('.detail-section');
     sections.forEach((section) => {
       void section.offsetWidth; // 强制重排
       setTimeout(() => {

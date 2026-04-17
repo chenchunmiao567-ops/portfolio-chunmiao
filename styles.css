@@ -1395,6 +1395,18 @@ body {
   border: 1px solid #E5E5E5;
   border-radius: 18px;
   margin-bottom: 24px;
+  margin-top: 20px; /* 与上方按钮间距 */
+  
+  /* 初始状态：透明 + 下方 10px */
+  opacity: 0.01;
+  transform: translateY(10px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-details.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-details h4 {
