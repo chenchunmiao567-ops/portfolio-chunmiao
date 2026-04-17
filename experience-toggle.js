@@ -1,48 +1,54 @@
-// 折叠展开功能
+// 折叠展开功能（Apple 风格优化）
 function toggleDetails(button) {
   const content = button.nextElementSibling;
   const isExpanded = content.classList.contains('expanded');
   
-  // 切换状态
-  content.classList.toggle('expanded');
-  button.classList.toggle('active');
-  
-  // 更新按钮文字（统一为"项目详情"）
+  // 更新按钮文字
   const textSpan = button.querySelector('.btn-text');
   if (textSpan) {
-    if (isExpanded) {
-      textSpan.textContent = '项目详情';
-      button.classList.remove('active');
-    } else {
-      textSpan.textContent = '项目详情';
-      button.classList.add('active');
-    }
+    textSpan.textContent = '项目详情';
   }
   
-  // 展开时：逐行显示内容
-  if (!isExpanded) {
-    animateDetailSections(content);
+  if (isExpanded) {
+    // 收起
+    button.classList.remove('active');
+    content.classList.remove('expanded');
+    
+    // 移除 visible 类，准备下次动画
+    setTimeout(() => {
+      const sections = content.querySelectorAll('.detail-section');
+      sections.forEach(section => section.classList.remove('visible'));
+    }, 300);
+  } else {
+    // 展开：Apple 风格
+    button.classList.add('active');
+    content.classList.add('expanded');
+    
+    // Apple 式动画：高度展开后，内容逐行淡入
+    animateDetailSectionsAppleStyle(content);
   }
 }
 
-// 逐行动画函数（与主页面一致的缓动上浮效果）
-function animateDetailSections(container) {
+// Apple 风格的逐行动画
+function animateDetailSectionsAppleStyle(container) {
   const sections = container.querySelectorAll('.detail-section');
   
-  // 先重置所有section 的状态（确保动画可重复触发）
+  // 重置所有 section 的状态
   sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    section.classList.remove('visible');
   });
   
-  // 逐行触发动画
-  sections.forEach((section, index) => {
-    setTimeout(() => {
-      section.style.opacity = '1';
-      section.style.transform = 'translateY(0)';
-    }, index * 120); // 每行间隔 120ms
-  });
+  // 强制浏览器重排
+  void container.offsetWidth;
+  
+  // 延迟一点点，等高度展开后再淡入内容
+  setTimeout(() => {
+    sections.forEach((section, index) => {
+      setTimeout(() => {
+        section.classList.add('visible');
+      }, index * 100); // 每行间隔 100ms
+    });
+  }, 150); // 等 150ms 让高度开始展开
 }
 
 // 页面加载后初始化

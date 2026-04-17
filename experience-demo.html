@@ -90,6 +90,65 @@
           <span>最终视频在展会主展区循环播放，该视频后续被作为标杆素材，应用于多个营销渠道，成为海外市场拓展的关键品牌背书资产。</span>
         </div>
       </div>
+    </div>
+  </div>
+  
+  <script src="experience-toggle.js"></script>
+</body>
+</html>
+    
+    <div class="collapsible-content">
+      <div class="project-details">
+        <h4>项目一：华为茶思下午茶高端访谈栏目</h4>
+        <div class="detail-section">
+          <strong>背景：</strong>
+          <span>为提升华为黄大年茶思屋科技网站在全球顶尖科学家群体中的影响力，打造高质量访谈栏目。</span>
+        </div>
+        <div class="detail-section">
+          <strong>职责：</strong>
+          <span>项目主导，负责茶思下午茶栏目板块内容全流程制作与运营（策划、拍摄、后期、数据复盘）。</span>
+        </div>
+        <div class="detail-section">
+          <strong>行动：</strong>
+          <span>全流程主导，独立完成从嘉宾访谈拍摄（如把控现场访谈的灯光、构图与收音）到后期剪辑、AE 动效包装及文案梳理的全过程。数据驱动优化：系统性分析用户浏览数据（如停留时长、人群分布、浏览时间节点、点击量等），针对栏目中 Mérouane Debbah 教授技术访谈在 B 站播放量较低（282 次）的情况，总结出"技术内容需优化叙事结构"的经验，并应用于后续内容迭代。</span>
+        </div>
+        <div class="detail-section">
+          <strong>成果：</strong>
+          <span>主导的「田刚院士谈数学人才的机遇与选择」视频在 B 站获得 5848 次播放，在【茶思下午茶】栏目中排名第二，（同栏目中最高 6013 次）通过分析优化有效提升了同类型视频浏览量（1973.6%）与专业调性。</span>
+        </div>
+      </div>
+      
+      <div class="project-details">
+        <h4>项目二：华为全联接大会（HC 大会）全流程影像服务</h4>
+        <div class="detail-section">
+          <strong>背景：</strong>
+          <span>为年度旗舰活动"华为全联接大会"提供全周期影像支持，用于全球传播与客户转化。</span>
+        </div>
+        <div class="detail-section">
+          <strong>职责：</strong>
+          <span>前期 - 策划搭建、花絮拍摄脚本，组织团队分工并协调外部供应商完成拍摄、独立完成搭建视频；现场 - 重点客户参观跟拍；同步记录客户参观动态，实时整理影像素材；后期 - 按传播场景分类梳理素材，为社媒宣传提供即剪即用的内容基础。</span>
+        </div>
+        <div class="detail-section">
+          <strong>成果：</strong>
+          <span>高效响应与资产沉淀：针对管理层对会场搭建经验沉淀的特定需求，主导团队在一周内高效完成从策划到成片的全流程，视频作为关键过程资产用于内部复盘与知识传承。敏捷交付与标准建立：在华为全联接大会中，面对紧急需求，12 小时内完成搭建花絮的紧急成片，其成功经验被固化为标准操作流程，提升了团队整体应急响应能力。</span>
+        </div>
+      </div>
+      
+      <div class="project-details">
+        <h4>项目三：巴塞罗那世界移动通信大会（MWC）客户证言视频制作与产品发布协同（海外展会项目）</h4>
+        <div class="detail-section">
+          <strong>背景：</strong>
+          <span>为公司在全球顶级行业展会——巴塞罗那 MWC 上的品牌亮相，制作符合国际传播标准的客户证言视频及产品发布视频，核心目标为提升品牌在 EMEA（欧洲、中东、非洲）市场的认知度与信任度。</span>
+        </div>
+        <div class="detail-section">
+          <strong>职责：</strong>
+          <span>基于展会传播诉求，设计制作客户证言 keynote 视频；协助团队对接供应商完成视频，全程指导特效风格与内容呈现，确保品牌在内容层面视觉与体验层面、合规层面、素材使用层面符合海外传播标准。</span>
+        </div>
+        <div class="detail-section">
+          <strong>成果：</strong>
+          <span>最终视频在展会主展区循环播放，该视频后续被作为标杆素材，应用于多个营销渠道，成为海外市场拓展的关键品牌背书资产。</span>
+        </div>
+      </div>
       
       <div class="project-details">
         <h4>项目二：华为全联接大会（HC 大会）全流程影像服务</h4>
@@ -125,44 +184,5 @@
     </div>
   </div>
   
-  <script>
-    function toggleDetails(button) {
-      const content = button.nextElementSibling;
-      const isExpanded = content.classList.contains('expanded');
-      
-      content.classList.toggle('expanded');
-      button.classList.toggle('active');
-      
-      // 更新按钮文字（统一为"项目详情"）
-      const textSpan = button.querySelector('.btn-text');
-      if (textSpan) {
-        textSpan.textContent = '项目详情';
-      }
-      
-      // 展开时：逐行显示内容
-      if (!isExpanded) {
-        animateDetailSections(content);
-      }
-    }
-    
-    function animateDetailSections(container) {
-      const sections = container.querySelectorAll('.detail-section');
-      
-      // 先重置所有 section 的状态
-      sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-      });
-      
-      // 逐行触发动画（与主页面一致的缓动上浮效果）
-      sections.forEach((section, index) => {
-        setTimeout(() => {
-          section.style.opacity = '1';
-          section.style.transform = 'translateY(0)';
-        }, index * 120);
-      });
-    }
-  </script>
 </body>
 </html>

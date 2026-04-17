@@ -1404,14 +1404,27 @@ body {
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid #E5E5E5;
+  padding-left: 82px; /* 与下方内容对齐（70px 标签 + 12px gap） */
 }
 
 .detail-section {
   margin-bottom: 20px;
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 70px 1fr; /* 固定 70px 标签宽度 */
   gap: 12px;
-  /* 初始状态由 JS 控制，确保收起时不可见 */
+  align-items: baseline; /* 基线对齐 */
+  
+  /* 初始状态：透明 + 下方 12px */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.detail-section.visible {
+  /* 显示状态：不透明 + 原位 */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .detail-section:last-child {
@@ -1419,17 +1432,15 @@ body {
 }
 
 .detail-section strong {
-  display: inline-block;
-  min-width: 70px;
   color: var(--color-primary);
   font-weight: 600;
-  flex-shrink: 0;
   line-height: 1.6;
+  /* 右对齐冒号 */
+  text-align: right;
 }
 
 .detail-section span {
   color: var(--color-gray-dark);
   line-height: 1.6;
   text-align: left;
-  flex: 1;
 }
