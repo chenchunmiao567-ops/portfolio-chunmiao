@@ -1,4 +1,4 @@
-// 折叠展开功能（Apple 风格 v4 - 完全展开后淡入）
+// 折叠展开功能（Apple 官方风格 - 完全展开后淡入）
 function toggleDetails(button) {
   const content = button.nextElementSibling;
   const isExpanded = content.classList.contains('expanded');
@@ -29,17 +29,20 @@ function toggleDetails(button) {
       content.classList.remove('expanded');
     }, 400);
   } else {
-    // 展开：Apple 风格 - 完全展开后停顿，然后整体淡入
+    // 展开：Apple 官方风格 - 完全展开后停顿，然后整体淡入
     button.classList.add('active');
     content.classList.add('expanded');
     
-    // Apple 式动画：等高度完全展开后，停顿一下，然后所有内容优雅淡入
-    animateDetailSectionsAppleStyleV4(content);
+    // Apple 官方动画流程：
+    // 1. 高度完全展开（800ms）
+    // 2. 停顿 150ms（让眼睛适应）
+    // 3. 所有内容同时淡入（标题 + 内容，间隔 80ms）
+    animateDetailSectionsAppleOfficial(content);
   }
 }
 
-// Apple 风格的逐行动画 v4（完全展开后淡入）
-function animateDetailSectionsAppleStyleV4(container) {
+// Apple 官方风格的淡入动画
+function animateDetailSectionsAppleOfficial(container) {
   const projectDetails = container.querySelectorAll('.project-details');
   
   // 重置所有状态
@@ -54,20 +57,16 @@ function animateDetailSectionsAppleStyleV4(container) {
   // 强制浏览器重排
   void container.offsetWidth;
   
-  // Apple 设计原则：
-  // 1. 等待高度完全展开（800ms）
-  // 2. 停顿 100ms（让眼睛适应）
-  // 3. 所有内容同时开始淡入（标题 + 内容，间隔 50ms）
-  // 4. 使用非常柔和的缓动曲线
-  
+  // Apple 官方设计：
+  // 完全展开后等待 950ms（800ms 展开 + 150ms 停顿）
+  // 然后所有内容优雅淡入
   setTimeout(() => {
-    // 开始淡入动画
-    startFadeInAnimationV4(projectDetails);
-  }, 900); // 800ms 展开 + 100ms 停顿
+    startFadeInAppleOfficial(projectDetails);
+  }, 950);
 }
 
-// 逐行淡入动画 v4（Apple 风格 - 同时淡入）
-function startFadeInAnimationV4(projectDetailsList) {
+// Apple 官方淡入动画（同时淡入，间隔 80ms）
+function startFadeInAppleOfficial(projectDetailsList) {
   let globalIndex = 0;
   
   projectDetailsList.forEach((details) => {
@@ -83,7 +82,7 @@ function startFadeInAnimationV4(projectDetailsList) {
       globalIndex++;
     }
     
-    // 内容紧随其后淡入（间隔很短）
+    // 内容紧随其后淡入（间隔 80ms）
     sections.forEach((section) => {
       void section.offsetWidth; // 强制重排
       setTimeout(() => {
@@ -99,5 +98,5 @@ function startFadeInAnimationV4(projectDetailsList) {
 
 // 页面加载后初始化
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('工作经历折叠功能已加载 - Apple 风格 v4');
+  console.log('工作经历折叠功能已加载 - Apple 官方风格');
 });

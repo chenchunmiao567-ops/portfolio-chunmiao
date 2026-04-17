@@ -1407,11 +1407,11 @@ body {
   display: flex;
   align-items: baseline;
   
-  /* 初始状态：几乎透明（不是完全 0）+ 下方 10px */
+  /* Apple 官方初始状态：几乎透明 + 下方 8px */
   opacity: 0.01;
-  transform: translateY(10px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(8px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-details h4.visible {
@@ -1435,11 +1435,11 @@ body {
   align-items: baseline;
   gap: 0;
   
-  /* 初始状态：几乎透明（不是完全 0）+ 下方 10px */
+  /* Apple 官方初始状态：几乎透明 + 下方 8px */
   opacity: 0.01;
-  transform: translateY(10px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(8px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .detail-section.visible {
