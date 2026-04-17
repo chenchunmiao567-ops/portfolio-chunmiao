@@ -69,12 +69,13 @@ function animateDetailSectionsAppleOfficial(container) {
   // 强制浏览器重排
   void container.offsetWidth;
   
-  // Apple 官方设计：
-  // 完全展开后等待 950ms（800ms 展开 + 150ms 停顿）
+  // Apple 优化设计：
+  // 完全展开后等待 500ms（400ms 展开 + 100ms 停顿）
   // 然后文本框 → 标题 → 内容 依次优雅淡入
+  // 更快响应，不等待完全展开
   setTimeout(() => {
     startFadeInAppleOfficial(projectDetails);
-  }, 950);
+  }, 500);
 }
 
 // Apple 官方淡入动画（文本框先行，标题 + 内容紧随）
