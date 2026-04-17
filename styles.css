@@ -1404,25 +1404,25 @@ body {
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid #E5E5E5;
-  display: grid;
-  grid-template-columns: 82px 1fr; /* 与下方 detail-section 一致 */
-  gap: 0;
+  display: flex;
+  align-items: baseline;
 }
 
 .project-details h4 .project-label {
   color: var(--color-primary);
   font-weight: 600;
-  letter-spacing: 0.3em;
-  padding-right: 0.3em;
+  letter-spacing: 0.5em; /* 与下方标签一致 */
+  padding-right: 0.5em; /* 补偿间距 */
+  min-width: 3em; /* 三个字宽度 */
   text-align: right;
+  flex-shrink: 0;
 }
 
 .detail-section {
   margin-bottom: 24px;
-  display: grid;
-  grid-template-columns: 82px 1fr; /* 82px 与标题 padding-left 一致 */
-  gap: 0; /* 移除 gap，用 padding 控制 */
+  display: flex;
   align-items: baseline;
+  gap: 0;
   
   /* 初始状态：透明 + 下方 20px */
   opacity: 0;
@@ -1446,8 +1446,10 @@ body {
   line-height: 1.6;
   /* 文字分散对齐：背    景： */
   letter-spacing: 0.5em;
-  padding-right: 0.5em; /* 补偿最后一个字的间距 */
+  padding-right: 0.5em; /* 补偿间距 */
+  min-width: 2em; /* 两个字宽度 */
   text-align: right;
+  flex-shrink: 0;
 }
 
 .detail-section span {
