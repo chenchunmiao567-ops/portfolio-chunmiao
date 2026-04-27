@@ -967,16 +967,23 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--color-gray-mid);
-  opacity: 0.3;
+  background: #d1d1d6;
+  opacity: 0.6;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  opacity: 0.8;
 }
 
 .carousel-dot.active {
   opacity: 1;
-  background: var(--color-blue);
-  transform: scale(1.2);
+  background: #1d1d1f;
+  width: 24px;
+  border-radius: 4px;
 }
 
 /* 联系区域 */
