@@ -263,82 +263,40 @@
   }
 
   // ========== 滚动动画（Apple 官方标准） ==========
+  // 修复 2026-05-11：按 section 分组 + DOM 顺序严格递增延迟
   // 参数来源：apple-animation-report.md
   function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in-up, .section-title, .section-subtitle');
-    
-    const observerOptions = {
-      rootMargin: '0px 0px 0px 0px',  // 元素底部接触视口底部时立即触发（修复：之前要进入 150px 才触发，导致动画太晚）
-      threshold: 0.01                     // 1% 可见就触发（Apple 标准）
-    };
+    const sections = document.querySelectorAll('.section, .hero');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-          // ✅ 按板块类型精确分组
-          let siblings;
-          let index = -1;
-          
-          if (entry.target.classList.contains('stat-inline')) {
-            // 统计数据：最先进入（索引 0-1）
-            const statsContainer = entry.target.closest('.about-stats-inline');
-            if (statsContainer) {
-              siblings = Array.from(statsContainer.querySelectorAll('.stat-inline'));
-              index = siblings.indexOf(entry.target);
-            }
-          } else if (entry.target.classList.contains('skills-title')) {
-            // 核心技能标题：在统计数据之后（索引 2）
-            index = 2;
-            siblings = [entry.target];
-          } else if (entry.target.classList.contains('skill-tag')) {
-            // 核心技能标签：按 data-order 排序（标签 1-10，延迟 300-1200ms）
-            const skillsContainer = entry.target.closest('.skills-grid');
-            if (skillsContainer) {
-              siblings = Array.from(skillsContainer.querySelectorAll('.skill-tag[data-order]'));
-              siblings.sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
-              index = siblings.indexOf(entry.target) + 3;  // +3 因为统计数据 2 个 + 标题 1 个
-            }
-          } else if (entry.target.classList.contains('advantages-title')) {
-            // 核心优势标题：和卡片统一分组，标题索引 0，卡片索引 1-6
-            const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
-            if (section) {
-              siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
-              index = siblings.indexOf(entry.target);
-            }
-          } else if (entry.target.classList.contains('advantage-card')) {
-            // 核心优势卡片：和标题统一分组，前 3 个快，后 3 个慢
-            const section = entry.target.closest('.about-advantages') || entry.target.closest('.section');
-            if (section) {
-              siblings = Array.from(section.querySelectorAll('.advantages-title, .advantage-card'));
-              index = siblings.indexOf(entry.target);
-            }
-          } else if (entry.target.closest('.experience-item')) {
-            // 工作经历：统一按 DOM 顺序计算（时间→公司→职位→项目 1→服务对象→项目 2→...）
-            const experienceItem = entry.target.closest('.experience-item');
-            const allElements = Array.from(experienceItem.querySelectorAll(':scope > .fade-in-up, :scope .experience-details p.fade-in-up'));
-            index = allElements.indexOf(entry.target);
-            siblings = allElements;
-          } else {
-            // 其他板块：按 section 分组
-            const parent = entry.target.closest('.section') || entry.target.parentElement;
-            siblings = parent ? Array.from(parent.querySelectorAll('.fade-in-up')) : [];
-            index = siblings.indexOf(entry.target);
+    sections.forEach((section) => {
+      // 收集该 section 内所有需要动画的元素
+      const elements = Array.from(section.querySelectorAll('.fade-in-up'));
+      if (elements.length === 0) return;
+
+      // 创建独立 Observer 监听该 section 的所有元素
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+            // 获取元素在该 section 内的 DOM 顺序索引
+            const index = elements.indexOf(entry.target);
+            // Apple 标准：100ms 间隔，按 DOM 顺序严格递增
+            const delay = index * 100;
+
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+
+            // 触发后停止监听，避免重复触发
+            sectionObserver.unobserve(entry.target);
           }
-          
-          // Apple 标准：100ms 间隔，依次浮现
-          const delay = index >= 0 ? index * 100 : 0;
-          
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-          
-          // 动画触发后停止监听，避免重复触发
-          observer.unobserve(entry.target);
-        }
+        });
+      }, {
+        rootMargin: '0px 0px 0px 0px',  // 元素进入视口立即触发
+        threshold: 0.01                    // 1% 可见即触发（Apple 标准）
       });
-    }, observerOptions);
 
-    animatedElements.forEach(el => observer.observe(el));
+      elements.forEach(el => sectionObserver.observe(el));
+    });
   }
 
   // ========== 回到顶部 ==========

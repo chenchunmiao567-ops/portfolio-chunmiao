@@ -394,7 +394,7 @@ body {
 /* ✅ 核心技能标签 + fade-in-up：Apple 标准动画初始状态 */
 .skill-tag.fade-in-up {
   opacity: 0;
-  transform: translateY(40px);  /* Apple 标准：从下方 40px 上浮 */
+  transform: translateY(20px);  /* Apple 标准：从下方 20px 上浮 */
 }
 
 .skill-tag:hover {
@@ -457,9 +457,9 @@ body {
 /* ✅ 核心优势卡片 + fade-in-up：Apple 标准动画初始状态 */
 .advantage-card.fade-in-up {
   opacity: 0;
-  transform: translateY(40px) scale(0.98);  /* Apple 标准：上浮 + 轻微缩放 */
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px) scale(0.98);  /* Apple 标准：上浮 + 轻微缩放 */
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .advantage-card:hover {
@@ -1245,9 +1245,9 @@ body {
 .section-title,
 .section-subtitle {
   opacity: 0;
-  transform: translateY(40px);  /* Apple 标准：从下方 40px 上浮 */
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),  /* Apple 高级缓动曲线 */
-              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);  /* Apple 标准：从下方 20px 上浮 */
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),  /* Apple 标准：400ms */
+              transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ✅ 添加 visible 类后显示（JS 完全控制，移除 CSS 自动延迟） */
