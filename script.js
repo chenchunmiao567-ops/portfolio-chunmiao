@@ -263,36 +263,51 @@
   }
 
   // ========== 滚动动画（Apple 官方标准） ==========
-  // 修复 2026-05-11：按 section 分组 + DOM 顺序严格递增延迟
+  // 修复 2026-05-11 v2：按 section 分组 + 首个元素触发 + DOM 顺序严格递增
   // 参数来源：apple-animation-report.md
+  //
+  // 修复的问题：
+  //   1. 旧版每个元素独立触发 setTimeout，滚动快时顺序混乱
+  //   2. threshold: 0.01 在某些浏览器/缩放比例下不稳定
+  //   3. 元素滚出视口再滚回时重复触发
   function initScrollAnimations() {
     const sections = document.querySelectorAll('.section, .hero');
 
     sections.forEach((section) => {
-      // 收集该 section 内所有需要动画的元素
+      // 收集该 section 内所有需要动画的元素（按 DOM 顺序）
       const elements = Array.from(section.querySelectorAll('.fade-in-up'));
       if (elements.length === 0) return;
 
-      // 创建独立 Observer 监听该 section 的所有元素
+      let triggered = false; // 每个 section 只触发一次
+
       const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-            // 获取元素在该 section 内的 DOM 顺序索引
-            const index = elements.indexOf(entry.target);
-            // Apple 标准：100ms 间隔，按 DOM 顺序严格递增
-            const delay = index * 100;
+          // 已经在动画中 或 已经显示 → 跳过
+          if (triggered || entry.target.classList.contains('visible')) return;
 
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, delay);
+          // 元素进入视口 → 以该元素为起点，按 DOM 顺序触发所有未显示的元素
+          if (entry.isIntersecting) {
+            triggered = true;
+            const startIndex = elements.indexOf(entry.target);
 
-            // 触发后停止监听，避免重复触发
-            sectionObserver.unobserve(entry.target);
+            // 从触发元素开始，按 DOM 顺序依次添加 visible
+            elements.forEach((el, index) => {
+              if (index < startIndex) return; // 已经在视口上方，直接显示（无延迟）
+              if (el.classList.contains('visible')) return;
+
+              const delay = (index - startIndex) * 100;
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, delay);
+            });
+
+            // 停止监听该 section 的所有元素
+            elements.forEach(el => sectionObserver.unobserve(el));
           }
         });
       }, {
-        rootMargin: '0px 0px 0px 0px',  // 元素进入视口立即触发
-        threshold: 0.01                    // 1% 可见即触发（Apple 标准）
+        rootMargin: '0px 0px -40px 0px',  // 底部留出 40px 缓冲，避免边缘误触发
+        threshold: 0.1                      // 10% 可见才触发（比 0.01 更稳定）
       });
 
       elements.forEach(el => sectionObserver.observe(el));

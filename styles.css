@@ -613,18 +613,6 @@ body {
   margin-bottom: var(--spacing-4xl);
 }
 
-.section-title.ready {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.section-title.ready.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (min-width: 768px) {
   .section-title {
     font-size: 48px;
@@ -638,18 +626,6 @@ body {
   color: var(--color-gray-mid);
   margin-top: -20px;
   margin-bottom: var(--spacing-4xl);
-}
-
-.section-subtitle.ready {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,
-              transform 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
-}
-
-.section-subtitle.ready.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* 视频网格 */
@@ -1241,22 +1217,23 @@ body {
 
 /* 动画 - Fade In Up（Apple 官方标准） */
 /* 参数来源：apple-animation-report.md + apple-design-system-report.md */
-.fade-in-up,
-.section-title,
-.section-subtitle {
+
+/* ✅ 只有带 .fade-in-up 的元素才会被隐藏等待动画 */
+.fade-in-up {
   opacity: 0;
   transform: translateY(20px);  /* Apple 标准：从下方 20px 上浮 */
   transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),  /* Apple 标准：400ms */
               transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ✅ 添加 visible 类后显示（JS 完全控制，移除 CSS 自动延迟） */
-.fade-in-up.visible,
-.section-title.visible,
-.section-subtitle.visible {
+/* ✅ 添加 visible 类后显示（JS 完全控制） */
+.fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* .section-title / .section-subtitle 默认始终可见 */
+/* 如需滚动动画，请同时添加 .fade-in-up 类 */
 
 /* Hero 区域独立动画（页面加载时直接播放） */
 @keyframes heroFadeIn {
